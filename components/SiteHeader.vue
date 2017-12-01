@@ -1,16 +1,16 @@
 <template>
   <header>
     <h1>BTMAT</h1>
-    <Nav />
+    <SiteNav />
   </header>
 </template>
 
 <script>
-import Nav from '~/components/Nav';
+import SiteNav from '~/components/SiteNav';
 
 export default {
   components: {
-    Nav
+    SiteNav
   }
 };
 </script>

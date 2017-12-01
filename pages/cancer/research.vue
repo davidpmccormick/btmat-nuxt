@@ -1,5 +1,5 @@
 <template>
   <div>
-    about research
+    <h2>Research</h2>
   </div>
 </template>

@@ -1,16 +1,16 @@
 <template>
   <div>
-    <Header />
+    <SiteHeader />
     <nuxt />
   </div>
 </template>
 
 <script>
-import Header from '~/components/Header';
+import SiteHeader from '~/components/SiteHeader';
 
 export default {
   components: {
-    Header
+    SiteHeader
   }
 };
 </script>
