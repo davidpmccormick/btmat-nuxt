@@ -10,20 +10,16 @@
 
 <script>
 import Pagination from '~/components/Pagination';
-import { getArticleStubs } from '~/services/wordpress';
 import { mapState } from 'vuex';
 
 export default {
   components: {
     Pagination
   },
-  async fetch({ store }) {
-    const { articleStubs, totalPages, totalArticles, currentPage } = await getArticleStubs();
+  async fetch({ store, params }) {
+    if (params.pageNumber) return;
 
-    store.commit('setCurrentPage', currentPage);
-    store.commit('setTotalPages', totalPages);
-    store.commit('setTotalArticles', totalArticles);
-    store.commit('setArticleStubs', articleStubs);
+    return store.dispatch('getArticleStubs');
   },
   computed: {
     ...mapState([

@@ -1,10 +1,10 @@
 import Vuex from 'vuex';
+import { getArticleStubs } from '~/services/wordpress';
 
 const createStore = () => {
   return new Vuex.Store({
     state: {
       articleStubs: [],
-      totalArticles: null,
       totalPages: null,
       currentPage: null,
       navItems: [
@@ -32,18 +32,28 @@ const createStore = () => {
         }
       ]
     },
+    actions: {
+      async getArticleStubs({ commit }, page = 1) {
+        const {
+          articleStubs,
+          totalPages,
+          currentPage
+        } = await getArticleStubs({page});
+
+        commit('setCurrentPage', currentPage);
+        commit('setTotalPages', totalPages);
+        commit('setArticleStubs', articleStubs);
+      }
+    },
     mutations: {
       setArticleStubs(state, value) {
         state.articleStubs = value;
       },
-      setTotalArticles(state, value) {
-        state.totalArticles = value;
-      },
       setTotalPages(state, value) {
-        state.totalPages = value;
+        state.totalPages = Number(value);
       },
       setCurrentPage(state, value) {
-        state.currentPage = value;
+        state.currentPage = Number(value);
       }
     }
   });
