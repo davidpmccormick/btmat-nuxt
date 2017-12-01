@@ -17,7 +17,7 @@ export default {
     Pagination
   },
   async fetch({ store, params }) {
-    if (params.pageNumber) return;
+    if (params.pageNumber) return; // Handled by news/page/_pageNumber.vue
 
     return store.dispatch('getArticleStubs');
   },

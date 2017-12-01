@@ -1,6 +1,6 @@
 <template>
   <div>
-    <p>Page {{ currentPage }} of {{ totalPages }}</p>
+    <p>Page <input @keyup.enter="handleEnter" type="number" :value="currentPage" /> of {{ totalPages }}</p>
     <nuxt-link v-if="currentPage < totalPages" :to="olderPageNumberLink">Older</nuxt-link>
     <nuxt-link v-if="currentPage > 1" :to="newerPageNumberLink">Newer</nuxt-link>
   </div>
@@ -20,6 +20,15 @@ export default {
     },
     newerPageNumberLink() {
       return this.currentPage === 2 ? '/news' : `/news/page/${this.currentPage - 1}`;
+    }
+  },
+  methods: {
+    handleEnter(event) {
+      const pageNumber = Number(event.target.value);
+
+      if (!pageNumber || pageNumber > this.totalPages || pageNumber < 1) return;
+
+      this.$router.push({name: 'news-page-pageNumber', params: {pageNumber}});
     }
   }
 };
