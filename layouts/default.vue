@@ -15,12 +15,15 @@ export default {
 };
 </script>
 
-<style>
-*, *:before, *:after {
-  box-sizing: border-box;
+<style lang="scss">
+.page-enter-active,
+.page-leave-active {
+  transition: all 600ms ease;
 }
 
-body {
-  margin: 0;
+.page-enter,
+.page-leave-active {
+  opacity: 0;
+  transform: translateX(-100px);
 }
 </style>

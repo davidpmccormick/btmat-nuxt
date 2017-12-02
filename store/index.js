@@ -1,10 +1,14 @@
 import Vuex from 'vuex';
-import { getArticleStubs } from '~/services/wordpress';
+import {
+  getArticleStubs,
+  getArticleBySlug
+} from '~/services/wordpress';
 
 const createStore = () => {
   return new Vuex.Store({
     state: {
       articleStubs: [],
+      article: null,
       totalPages: null,
       currentPage: null,
       navItems: [
@@ -43,11 +47,19 @@ const createStore = () => {
         commit('setCurrentPage', currentPage);
         commit('setTotalPages', totalPages);
         commit('setArticleStubs', articleStubs);
+      },
+      async getArticleBySlug({ commit }, slug) {
+        const article = await getArticleBySlug(slug);
+
+        commit('setArticle', article);
       }
     },
     mutations: {
       setArticleStubs(state, value) {
         state.articleStubs = value;
+      },
+      setArticle(state, value) {
+        state.article = value;
       },
       setTotalPages(state, value) {
         state.totalPages = Number(value);
