@@ -23,10 +23,12 @@ const createStore = () => {
         {
           title: 'Cancer',
           url: '/cancer/burkitt',
+          subnavPath: '/cancer/',
           subnavItems: [
             {
               title: 'Burkitt',
-              url: '/cancer/burkitt'
+              url: '/cancer/burkitt',
+              parent: 'cancer'
             },
             {
               title: 'Research',
