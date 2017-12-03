@@ -15,12 +15,10 @@ const createStore = () => {
         {
           title: 'Home',
           url: '/'
-        },
-        {
+        }, {
           title: 'News',
           url: '/news'
-        },
-        {
+        }, {
           title: 'Cancer',
           url: '/cancer/burkitt',
           subnavPath: '/cancer/',
@@ -29,12 +27,26 @@ const createStore = () => {
               title: 'Burkitt',
               url: '/cancer/burkitt',
               parent: 'cancer'
-            },
-            {
+            }, {
               title: 'Research',
               url: '/cancer/research'
             }
           ]
+        }, {
+          title: 'Hospitals',
+          url: '#'
+        }, {
+          title: 'Gallery',
+          url: '#'
+        }, {
+          title: 'Press',
+          url: '#'
+        }, {
+          title: 'About',
+          url: '#'
+        }, {
+          title: 'Support',
+          url: '#'
         }
       ]
     },
@@ -68,6 +80,9 @@ const createStore = () => {
       },
       setCurrentPage(state, value) {
         state.currentPage = Number(value);
+      },
+      setNavItems(state, value) {
+        state.navItems = value;
       }
     }
   });
