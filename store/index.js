@@ -11,42 +11,53 @@ const createStore = () => {
       article: null,
       totalPages: null,
       currentPage: null,
+      activeRoute: null,
       navItems: [
         {
           title: 'Home',
-          url: '/'
+          url: '/',
+          name: 'home'
         }, {
           title: 'News',
-          url: '/news'
+          url: '/news',
+          name: 'news'
         }, {
           title: 'Cancer',
           url: '/cancer/burkitt',
           subnavPath: '/cancer/',
+          name: 'cancer',
           subnavItems: [
             {
               title: 'Burkitt',
               url: '/cancer/burkitt',
-              parent: 'cancer'
+              parent: 'cancer',
+              name: 'cancer-burkitt'
             }, {
               title: 'Research',
-              url: '/cancer/research'
+              url: '/cancer/research',
+              name: 'cancer-research'
             }
           ]
         }, {
           title: 'Hospitals',
-          url: '#'
+          url: '#',
+          name: 'hospitals'
         }, {
           title: 'Gallery',
-          url: '#'
+          url: '#',
+          name: 'gallery'
         }, {
           title: 'Press',
-          url: '#'
+          url: '#',
+          name: 'press'
         }, {
           title: 'About',
-          url: '#'
+          url: '#',
+          name: 'about'
         }, {
           title: 'Support',
-          url: '#'
+          url: '#',
+          name: 'support'
         }
       ]
     },
@@ -83,6 +94,9 @@ const createStore = () => {
       },
       setNavItems(state, value) {
         state.navItems = value;
+      },
+      setActiveRoute(state, value) {
+        state.activeRoute = value;
       }
     }
   });

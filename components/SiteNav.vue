@@ -1,10 +1,11 @@
 <template>
   <nav class="site-nav">
     <ul class="site-nav__list">
-      <li class="site-nav__item" v-for="item in navItems" :key="item.title">
-        <nuxt-link class="site-nav__link" :to="item.url">
-          <span @click="handleLinkClick(item)">{{ item.title }}</span>
-        </nuxt-link>
+      <li v-for="item in navItems"
+        class="site-nav__item"
+        :key="item.title"
+        :data-name="item.activeRoute">
+        <nuxt-link class="site-nav__link" :to="item.url">{{ item.title }}</nuxt-link>
         <transition name="fade">
           <ul class="site-nav__sublist" v-if="showSubnav(item)">
             <li class="site-nav__subitem" v-for="subnavItem in item.subnavItems" :key="subnavItem.title">
@@ -15,7 +16,7 @@
       </li>
     </ul>
     <div class="site-nav__underline"
-      :style="{transform: navUnderlineLeft, width: navUnderlineWidth}"></div>
+      :style="{transform: activeElLeft, width: activeElWidth}"></div>
   </nav>
 </template>
 
@@ -23,50 +24,39 @@
 import { mapState } from 'vuex';
 
 export default {
-  data() {
-    return {
-      navUnderlineLeft: 0,
-      navUnderlineWidth: 0
-    };
-  },
-  mounted() {
-    this.setLeftsAndWidths();
-    // TODO: this should be based on the route
-    this.updateActiveNavUnderline(this.navItems[0]);
-  },
   computed: {
     ...mapState([
-      'navItems'
-    ])
+      'navItems',
+      'activeRoute'
+    ]),
+    activeRoute() {
+      return this.navItems.find(item => {
+        if (item.subnavItems) {
+          return item.subnavItems.find(subnavItem => {
+            return this.activeRoute.startsWith(item.name);
+          });
+        }
+
+        return this.activeRoute.startsWith(item.name);
+      });
+    },
+    activeEl() {
+      return this.$el.querySelector(`[data-name="${this.activeRoute}"]`);
+    },
+    activeElLeft() {
+      if (!this.activeEl) return 0;
+
+      return this.activeEl.offsetLeft;
+    },
+    activeElWidth() {
+      if (!this.activeEl) return 0;
+
+      return this.activeEl.offsetWidth;
+    }
   },
   methods: {
     showSubnav(item) {
       return item.subnavItems && this.$route.path.match(item.subnavPath);
-    },
-    handleLinkClick(item) {
-      this.setLeftsAndWidths();
-      this.updateActiveNavUnderline(item);
-    },
-    updateActiveNavUnderline(item) {
-      this.navUnderlineLeft = `translateX(${item.offsetLeft}px)`;
-      this.navUnderlineWidth = `${item.offsetWidth}px`;
-    },
-    setLeftsAndWidths() {
-      this.navListLeft = this.$el.querySelector('.site-nav__list')
-        .offsetLeft;
-      const updatedNavItems = [].slice
-        .call(this.$el.querySelectorAll('.site-nav__link'))
-        .map((item, index) => {
-          const { offsetLeft, offsetWidth } = item;
-
-          return {
-            ...this.navItems[index],
-            offsetLeft: offsetLeft - this.navListLeft,
-            offsetWidth
-          };
-        });
-
-      this.$store.commit('setNavItems', updatedNavItems);
     }
   }
 };

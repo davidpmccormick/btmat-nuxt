@@ -41,5 +41,6 @@ module.exports = {
         });
       }
     }
-  }
+  },
+  plugins: [{src: '~/plugins/navigation.js'}]
 };
