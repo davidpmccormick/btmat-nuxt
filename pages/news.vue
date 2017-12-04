@@ -1,14 +1,14 @@
 <template>
   <div class="news">
     <h2>News</h2>
-    <transition-group tag="ul" name="news" class="news__list">
+    <ul>
       <li class="news__item" v-for="article in articleStubs" :key="article.id">
         <nuxt-link class="news__link" :to="{name: 'year-month-pageSlug', params: {year: article.year, month: article.month, pageSlug: article.slug}}">
           <h3 class="news__heading" v-html="article.title"></h3>
           <div class="news__excerpt" v-html="article.excerpt"></div>
         </nuxt-link>
       </li>
-    </transition-group>
+    </ul>
     <Pagination />
   </div>
 </template>

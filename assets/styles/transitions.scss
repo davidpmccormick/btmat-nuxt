@@ -7,18 +7,3 @@
 .fade-leave-to {
   opacity: 0
 }
-
-.news-enter-active,
-.news-leave-active {
-  transition: all 600ms ease;
-}
-
-.news-enter,
-.news-leave-active {
-  opacity: 0;
-  transform: translateX(-100px);
-}
-
-.news-enter-active {
-  transition-delay: 600ms;
-}
