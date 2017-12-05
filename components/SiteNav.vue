@@ -3,7 +3,7 @@
     <ul class="site-nav__list">
       <li v-for="item in navItems"
         class="site-nav__item"
-        :class="{'is-route-active': activeRoute.startsWith(item.name)}"
+        :class="{'is-route-active': item.routesHandled.indexOf(activeRoute) > -1}"
         :key="item.title">
         <nuxt-link class="site-nav__link" :to="item.url">{{ item.title }}</nuxt-link>
         <transition name="fade">
@@ -50,11 +50,10 @@ export default {
   },
   methods: {
     updateNav() {
-      const activeRouteEl = this.$el.querySelector('.is-route-active');
+      const activeMainNavItem = this.$el.querySelector('.is-route-active');
 
-      // TODO: handle news item route ('year-month-pageSlug')
-      this.itemOffsetLeft = activeRouteEl ? activeRouteEl.offsetLeft : 0;
-      this.itemOffsetWidth = activeRouteEl ? activeRouteEl.offsetWidth : 0;
+      this.itemOffsetLeft = activeMainNavItem.offsetLeft;
+      this.itemOffsetWidth = activeMainNavItem.offsetWidth;
     },
     showSubnav(item) {
       return item.subnavItems && this.$route.path.match(item.subnavPath);

@@ -16,16 +16,16 @@ const createStore = () => {
         {
           title: 'Home',
           url: '/',
-          name: 'index'
+          routesHandled: ['index']
         }, {
           title: 'News',
           url: '/news',
-          name: 'news'
+          routesHandled: ['news', 'year-month-pageSlug']
         }, {
           title: 'Cancer',
           url: '/cancer/burkitt',
           subnavPath: '/cancer/',
-          name: 'cancer',
+          routesHandled: ['cancer-burkitt', 'cancer-research'],
           subnavItems: [
             {
               title: 'Burkitt',
@@ -41,23 +41,23 @@ const createStore = () => {
         }, {
           title: 'Hospitals',
           url: '#',
-          name: 'hospitals'
+          routesHandled: ['hostpitals']
         }, {
           title: 'Gallery',
           url: '#',
-          name: 'gallery'
+          routesHandled: ['gallery']
         }, {
           title: 'Press',
           url: '#',
-          name: 'press'
+          routesHandled: ['press']
         }, {
           title: 'About',
           url: '#',
-          name: 'about'
+          routesHandled: ['about']
         }, {
           title: 'Support',
           url: '#',
-          name: 'support'
+          routesHandled: ['support']
         }
       ]
     },
