@@ -3,8 +3,8 @@
     <ul class="site-nav__list">
       <li v-for="item in navItems"
         class="site-nav__item"
-        :key="item.title"
-        :data-name="item.activeRoute">
+        :class="{'is-route-active': activeRoute.startsWith(item.name)}"
+        :key="item.title">
         <nuxt-link class="site-nav__link" :to="item.url">{{ item.title }}</nuxt-link>
         <transition name="fade">
           <ul class="site-nav__sublist" v-if="showSubnav(item)">
@@ -16,7 +16,7 @@
       </li>
     </ul>
     <div class="site-nav__underline"
-      :style="{transform: activeElLeft, width: activeElWidth}"></div>
+      :style="{width: underlineWidth, transform: underlineTransform}"></div>
   </nav>
 </template>
 
@@ -24,37 +24,38 @@
 import { mapState } from 'vuex';
 
 export default {
+  data() {
+    return {
+      itemOffsetLeft: 0,
+      itemOffsetWidth: 0
+    };
+  },
+  mounted() {
+    this.updateNav();
+  },
+  updated() {
+    this.updateNav();
+  },
   computed: {
     ...mapState([
       'navItems',
       'activeRoute'
     ]),
-    activeRoute() {
-      return this.navItems.find(item => {
-        if (item.subnavItems) {
-          return item.subnavItems.find(subnavItem => {
-            return this.activeRoute.startsWith(item.name);
-          });
-        }
-
-        return this.activeRoute.startsWith(item.name);
-      });
+    underlineWidth() {
+      return `${this.itemOffsetWidth}px`;
     },
-    activeEl() {
-      return this.$el.querySelector(`[data-name="${this.activeRoute}"]`);
-    },
-    activeElLeft() {
-      if (!this.activeEl) return 0;
-
-      return this.activeEl.offsetLeft;
-    },
-    activeElWidth() {
-      if (!this.activeEl) return 0;
-
-      return this.activeEl.offsetWidth;
+    underlineTransform() {
+      return `translateX(${this.itemOffsetLeft}px)`;
     }
   },
   methods: {
+    updateNav() {
+      const activeRouteEl = this.$el.querySelector('.is-route-active');
+
+      // TODO: handle news item route ('year-month-pageSlug')
+      this.itemOffsetLeft = activeRouteEl ? activeRouteEl.offsetLeft : 0;
+      this.itemOffsetWidth = activeRouteEl ? activeRouteEl.offsetWidth : 0;
+    },
     showSubnav(item) {
       return item.subnavItems && this.$route.path.match(item.subnavPath);
     }

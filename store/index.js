@@ -16,7 +16,7 @@ const createStore = () => {
         {
           title: 'Home',
           url: '/',
-          name: 'home'
+          name: 'index'
         }, {
           title: 'News',
           url: '/news',
