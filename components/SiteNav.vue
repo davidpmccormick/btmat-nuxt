@@ -98,15 +98,14 @@ export default {
 
 .site-nav__sublink {
   &.nuxt-link-active {
-    border-bottom: 0.2em solid dodgerblue;
+    border-bottom: 3px solid dodgerblue;
   }
 }
 
 .site-nav__underline {
   position: absolute;
   top: 100%;
-  height: 0.2em;
-  width: 20px;
+  height: 3px;
   background: dodgerblue;
   transition: transform 600ms ease, width 600ms ease, background 600ms ease;
 }
