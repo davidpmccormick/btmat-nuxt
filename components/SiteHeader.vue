@@ -20,9 +20,9 @@ export default {
 <style>
   .site-header {
     position: sticky;
-    top: -70px;
+    top: -90px;
     background: white;
-    font-family: "brandon-grotesque";
+    font-family: "proxima-soft";
     font-weight: bold;
     border-bottom: 1px solid #e4e4e4;
     box-shadow: 0 1px 5px rgba(0, 0, 0, 0.1);
@@ -32,6 +32,6 @@ export default {
   .site-header__title {
     font-weight: bold;
     font-size: 3em;
-    margin-bottom: 0.4em;
+    margin-bottom: 0.2em;
   }
 </style>

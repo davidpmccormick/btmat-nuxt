@@ -8,12 +8,17 @@ h3,
 h4,
 h5,
 h6 {
-  font-family: 'brandon-grotesque';
+  font-family: 'proxima-soft';
+  margin-bottom: 1em;
+  line-height: 1.4;
+  margin-bottom: 0.4em;
+  text-decoration-skip: ink;
 }
 
 h2 {
   font-size: 2em;
-  margin-bottom: 1em;
-  text-decoration: underline;
-  text-decoration-skip: ink;
+}
+
+h3 {
+  font-size: 1.7em;
 }

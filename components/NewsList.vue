@@ -37,11 +37,10 @@ export default {
   margin-bottom: 2em;
 }
 
-.news-list__heading {
-  font-family: "brandon-grotesque";
-  font-size: 1.7em;
-  margin-bottom: 0.2em;
-}
+// .news-list__heading {
+//   font-family: "proxima-soft";
+//   font-size: 1.7em;
+// }
 
 .news-list__excerpt {
   font-size: 1.5em;

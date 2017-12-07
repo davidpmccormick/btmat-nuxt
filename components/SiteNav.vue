@@ -64,7 +64,7 @@ export default {
 
 <style lang="scss">
 .site-nav {
-  font-family: "brandon-grotesque";
+  font-family: "proxima-soft";
   font-size: 0.9em;
   position: relative;
   padding: 15px 0;
