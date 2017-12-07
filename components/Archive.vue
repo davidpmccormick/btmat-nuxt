@@ -9,7 +9,9 @@
 </template>
 
 <script>
-const years = [2011, 2012, 2013, 2014, 2015, 2016, 2017];
+const startYear = 2011;
+const currentYear = new Date().getFullYear();
+const years = range(startYear, currentYear + 1);
 
 export default {
   data() {
@@ -18,8 +20,8 @@ export default {
     };
   }
 };
+
+function range(start, end) {
+  return Array.from({length: (end - start)}, (v, k) => k + start);
+}
 </script>
-
-<style>
-
-</style>

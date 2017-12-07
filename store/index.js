@@ -20,12 +20,20 @@ const createStore = () => {
         }, {
           title: 'News',
           url: '/news',
-          routesHandled: ['news', 'year-month-pageSlug', 'year']
+          routesHandled: [
+            'news',
+            'year-month-pageSlug',
+            'year',
+            'news-page-pageNumber'
+          ]
         }, {
           title: 'Cancer',
           url: '/cancer/burkitt',
           subnavPath: '/cancer/',
-          routesHandled: ['cancer-burkitt', 'cancer-research'],
+          routesHandled: [
+            'cancer-burkitt',
+            'cancer-research'
+          ],
           subnavItems: [
             {
               title: 'Burkitt',
