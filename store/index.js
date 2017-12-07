@@ -20,7 +20,7 @@ const createStore = () => {
         }, {
           title: 'News',
           url: '/news',
-          routesHandled: ['news', 'year-month-pageSlug']
+          routesHandled: ['news', 'year-month-pageSlug', 'year']
         }, {
           title: 'Cancer',
           url: '/cancer/burkitt',

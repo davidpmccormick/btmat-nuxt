@@ -10,7 +10,7 @@ import { mapState } from 'vuex';
 
 export default {
   async fetch({ store, params }) {
-    return store.dispatch('getArticleBySlug', params.pageSlug);
+    await store.dispatch('getArticleBySlug', params.pageSlug);
   },
   computed: {
     ...mapState([
