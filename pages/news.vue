@@ -1,12 +1,11 @@
 <template>
   <div class="news">
-    <NewsList :articleStubs="articleStubs" />
+    <NewsList />
   </div>
 </template>
 
 <script>
 import NewsList from '~/components/NewsList';
-import { mapState } from 'vuex';
 
 export default {
   components: {
@@ -16,11 +15,6 @@ export default {
     if (params.pageNumber) return; // Handled by news/page/_pageNumber.vue
 
     await store.dispatch('getArticleStubs');
-  },
-  computed: {
-    ...mapState([
-      'articleStubs'
-    ])
   }
 };
 </script>
