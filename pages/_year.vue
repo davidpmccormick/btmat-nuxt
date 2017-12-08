@@ -13,9 +13,14 @@ export default {
     NewsList
   },
   async fetch({ params, store }) {
-    if (params.pageSlug) return; // TODO: check this works on refresh
-    // TODO: get article stubs by date
-    await store.dispatch('getArticleStubs');
+    if (params.pageSlug) return;
+
+    const nextYear = Number(params.year) + 1;
+    const after = `${params.year}-01-01T00:00:00`;
+    const before = `${nextYear}-01-01T00:00:00`;
+
+    // TODO: handle archive pagination
+    await store.dispatch('getArticleStubs', {before, after});
   }
 };
 </script>

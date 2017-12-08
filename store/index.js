@@ -70,12 +70,13 @@ const createStore = () => {
       ]
     },
     actions: {
-      async getArticleStubs({ commit }, page = 1) {
+      async getArticleStubs({ commit }, query = {}) {
+        const queryWithPage = query.page ? query : {...query, page: 1};
         const {
           articleStubs,
           totalPages,
           currentPage
-        } = await getArticleStubs({page});
+        } = await getArticleStubs(queryWithPage);
 
         commit('setCurrentPage', currentPage);
         commit('setTotalPages', totalPages);

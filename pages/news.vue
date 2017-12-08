@@ -12,7 +12,7 @@ export default {
     NewsList
   },
   async fetch({ store, params }) {
-    if (params.pageNumber) return; // Handled by news/page/_pageNumber.vue
+    if (params.pageNumber) return;
 
     await store.dispatch('getArticleStubs');
   }

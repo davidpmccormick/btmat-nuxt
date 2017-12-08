@@ -8,7 +8,7 @@ export async function getArticleStubs(query = {}) {
   const { data, headers, config } = await axios.get(`${baseUrl}/posts`, {params});
   const totalArticles = headers['x-wp-total'];
   const totalPages = headers['x-wp-totalpages'];
-  const currentPage = config.params.page || 1;
+  const currentPage = Number(config.params.page) || 1;
 
   const articleStubs = data.map((article) => {
     const year = article.date.slice(0, 4);

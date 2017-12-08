@@ -16,6 +16,7 @@ export default {
       'currentPage'
     ]),
     olderPageNumberLink() {
+      // TODO: handle if we're in the year archive
       return `/news/page/${this.currentPage + 1}`;
     },
     newerPageNumberLink() {
