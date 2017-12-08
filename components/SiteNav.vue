@@ -98,7 +98,7 @@ export default {
 
 .site-nav__sublink {
   &.nuxt-link-active {
-    border-bottom: 3px solid dodgerblue;
+    border-bottom: 3px solid #47b784;
   }
 }
 
@@ -106,7 +106,7 @@ export default {
   position: absolute;
   top: 100%;
   height: 3px;
-  background: dodgerblue;
+  background: #47b784;
   transition: transform 600ms ease, width 600ms ease, background 600ms ease;
 }
 </style>
