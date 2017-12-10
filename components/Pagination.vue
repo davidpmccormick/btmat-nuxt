@@ -16,25 +16,39 @@ export default {
       'currentPage'
     ]),
     olderPageNumberLink() {
-      // TODO: handle if we're in the year archive
-      return `/news/page/${this.currentPage + 1}`;
+      const year = this.$route.params.year;
+      const nextPage = this.currentPage + 1;
+
+      if (year) {
+        return `/${year}/page/${nextPage}`;
+      } else {
+        return `/news/page/${nextPage}`;
+      }
     },
     newerPageNumberLink() {
-      return this.currentPage === 2 ? '/news' : `/news/page/${this.currentPage - 1}`;
+      const year = this.$route.params.year;
+      const prevPage = this.currentPage - 1;
+
+      if (year) {
+        return this.currentPage === 2 ? `/${year}` : `/${year}/page/${prevPage}`;
+      } else {
+        return this.currentPage === 2 ? '/news' : `/news/page/${prevPage}`;
+      }
     }
   },
   methods: {
     handleEnter(event) {
       const pageNumber = Number(event.target.value);
+      const year = this.$route.params.year;
 
       if (!pageNumber || pageNumber > this.totalPages || pageNumber < 1) return;
 
-      this.$router.push({name: 'news-page-pageNumber', params: {pageNumber}});
+      if (year) {
+        this.$router.push({name: 'year-page-pageNumber', params: {pageNumber, year}});
+      } else {
+        this.$router.push({name: 'news-page-pageNumber', params: {pageNumber}});
+      }
     }
   }
 };
 </script>
-
-<style>
-
-</style>

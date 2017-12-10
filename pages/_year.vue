@@ -1,6 +1,6 @@
 <template>
   <div class="news">
-    <NewsList v-if="!$route.params.pageSlug" />
+    <NewsList v-if="shouldDisplay" />
     <nuxt-child />
   </div>
 </template>
@@ -19,8 +19,17 @@ export default {
     const after = `${params.year}-01-01T00:00:00`;
     const before = `${nextYear}-01-01T00:00:00`;
 
-    // TODO: handle archive pagination
     await store.dispatch('getArticleStubs', {before, after});
+  },
+  computed: {
+    shouldDisplay() {
+      const pageSlug = this.$route.params.pageSlug;
+      const year = this.$route.params.year;
+      const pageNumber = this.$route.params.pageNumber;
+      const hasYearAndPage = year && pageNumber;
+
+      return !pageSlug && !(hasYearAndPage);
+    }
   }
 };
 </script>

@@ -24,7 +24,8 @@ const createStore = () => {
             'news',
             'year-month-pageSlug',
             'year',
-            'news-page-pageNumber'
+            'news-page-pageNumber',
+            'year-page-pageNumber'
           ]
         }, {
           title: 'Cancer',
