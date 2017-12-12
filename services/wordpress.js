@@ -1,4 +1,5 @@
 import axios from 'axios';
+import { bodyParser } from '../utils/body-parser';
 
 const baseUrl = 'http://btmat.org.uk/wp-json/wp/v2';
 
@@ -36,6 +37,9 @@ export async function getArticleBySlug(slug) {
   const params = {slug};
   const { data } = await axios.get(`${baseUrl}/posts`, {params});
   const article = data[0];
+
+  const components = bodyParser(article.content.rendered);
+  console.log(components);
 
   return {
     title: article.title.rendered,
