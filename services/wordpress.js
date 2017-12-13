@@ -39,11 +39,10 @@ export async function getArticleBySlug(slug) {
   const article = data[0];
 
   const components = bodyParser(article.content.rendered);
-  console.log(components);
 
   return {
     title: article.title.rendered,
-    content: article.content.rendered,
+    components: components,
     year: article.date.slice(0, 4),
     month: article.date.slice(5, 7),
     day: article.date.slice(8, 10)

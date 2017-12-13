@@ -46,27 +46,31 @@ function convertToComponents(nodes) {
   ];
 
   return nodes.map((node, index) => {
-    if (index === 0 && node.tagName === 'p') return convertStandfirst(node);
+    if (index === 0 && node.tagName === 'p') return convertStandfirst(node, index);
 
-    const component = converters.reduce((node, converter) => converter(node), node);
+    const component = converters.reduce((node, converter) => converter(node, index), node);
 
-    return component.type ? component : convertDomNode(component);
+    return component.type ? component : convertDomNode(component, index);
   }).filter(_ => _);
 }
 
-function convertStandfirst(node) {
+function convertStandfirst(node, index) {
   return {
     type: 'standfirst',
     value: {
+      id: index,
       html: serializeNode(node)
     }
   };
 }
 
-function convertDomNode(node) {
+function convertDomNode(node, index) {
   return {
     type: 'html',
-    value: serializeNode(node)
+    value: {
+      id: index,
+      html: serializeNode(node)
+    }
   };
 }
 
@@ -85,7 +89,7 @@ function getAttrValue(node, attrName) {
   return attr && attr.value;
 }
 
-function convertImage(node) {
+function convertImage(node, index) {
   const classNames = getAttrValue(node, 'class');
   const classNamesArray = classNames && classNames.split(' ');
   const isImageWrapper = classNamesArray && classNamesArray.includes('wp-caption');
@@ -98,8 +102,10 @@ function convertImage(node) {
   return {
     type: 'image',
     value: {
+      id: index,
       src: image && getAttrValue(image, 'src'),
-      alt: caption && getAttrValue(image, 'alt')
+      alt: image && getAttrValue(image, 'alt'),
+      caption: caption && serializeNode(caption)
     }
   };
 }
