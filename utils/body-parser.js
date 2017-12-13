@@ -45,14 +45,25 @@ function convertToComponents(nodes) {
     convertImage
   ];
 
-  return nodes.map((node) => {
+  return nodes.map((node, index) => {
+    if (index === 0 && node.tagName === 'p') return convertStandfirst(node);
+
     const component = converters.reduce((node, converter) => converter(node), node);
 
     return component.type ? component : convertDomNode(component);
   }).filter(_ => _);
 }
 
-export function convertDomNode(node) {
+function convertStandfirst(node) {
+  return {
+    type: 'standfirst',
+    value: {
+      html: serializeNode(node)
+    }
+  };
+}
+
+function convertDomNode(node) {
   return {
     type: 'html',
     value: serializeNode(node)
@@ -68,29 +79,27 @@ function serializeNode(node) {
   return parse5.serialize(frag);
 }
 
-function findByTagName(node, tagName) {
-  if (node.nodeName === tagName) return node;
-  if (!(node.childNodes && node.childNodes[0])) return;
-
-  return findByTagName(node.childNodes[0], tagName);
-}
-
 function getAttrValue(node, attrName) {
-  const attr = node.attrs.find(a => a.name === attrName);
+  const attr = node.attrs && node.attrs.find(a => a.name && a.name === attrName);
 
   return attr && attr.value;
 }
 
 function convertImage(node) {
-  const image = findByTagName(node, 'img');
+  const classNames = getAttrValue(node, 'class');
+  const classNamesArray = classNames && classNames.split(' ');
+  const isImageWrapper = classNamesArray && classNamesArray.includes('wp-caption');
 
-  if (!image) return node;
+  if (!isImageWrapper) return node;
+
+  const image = node.childNodes && node.childNodes[0] && node.childNodes[0].childNodes[0];
+  const caption = node.childNodes && node.childNodes[1];
 
   return {
     type: 'image',
     value: {
-      src: getAttrValue(image, 'src'),
-      alt: getAttrValue(image, 'alt')
+      src: image && getAttrValue(image, 'src'),
+      alt: caption && getAttrValue(image, 'alt')
     }
   };
 }
