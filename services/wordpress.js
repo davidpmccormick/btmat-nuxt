@@ -37,7 +37,6 @@ export async function getArticleBySlug(slug) {
   const params = {slug};
   const { data } = await axios.get(`${baseUrl}/posts`, {params});
   const article = data[0];
-
   const components = bodyParser(article.content.rendered);
 
   return {

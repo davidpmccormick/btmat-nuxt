@@ -32,7 +32,7 @@ export default {
   .site-header__title {
     font-weight: bold;
     color: #47b784;
-    font-size: 3em;
+    font-size: 3.2rem;
     margin-bottom: 0.2em;
   }
 </style>

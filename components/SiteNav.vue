@@ -65,7 +65,7 @@ export default {
 <style lang="scss">
 .site-nav {
   font-family: "proxima-soft";
-  font-size: 0.9em;
+  font-size: 0.9rem;
   position: relative;
   padding: 15px 0;
 }

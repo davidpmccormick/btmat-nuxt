@@ -34,12 +34,11 @@ export default {
 
 <style lang="scss">
 .news-list__item {
-  margin-bottom: 2em;
+  margin-bottom: 2rem;
 }
 
 .news-list__excerpt {
-  font-size: 1.5em;
-  line-height: 1.4;
+  font-size: 1.5rem;
 }
 
 .news-list__link {
