@@ -21,5 +21,7 @@
 
   .two-columns__secondary {
     flex: 1;
+    padding-left: 20px;
+    border-left: 1px solid #eee;
   }
 </style>

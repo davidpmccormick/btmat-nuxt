@@ -37,7 +37,8 @@ function range(start, end) {
 
 <style lang="scss">
 .archive {
-  margin-bottom: 2em;
+  padding-top: 1rem;
+  margin-bottom: 3rem;
 }
 
 .archive__heading {
@@ -67,7 +68,8 @@ function range(start, end) {
   transition: color 600ms ease;
 
   &:hover,
-  &:focus {
+  &:focus,
+  &.nuxt-link-active {
     color: #4cb685;
   }
 }

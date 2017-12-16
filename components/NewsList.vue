@@ -44,14 +44,24 @@ export default {
 <style lang="scss">
 .news-list__item {
   margin-bottom: 2rem;
-}
-
-.news-list__excerpt {
-  font-size: 1.5rem;
+  padding-bottom: 1rem;
+  border-bottom: 1px solid #eee;
 }
 
 .news-list__link {
   text-decoration: none;
   color: inherit;
+
+  &:hover,
+  &:focus {
+    .news-list__heading {
+      color: #4cb685;
+    }
+  }
 }
+
+.news-list__heading {
+  transition: color 600ms ease;
+}
+
 </style>
