@@ -4,9 +4,8 @@ export function bodyParser(content) {
   const fragment = parse5.parseFragment(content);
   const preCleaned = cleanNodes(fragment.childNodes, [removeEmptyTextNodes]);
   const components = convertToComponents(preCleaned);
-  const cleanedComponents = cleanNodes(components, [removeExtraAttrs]);
 
-  return cleanedComponents;
+  return components;
 }
 
 export function removeEmptyTextNodes(nodes) {
@@ -59,7 +58,7 @@ function convertStandfirst(node, index) {
     type: 'standfirst',
     value: {
       id: index,
-      html: serializeNode(node)
+      html: cleanAndSerializeNode(node)
     }
   };
 }
@@ -69,9 +68,17 @@ function convertDomNode(node, index) {
     type: 'html',
     value: {
       id: index,
-      html: serializeNode(node)
+      html: cleanAndSerializeNode(node)
     }
   };
+}
+
+function cleanAndSerializeNode(node) {
+  const cleanNode = cleanNodes([node], [removeExtraAttrs]);
+
+  if (!cleanNode.length) return;
+
+  return serializeNode(cleanNode[0]);
 }
 
 function serializeNode(node) {
