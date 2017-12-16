@@ -17,4 +17,9 @@ export default {
     width: 100%;
     margin-bottom: 1em;
   }
+
+  .captioned-image__caption {
+    font-family: "proxima-soft";
+    font-size: 1rem;
+  }
 </style>

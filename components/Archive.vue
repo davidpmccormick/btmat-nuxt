@@ -11,7 +11,7 @@
 <script>
 const startYear = 2011;
 const currentYear = new Date().getFullYear();
-const years = range(startYear, currentYear + 1);
+const years = range(startYear, currentYear + 1).reverse();
 
 export default {
   data() {
@@ -27,12 +27,16 @@ function range(start, end) {
 </script>
 
 <style lang="scss">
+.archive {
+  position: sticky;
+  top: 80px;
+}
+
 .archive__link {
   display: block;
   color: inherit;
   font-family: "proxima-soft";
-  font-size: 1.3em;
-  padding: 0.8em 0;
+  padding: 0.5em 0;
   border-bottom: 1px solid #eee;
   text-decoration: none;
 }
