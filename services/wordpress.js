@@ -20,7 +20,7 @@ export async function getArticleStubs(query = {}) {
       id: article.id,
       title: article.title && article.title.rendered,
       slug: article.slug,
-      excerpt: article.excerpt && `${article.excerpt.rendered.slice(0, -15)}&hellip;</p>`,
+      excerpt: article.excerpt && `${article.excerpt.rendered.slice(0, -16)}&hellip;</p>`,
       year: year,
       month: month,
       date: date
