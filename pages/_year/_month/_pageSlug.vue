@@ -1,19 +1,19 @@
 <template>
-  <div class="two-column">
-    <div class="two-column__primary">
-      <h2 class="two-column__heading" v-html="article.title"></h2>
+  <TwoColumns class="article">
+    <template slot="primary">
+      <h2 class="article__heading" v-html="article.title"></h2>
       <Timestamp :model="{year: article.year, month: article.month, date: article.date}" />
       <template v-for="component in article.components">
         <Standfirst :key="component.id" v-if="component.type === 'standfirst'" :model="component.value" />
         <CaptionedImage :key="component.id" v-else-if="component.type === 'image'" :model="component.value" />
         <BodyContent v-else :key="component.id" :model="component.value.html" />
       </template>
-    </div>
-    <div class="two-column__secondary">
+    </template>
+    <template slot="secondary">
       <Archive />
-      <ButtonLink class="two-column__button-link" :model="{link: '#', text: 'Donate now', icon: 'donate'}" />
-    </div>
-  </div>
+      <ButtonLink class="article__button-link" :model="{link: '#', text: 'Donate now', icon: 'donate'}" />
+    </template>
+  </TwoColumns>
 </template>
 
 <script>
@@ -23,6 +23,7 @@ import ButtonLink from '~/components/ButtonLink';
 import CaptionedImage from '~/components/CaptionedImage';
 import Standfirst from '~/components/Standfirst';
 import Timestamp from '~/components/Timestamp';
+import TwoColumns from '~/components/TwoColumns';
 import { mapState } from 'vuex';
 
 export default {
@@ -32,7 +33,8 @@ export default {
     ButtonLink,
     CaptionedImage,
     Standfirst,
-    Timestamp
+    Timestamp,
+    TwoColumns
   },
   scrollToTop: true,
   async fetch({ store, params }) {
@@ -47,25 +49,15 @@ export default {
 </script>
 
 <style lang="scss">
-  .two-column {
-    display: flex;
+  .article {
     margin-bottom: 40px;
-  }
 
-  .two-column__primary {
-    > * + * {
+    .two-columns__primary > * + * {
       margin-top: 1em;
     }
-
-    flex: 2;
-    padding-right: 30px;
   }
 
-  .two-column__heading {
+  .article__heading {
     margin-bottom: 0;
-  }
-
-  .two-column__secondary {
-    flex: 1;
   }
 </style>

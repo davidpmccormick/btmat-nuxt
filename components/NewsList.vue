@@ -1,28 +1,37 @@
 <template>
-  <div>
-    <h2>News</h2>
-    <ul>
-      <li class="news-list__item" v-for="article in articleStubs" :key="article.id">
-        <nuxt-link class="news-list__link" :to="{name: 'year-month-pageSlug', params: {year: article.year, month: article.month, pageSlug: article.slug}}">
-          <h3 class="news-list__heading" v-html="article.title"></h3>
-          <div class="news-list__excerpt" v-html="article.excerpt"></div>
-        </nuxt-link>
-      </li>
-    </ul>
-    <Archive />
-    <Pagination />
-  </div>
+  <TwoColumns>
+    <template slot="primary">
+      <h2>News</h2>
+      <ul>
+        <li class="news-list__item" v-for="article in articleStubs" :key="article.id">
+          <nuxt-link class="news-list__link" :to="{name: 'year-month-pageSlug', params: {year: article.year, month: article.month, pageSlug: article.slug}}">
+            <h3 class="news-list__heading" v-html="article.title"></h3>
+            <div class="news-list__excerpt" v-html="article.excerpt"></div>
+          </nuxt-link>
+        </li>
+      </ul>
+      <Pagination />
+    </template>
+    <template slot="secondary">
+      <Archive />
+      <ButtonLink :model="{link: '#', text: 'Donate now', icon: 'donate'}" />
+    </template>
+  </TwoColumns>
 </template>
 
 <script>
 import { mapState } from 'vuex';
 import Archive from '~/components/Archive';
+import ButtonLink from '~/components/ButtonLink';
 import Pagination from '~/components/Pagination';
+import TwoColumns from '~/components/TwoColumns';
 
 export default {
   components: {
     Archive,
-    Pagination
+    ButtonLink,
+    Pagination,
+    TwoColumns
   },
   computed: {
     ...mapState([
