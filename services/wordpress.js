@@ -14,14 +14,16 @@ export async function getArticleStubs(query = {}) {
   const articleStubs = data.map((article) => {
     const year = article.date.slice(0, 4);
     const month = article.date.slice(5, 7);
+    const date = article.date.slice(8, 10);
 
     return {
       id: article.id,
       title: article.title && article.title.rendered,
       slug: article.slug,
-      excerpt: article.excerpt && article.excerpt.rendered,
+      excerpt: article.excerpt && `${article.excerpt.rendered.slice(0, -15)}&hellip;</p>`,
       year: year,
-      month: month
+      month: month,
+      date: date
     };
   });
 

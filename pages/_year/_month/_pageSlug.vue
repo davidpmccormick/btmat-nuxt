@@ -2,7 +2,7 @@
   <TwoColumns class="article">
     <template slot="primary">
       <h2 class="article__heading" v-html="article.title"></h2>
-      <Timestamp :model="{year: article.year, month: article.month, date: article.date}" />
+      <Timestamp class="article__timestamp" :model="{year: article.year, month: article.month, date: article.date}" />
       <template v-for="component in article.components">
         <Standfirst :key="component.id" v-if="component.type === 'standfirst'" :model="component.value" />
         <CaptionedImage :key="component.id" v-else-if="component.type === 'image'" :model="component.value" />
@@ -59,5 +59,9 @@ export default {
 
   .article__heading {
     margin-bottom: 0;
+  }
+
+  .article__timestamp {
+    margin-bottom: 3rem;
   }
 </style>

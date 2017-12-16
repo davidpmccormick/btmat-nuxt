@@ -46,7 +46,7 @@ export default {
     font-family: 'proxima-soft';
     align-items: center;
     font-size: 1rem;
-    margin-bottom: 3em;
+    color: #aaa;
   }
 
   .timestamp__icon {
