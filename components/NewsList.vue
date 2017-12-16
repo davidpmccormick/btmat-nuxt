@@ -6,7 +6,7 @@
         <li class="news-list__item" v-for="article in articleStubs" :key="article.id">
           <nuxt-link class="news-list__link" :to="{name: 'year-month-pageSlug', params: {year: article.year, month: article.month, pageSlug: article.slug}}">
             <h3 class="news-list__heading" v-html="article.title"></h3>
-            <TimeStamp class="news-list__timestamp" :model="{year: article.year, month: article.month, date: article.date}" />
+            <Timestamp class="news-list__timestamp" :model="{year: article.year, month: article.month, date: article.date}" />
             <div class="news-list__excerpt" v-html="article.excerpt"></div>
           </nuxt-link>
         </li>
@@ -25,7 +25,7 @@ import { mapState } from 'vuex';
 import Archive from '~/components/Archive';
 import ButtonLink from '~/components/ButtonLink';
 import Pagination from '~/components/Pagination';
-import TimeStamp from '~/components/TimeStamp';
+import Timestamp from '~/components/Timestamp';
 import TwoColumns from '~/components/TwoColumns';
 
 export default {
@@ -33,7 +33,7 @@ export default {
     Archive,
     ButtonLink,
     Pagination,
-    TimeStamp,
+    Timestamp,
     TwoColumns
   },
   computed: {
