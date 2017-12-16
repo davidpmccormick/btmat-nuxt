@@ -1,31 +1,40 @@
 <template>
-  <div class="body-content">
-    <div class="body-content__primary">
-      <h2 v-html="article.title"></h2>
+  <div class="two-column">
+    <div class="two-column__primary">
+      <h2 class="two-column__heading" v-html="article.title"></h2>
+      <Timestamp :model="{year: article.year, month: article.month, date: article.date}" />
       <template v-for="component in article.components">
         <Standfirst :key="component.id" v-if="component.type === 'standfirst'" :model="component.value" />
         <CaptionedImage :key="component.id" v-else-if="component.type === 'image'" :model="component.value" />
-        <div v-else :key="component.id" v-html="component.value.html" />
+        <BodyContent v-else :key="component.id" :model="component.value.html" />
       </template>
     </div>
-    <div class="body-content__secondary">
+    <div class="two-column__secondary">
       <Archive />
+      <ButtonLink class="two-column__button-link" :model="{link: '#', text: 'Donate now', icon: 'donate'}" />
     </div>
   </div>
 </template>
 
 <script>
 import Archive from '~/components/Archive';
+import BodyContent from '~/components/BodyContent';
+import ButtonLink from '~/components/ButtonLink';
 import CaptionedImage from '~/components/CaptionedImage';
 import Standfirst from '~/components/Standfirst';
+import Timestamp from '~/components/Timestamp';
 import { mapState } from 'vuex';
 
 export default {
   components: {
     Archive,
+    BodyContent,
+    ButtonLink,
     CaptionedImage,
-    Standfirst
+    Standfirst,
+    Timestamp
   },
+  scrollToTop: true,
   async fetch({ store, params }) {
     await store.dispatch('getArticleBySlug', params.pageSlug);
   },
@@ -38,12 +47,13 @@ export default {
 </script>
 
 <style lang="scss">
-  .body-content {
+  .two-column {
     display: flex;
+    margin-bottom: 40px;
   }
 
-  .body-content__primary {
-    * + * {
+  .two-column__primary {
+    > * + * {
       margin-top: 1em;
     }
 
@@ -51,7 +61,11 @@ export default {
     padding-right: 30px;
   }
 
-  .body-content__secondary {
+  .two-column__heading {
+    margin-bottom: 0;
+  }
+
+  .two-column__secondary {
     flex: 1;
   }
 </style>

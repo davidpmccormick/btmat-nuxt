@@ -1,12 +1,20 @@
 <template>
   <figure class="captioned-image">
     <img class="captioned-image__image" :src="model.src" :alt="model.alt" />
-    <figcaption class="captioned-image__caption" v-if="model.caption" v-html="model.caption"></figcaption>
+    <figcaption class="captioned-image__caption" v-if="model.caption">
+      <Icon name="image" />
+      <span v-html="model.caption"></span>
+    </figcaption>
   </figure>
 </template>
 
 <script>
+import Icon from '~/components/Icon';
+
 export default {
+  components: {
+    Icon
+  },
   props: ['model']
 };
 </script>
@@ -19,7 +27,16 @@ export default {
   }
 
   .captioned-image__caption {
+    display: flex;
+    align-items: flex-start;
     font-family: "proxima-soft";
     font-size: 1rem;
+
+    svg {
+      height: 2em;
+      top: -0.1em;
+      margin-right: 0.3em;
+      position: relative;
+    }
   }
 </style>

@@ -44,6 +44,6 @@ export async function getArticleBySlug(slug) {
     components: components,
     year: article.date.slice(0, 4),
     month: article.date.slice(5, 7),
-    day: article.date.slice(8, 10)
+    date: article.date.slice(8, 10)
   };
 }

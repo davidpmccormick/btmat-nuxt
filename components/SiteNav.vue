@@ -77,7 +77,7 @@ export default {
 
 .site-nav__sublist {
   position: absolute;
-  bottom: -30px;
+  bottom: -36px;
   left: 0;
   right: 0;
 }
@@ -97,8 +97,10 @@ export default {
 }
 
 .site-nav__sublink {
+  transition: color 600ms ease;
+
   &.nuxt-link-active {
-    border-bottom: 3px solid #47b784;
+    color: #47b784;
   }
 }
 
