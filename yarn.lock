@@ -261,6 +261,10 @@ aws4@^1.2.1, aws4@^1.6.0:
   version "1.6.0"
   resolved "https://registry.yarnpkg.com/aws4/-/aws4-1.6.0.tgz#83ef5ca860b2b32e4a0deedee8c771b9db57471e"
 
+axios-cache-plugin@^0.1.0:
+  version "0.1.0"
+  resolved "https://registry.yarnpkg.com/axios-cache-plugin/-/axios-cache-plugin-0.1.0.tgz#e84f4902029f2e0323bbae739d6a1d0ba5551e89"
+
 axios@^0.17.1:
   version "0.17.1"
   resolved "https://registry.yarnpkg.com/axios/-/axios-0.17.1.tgz#2d8e3e5d0bdbd7327f91bc814f5c57660f81824d"

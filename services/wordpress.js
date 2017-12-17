@@ -1,12 +1,22 @@
 import axios from 'axios';
+import wrapper from 'axios-cache-plugin';
 import { bodyParser } from '../utils/body-parser';
 
 const baseUrl = 'http://btmat.org.uk/wp-json/wp/v2';
 
+let http = wrapper(axios, {
+  maxCacheSize: 100
+});
+http.__addFilter(/.*/); // Cache everything
+
 export async function getArticleStubs(query = {}) {
   const articleStubFields = 'id,title.rendered,slug,excerpt.rendered,date';
   const params = Object.assign(query, {fields: articleStubFields, categories: 1});
-  const { data, headers, config } = await axios.get(`${baseUrl}/posts`, {params});
+  const { data, headers, config } = await http({
+    url: `${baseUrl}/posts`,
+    mthod: 'get',
+    params
+  });
   const totalArticles = headers['x-wp-total'];
   const totalPages = headers['x-wp-totalpages'];
   const currentPage = Number(config.params.page) || 1;
@@ -37,7 +47,11 @@ export async function getArticleStubs(query = {}) {
 
 export async function getArticleBySlug(slug) {
   const params = {slug};
-  const { data } = await axios.get(`${baseUrl}/posts`, {params});
+  const { data } = await http({
+    url: `${baseUrl}/posts`,
+    method: 'get',
+    params
+  });
   const article = data[0];
   const components = bodyParser(article.content.rendered);
 
