@@ -96,10 +96,20 @@ export default {
   transition: color 600ms ease;
 }
 
+.site-nav__link {
+  &:hover,
+  &:focus,
+  .is-route-active & {
+    color: #47b784;
+  }
+}
+
 .site-nav__sublink {
   transition: color 600ms ease;
 
-  &.nuxt-link-active {
+  &:hover,
+  &:focus,
+  &.nuxt-link-exact-active {
     color: #47b784;
   }
 }
