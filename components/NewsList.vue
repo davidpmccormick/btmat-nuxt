@@ -3,13 +3,9 @@
     <template slot="primary">
       <h2>News</h2>
       <ul>
-        <li class="news-list__item" v-for="article in articleStubs" :key="article.id">
-          <nuxt-link class="news-list__link" :to="{name: 'year-month-pageSlug', params: {year: article.year, month: article.month, pageSlug: article.slug}}">
-            <h3 class="news-list__heading" v-html="article.title"></h3>
-            <Timestamp class="news-list__timestamp" :model="{year: article.year, month: article.month, date: article.date}" />
-            <div class="news-list__excerpt" v-html="article.excerpt"></div>
-          </nuxt-link>
-        </li>
+        <NewsPromo v-for="article in articleStubs"
+          :key="article.id"
+          :model="article" />
       </ul>
       <Pagination />
     </template>
@@ -24,16 +20,16 @@
 import { mapState } from 'vuex';
 import Archive from '~/components/Archive';
 import ButtonLink from '~/components/ButtonLink';
+import NewsPromo from '~/components/NewsPromo';
 import Pagination from '~/components/Pagination';
-import Timestamp from '~/components/Timestamp';
 import TwoColumns from '~/components/TwoColumns';
 
 export default {
   components: {
     Archive,
     ButtonLink,
+    NewsPromo,
     Pagination,
-    Timestamp,
     TwoColumns
   },
   computed: {
@@ -43,33 +39,3 @@ export default {
   }
 };
 </script>
-
-<style lang="scss">
-.news-list__item {
-  margin-bottom: 2rem;
-  padding-bottom: 1rem;
-  border-bottom: 1px solid #eee;
-}
-
-.news-list__link {
-  text-decoration: none;
-  color: inherit;
-
-  &:hover,
-  &:focus {
-    .news-list__heading {
-      color: #4cb685;
-    }
-  }
-}
-
-.news-list__heading {
-  margin-bottom: 0.5rem;
-  transition: color 600ms ease;
-}
-
-.news-list__timestamp {
-  margin-bottom: 1rem;
-}
-
-</style>

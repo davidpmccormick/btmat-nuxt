@@ -27,6 +27,7 @@ import TwoColumns from '~/components/TwoColumns';
 import { mapState } from 'vuex';
 
 export default {
+  transition: 'fade',
   components: {
     Archive,
     BodyContent,
@@ -50,8 +51,6 @@ export default {
 
 <style lang="scss">
   .article {
-    margin-bottom: 40px;
-
     .two-columns__primary > * + * {
       margin-top: 1em;
     }

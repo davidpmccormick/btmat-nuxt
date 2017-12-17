@@ -50,6 +50,6 @@ export default {
   }
 
   .timestamp__icon {
-    margin-right: 0.3em;
+    margin-right: 0.4em;
   }
 </style>

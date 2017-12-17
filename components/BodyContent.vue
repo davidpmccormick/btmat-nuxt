@@ -20,5 +20,24 @@ export default {
       color: #4cb685;
     }
   }
+
+  table {
+    font-family: 'proxima-soft';
+    font-size: 1rem;
+    width: 100%;
+
+    tr {
+      border-bottom: 1px solid #eee;
+    }
+
+    td {
+      padding: 0.5em 0.5em 0.5em 0;
+
+      &:last-child {
+        padding-right: 0;
+        text-align: right;
+      }
+    }
+  }
 }
 </style>
