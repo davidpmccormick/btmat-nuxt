@@ -10,6 +10,7 @@
       <Pagination />
     </template>
     <template slot="secondary">
+      <SearchForm />
       <Archive />
       <ButtonLink :model="{link: '#', text: 'Donate now', icon: 'donate'}" />
     </template>
@@ -22,6 +23,7 @@ import Archive from '~/components/Archive';
 import ButtonLink from '~/components/ButtonLink';
 import NewsPromo from '~/components/NewsPromo';
 import Pagination from '~/components/Pagination';
+import SearchForm from '~/components/SearchForm';
 import TwoColumns from '~/components/TwoColumns';
 
 export default {
@@ -30,6 +32,7 @@ export default {
     ButtonLink,
     NewsPromo,
     Pagination,
+    SearchForm,
     TwoColumns
   },
   computed: {

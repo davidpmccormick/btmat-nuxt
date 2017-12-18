@@ -12,6 +12,7 @@ http.__addFilter(/.*/); // Cache everything
 export async function getArticleStubs(query = {}) {
   const articleStubFields = 'id,title.rendered,slug,excerpt.rendered,date';
   const params = Object.assign(query, {fields: articleStubFields, categories: 1});
+
   const { data, headers, config } = await http({
     url: `${baseUrl}/posts`,
     mthod: 'get',
