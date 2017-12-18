@@ -1,6 +1,6 @@
 <template>
   <form class="search-form" action="/" method="GET">
-    <input class="search-form__input" placeholder="search" />
+    <input class="search-form__input" placeholder="search" name="search" />
   </form>
 </template>
 
