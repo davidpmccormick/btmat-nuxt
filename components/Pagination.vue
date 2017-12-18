@@ -1,7 +1,9 @@
 <template>
   <div class="pagination">
     <nuxt-link class="pagination__link" v-if="currentPage < totalPages" :to="olderPageNumberLink">Older</nuxt-link>
-    <p class="pagination__info">Page {{ currentPage }} of {{ totalPages }}</p>
+
+    <p v-if="totalPages" class="pagination__info">Page {{ currentPage }} of {{ totalPages }}</p>
+    <p v-else class="pagination__info">No results</p>
     <nuxt-link class="pagination__link" v-if="currentPage > 1" :to="newerPageNumberLink">Newer</nuxt-link>
   </div>
 </template>
@@ -15,20 +17,28 @@ export default {
       'totalPages',
       'currentPage'
     ]),
+    query() {
+      const keys = Object.keys(this.$route.query);
+
+      return keys.reduce((acc, curr, index) => {
+        const isLast = (keys.length - 1 === index);
+        return acc.concat(`${curr}=${this.$route.query[curr]}${isLast ? '' : '&'}`);
+      }, ['?']).join('');
+    },
     olderPageNumberLink() {
       const year = this.$route.params.year;
       const nextPage = this.currentPage + 1;
 
-      return `/${year || 'news'}/page/${nextPage}`;
+      return `/${year || 'news'}/page/${nextPage}${this.query}`;
     },
     newerPageNumberLink() {
       const year = this.$route.params.year;
       const prevPage = this.currentPage - 1;
 
       if (year) {
-        return this.currentPage === 2 ? `/${year}` : `/${year}/page/${prevPage}`;
+        return this.currentPage === 2 ? `/${year}${this.query}` : `/${year}/page/${prevPage}${this.query}`;
       } else {
-        return this.currentPage === 2 ? '/news' : `/news/page/${prevPage}`;
+        return this.currentPage === 2 ? `/news${this.query}` : `/news/page/${prevPage}${this.query}`;
       }
     }
   }

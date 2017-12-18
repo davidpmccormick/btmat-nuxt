@@ -11,10 +11,12 @@ export default {
   components: {
     NewsList
   },
-  async fetch({ store, params }) {
+  async fetch({ store, params, route }) {
     if (params.pageNumber) return;
 
-    await store.dispatch('getArticleStubs');
+    const search = route.query && route.query.search;
+
+    await store.dispatch('getArticleStubs', {search});
   }
 };
 </script>

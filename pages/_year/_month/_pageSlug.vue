@@ -10,6 +10,7 @@
       </template>
     </template>
     <template slot="secondary">
+      <Search />
       <Archive />
       <ButtonLink class="article__button-link" :model="{link: '#', text: 'Donate now', icon: 'donate'}" />
     </template>
@@ -21,6 +22,7 @@ import Archive from '~/components/Archive';
 import BodyContent from '~/components/BodyContent';
 import ButtonLink from '~/components/ButtonLink';
 import CaptionedImage from '~/components/CaptionedImage';
+import Search from '~/components/Search';
 import Standfirst from '~/components/Standfirst';
 import Timestamp from '~/components/Timestamp';
 import TwoColumns from '~/components/TwoColumns';
@@ -33,6 +35,7 @@ export default {
     BodyContent,
     ButtonLink,
     CaptionedImage,
+    Search,
     Standfirst,
     Timestamp,
     TwoColumns

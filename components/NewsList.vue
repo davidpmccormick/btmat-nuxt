@@ -1,7 +1,8 @@
 <template>
   <TwoColumns>
     <template slot="primary">
-      <h2>News</h2>
+      <h2 v-if="search">Search: {{ search }}</h2>
+      <h2 v-else>News</h2>
       <ul>
         <NewsPromo v-for="article in articleStubs"
           :key="article.id"
@@ -10,7 +11,7 @@
       <Pagination />
     </template>
     <template slot="secondary">
-      <SearchForm />
+      <Search />
       <Archive />
       <ButtonLink :model="{link: '#', text: 'Donate now', icon: 'donate'}" />
     </template>
@@ -23,7 +24,7 @@ import Archive from '~/components/Archive';
 import ButtonLink from '~/components/ButtonLink';
 import NewsPromo from '~/components/NewsPromo';
 import Pagination from '~/components/Pagination';
-import SearchForm from '~/components/SearchForm';
+import Search from '~/components/Search';
 import TwoColumns from '~/components/TwoColumns';
 
 export default {
@@ -32,13 +33,16 @@ export default {
     ButtonLink,
     NewsPromo,
     Pagination,
-    SearchForm,
+    Search,
     TwoColumns
   },
   computed: {
     ...mapState([
       'articleStubs'
-    ])
+    ]),
+    search() {
+      return this.$route.query.search;
+    }
   }
 };
 </script>

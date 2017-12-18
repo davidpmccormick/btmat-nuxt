@@ -1,7 +1,6 @@
 <template>
   <nav class="archive">
     <h2 class="archive__heading">
-      <Icon name="archive" />
       <span>Archive</span>
     </h2>
     <ul class="archive__list">
@@ -13,16 +12,11 @@
 </template>
 
 <script>
-import Icon from '~/components/Icon';
-
 const startYear = 2011;
 const currentYear = new Date().getFullYear();
 const years = range(startYear, currentYear + 1).reverse();
 
 export default {
-  components: {
-    Icon
-  },
   data() {
     return {
       years
@@ -37,7 +31,6 @@ function range(start, end) {
 
 <style lang="scss">
 .archive {
-  padding-top: 1rem;
   margin-bottom: 3rem;
 }
 
@@ -46,15 +39,6 @@ function range(start, end) {
   margin-bottom: 1rem;
   display: flex;
   align-items: center;
-
-  svg {
-    height: 1.4em;
-    position: relative;
-    top: 0.15em;
-    margin-right: 0.2em;
-    z-index: -1;
-
-  }
 }
 
 .archive__link {
