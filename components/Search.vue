@@ -59,6 +59,7 @@
   &:focus {
     color: white;
     background: #47b784;
+    outline: 0;
   }
 }
 
