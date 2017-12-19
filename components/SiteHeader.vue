@@ -20,6 +20,7 @@ export default {
 <style>
   .site-header {
     position: sticky;
+    z-index: 1;
     top: -100px;
     background: white;
     font-family: "proxima-soft";
