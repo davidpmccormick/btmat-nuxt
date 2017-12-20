@@ -64,3 +64,14 @@ export async function getArticleBySlug(slug) {
     date: article.date.slice(8, 10)
   };
 }
+
+export async function getPageById(id) {
+  const page = await http({
+    url: `${baseUrl}/pages/${id}`,
+    method: 'get'
+  });
+
+  return {
+    title: page.data.title.rendered
+  };
+}

@@ -1,7 +1,8 @@
 import Vuex from 'vuex';
 import {
   getArticleStubs,
-  getArticleBySlug
+  getArticleBySlug,
+  getPageById
 } from '~/services/wordpress';
 
 const createStore = () => {
@@ -9,6 +10,7 @@ const createStore = () => {
     state: {
       articleStubs: [],
       article: null,
+      page: null,
       totalPages: null,
       currentPage: null,
       activeRoute: null,
@@ -32,8 +34,7 @@ const createStore = () => {
           url: '/cancer/burkitt',
           subnavPath: '/cancer/',
           routesHandled: [
-            'cancer-burkitt',
-            'cancer-research'
+            'cancer-pageSlug'
           ],
           subnavItems: [
             {
@@ -87,6 +88,11 @@ const createStore = () => {
         const article = await getArticleBySlug(slug);
 
         commit('setArticle', article);
+      },
+      async getPageById({ commit }, id) {
+        const page = await getPageById(id);
+
+        commit('setPage', page);
       }
     },
     mutations: {
@@ -107,6 +113,9 @@ const createStore = () => {
       },
       setActiveRoute(state, value) {
         state.activeRoute = value;
+      },
+      setPage(state, value) {
+        state.page = value;
       }
     }
   });
