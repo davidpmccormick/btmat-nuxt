@@ -82,7 +82,6 @@ export default {
   right: 0;
   bottom: -46px;
   padding: 14px 0 12px;
-  border-bottom: 1px solid #eee;
 
   &:before,
   &:after {
@@ -115,10 +114,14 @@ export default {
   }
 }
 
-.site-nav__item,
-.site-nav__subitem {
+.site-nav__item {
   margin-right: 2em;
   color: #555
+}
+
+.site-nav__subitem {
+  margin-right: 2em;
+  color: white;
 }
 
 .site-nav__link,
@@ -138,12 +141,27 @@ export default {
 }
 
 .site-nav__sublink {
+  position: relative;
   transition: color 600ms ease;
+
+  &:after {
+    position: absolute;
+    bottom: -0.2em;
+    left: 0;
+    height: 3px;
+    border-radius: 3px;
+    width: 0%;
+    background: white;
+    transition: width 600ms ease;
+    content: '';
+  }
 
   &:hover,
   &:focus,
   &.nuxt-link-exact-active {
-    color: #47b784;
+    &:after {
+      width: 100%;
+    }
   }
 }
 
