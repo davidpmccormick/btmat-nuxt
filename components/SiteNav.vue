@@ -7,21 +7,29 @@
         :key="item.title">
         <nuxt-link class="site-nav__link" :to="item.url">{{ item.title }}</nuxt-link>
         <transition name="fade">
-          <ul class="site-nav__sublist" v-if="showSubnav(item)">
-            <li class="site-nav__subitem" v-for="subnavItem in item.subnavItems" :key="subnavItem.title">
-              <nuxt-link class="site-nav__sublink" :to="subnavItem.url">{{ subnavItem.title }}</nuxt-link>
-            </li>
-          </ul>
+          <nav class="site-nav__subnav" v-if="showSubnav(item)">
+            <div class="site-nav__subnav-shadow"></div>
+            <ul class="site-nav__sublist container">
+              <li class="site-nav__subitem" v-for="subnavItem in item.subnavItems" :key="subnavItem.title">
+                <nuxt-link class="site-nav__sublink" :to="subnavItem.url">{{ subnavItem.title }}</nuxt-link>
+              </li>
+            </ul>
+          </nav>
         </transition>
       </li>
     </ul>
     <div class="site-nav__underline"
+      :class="{'is-white': underlineIsWhite}"
       :style="{width: underlineWidth, transform: underlineTransform}"></div>
   </nav>
 </template>
 
 <script>
 import { mapState } from 'vuex';
+
+const whiteSubnavItems = [
+  'cancer-pageSlug'
+];
 
 export default {
   data() {
@@ -41,6 +49,9 @@ export default {
       'navItems',
       'activeRoute'
     ]),
+    underlineIsWhite() {
+      return whiteSubnavItems.indexOf(this.activeRoute) > -1;
+    },
     underlineWidth() {
       return `${this.itemOffsetWidth}px`;
     },
@@ -75,43 +86,58 @@ export default {
   display: flex;
 }
 
-.site-nav__sublist {
+.site-nav__subnav {
   background: #47b784;
   position: absolute;
-  left: 0;
-  right: 0;
+  left: -20px;
+  right: -20px;
   bottom: -48px;
   padding: 14px 0 14px;
-  border-bottom: 6px solid white;
+  background: #47b784;
+
+  @media(min-width: 1000px) {
+    left: calc(((100vw - 960px) / 2) * -1);
+    right: calc(((100vw - 960px) / 2) * -1);
+  }
+
+  &:after {
+    position: absolute;
+    content: '';
+    top: 100%;
+    left: 0;
+    right: 0;
+    height: 4px;
+    background: rgba(255, 255, 255, 0.7);
+  }
+}
+
+.site-nav__subnav-shadow {
+  position: absolute;
+  top: 0;
+  bottom: 0;
+  left: 0;
+  right: 0;
 
   &:before,
   &:after {
-    top: 0;
-    bottom: 0;
-    width: 20px;
-    background: #47b784;
     position: absolute;
     content: '';
-
-    @media(min-width: 1000px) {
-      width: calc((100vw - 960px) / 2);
-    }
+    height: 5px;
+    background: #47b784;
+    left: 0;
+    right: 0;
   }
 
   &:before {
-    left: -20px;
-
-    @media(min-width: 1000px) {
-      left: calc(((100vw - 960px) / 2) * -1);
-    }
+    bottom: 2px;
+    z-index: 2;
   }
 
   &:after {
-    right: -20px;
-
-    @media(min-width: 1000px) {
-      right: calc(((100vw - 960px) / 2) * -1);
-    }
+    z-index: 1;
+    content: '';
+    bottom: -1px;
+    box-shadow: 0 1px 5px rgba(0, 0, 0, 0.1);
   }
 }
 
@@ -149,8 +175,7 @@ export default {
     position: absolute;
     bottom: -0.2em;
     left: 0;
-    height: 2px;
-    border-radius: 3px;
+    height: 3px;
     width: 0%;
     background: white;
     transition: width 600ms ease;
@@ -171,6 +196,10 @@ export default {
   top: 100%;
   height: 3px;
   background: #47b784;
-  transition: transform 600ms ease, width 600ms ease, background 600ms ease;
+  transition: transform 600ms ease, width 600ms ease, background 600ms ease, color 600ms ease;
+
+  &.is-white {
+    background: white;
+  }
 }
 </style>

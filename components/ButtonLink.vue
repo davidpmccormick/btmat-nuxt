@@ -1,6 +1,5 @@
 <template>
   <a :href="model.link" class="button-link">
-    <Icon class="button-link__icon" v-if="model.icon" :name="model.icon" />
     <span>{{ model.text }}</span>
   </a>
 </template>
@@ -29,20 +28,12 @@ export default {
     align-items: center;
     border-radius: 6px;
     transition: background 600ms ease;
+    text-align: center;
+    display: block;
 
     &:hover,
     &:focus {
       background: rgba(#4cb685, 0.8);
-    }
-  }
-
-  .button-link__icon {
-    fill: white;
-    margin-right: 0.3em;
-
-    svg {
-      margin-top: 0.3em;
-      height: 1.4em;
     }
   }
 </style>

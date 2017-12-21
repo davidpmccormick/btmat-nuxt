@@ -12,7 +12,7 @@
     <template slot="secondary">
       <Archive />
       <Search />
-      <ButtonLink class="article__button-link" :model="{link: '#', text: 'Donate now', icon: 'donate'}" />
+      <ButtonLink class="article__button-link" :model="{link: '#', text: 'Donate now'}" />
     </template>
   </TwoColumns>
 </template>
