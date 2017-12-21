@@ -76,13 +76,43 @@ export default {
 }
 
 .site-nav__sublist {
+  background: #47b784;
   position: absolute;
   left: 0;
   right: 0;
   bottom: -46px;
   padding: 14px 0 12px;
   border-bottom: 1px solid #eee;
-  background: white;
+
+  &:before,
+  &:after {
+    top: 0;
+    bottom: 0;
+    width: 20px;
+    background: #47b784;
+    position: absolute;
+    content: '';
+
+    @media(min-width: 1000px) {
+      width: calc((100vw - 960px) / 2);
+    }
+  }
+
+  &:before {
+    left: -20px;
+
+    @media(min-width: 1000px) {
+      left: calc(((100vw - 960px) / 2) * -1);
+    }
+  }
+
+  &:after {
+    right: -20px;
+
+    @media(min-width: 1000px) {
+      right: calc(((100vw - 960px) / 2) * -1);
+    }
+  }
 }
 
 .site-nav__item,
