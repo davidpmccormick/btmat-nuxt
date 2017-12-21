@@ -1,5 +1,5 @@
 <template>
-  <TwoColumns class="article">
+  <TwoColumns class="article spaced">
     <template slot="primary">
       <h2 class="article__heading" v-html="article.title"></h2>
       <Timestamp class="article__timestamp" :model="{year: article.year, month: article.month, date: article.date}" />
@@ -10,8 +10,8 @@
       </template>
     </template>
     <template slot="secondary">
-      <Search />
       <Archive />
+      <Search />
       <ButtonLink class="article__button-link" :model="{link: '#', text: 'Donate now', icon: 'donate'}" />
     </template>
   </TwoColumns>
@@ -53,12 +53,6 @@ export default {
 </script>
 
 <style lang="scss">
-  .article {
-    .two-columns__primary > * + * {
-      margin-top: 1em;
-    }
-  }
-
   .article__heading {
     margin-bottom: 0;
   }

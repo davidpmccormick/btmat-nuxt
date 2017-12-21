@@ -31,7 +31,7 @@ function range(start, end) {
 
 <style lang="scss">
 .archive {
-  margin-bottom: 3rem;
+  margin-bottom: 2rem;
 }
 
 .archive__heading {

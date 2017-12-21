@@ -71,7 +71,10 @@ export async function getPageById(id) {
     method: 'get'
   });
 
+  const components = bodyParser(page.data.content.rendered);
+
   return {
-    title: page.data.title.rendered
+    title: page.data.title.rendered,
+    components: components
   };
 }

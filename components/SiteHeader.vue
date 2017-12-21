@@ -17,7 +17,7 @@ export default {
 };
 </script>
 
-<style>
+<style lang="scss">
   .site-header {
     position: sticky;
     z-index: 1;
@@ -26,8 +26,29 @@ export default {
     font-family: "proxima-soft";
     font-weight: bold;
     border-bottom: 1px solid #e4e4e4;
-    box-shadow: 0 1px 5px rgba(0, 0, 0, 0.1);
     padding-top: 20px;
+
+    &:before,
+    &:after {
+      position: absolute;
+      content: '';
+      height: 5px;
+      background: white;
+      left: 0;
+      right: 0;
+    }
+
+    &:before {
+      bottom: 2px;
+      z-index: 2;
+    }
+
+    &:after {
+      z-index: 1;
+      content: '';
+      bottom: -1px;
+      box-shadow: 0 1px 5px rgba(0, 0, 0, 0.1);
+    }
   }
 
   .site-header__title {

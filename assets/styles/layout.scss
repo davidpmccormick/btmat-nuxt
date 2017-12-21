@@ -12,3 +12,9 @@
   padding-top: 50px;
   padding-bottom: 50px;
 }
+
+.spaced {
+  .two-columns__primary > * + * {
+    margin-top: 1em;
+  }
+}

@@ -11,8 +11,8 @@
       <Pagination />
     </template>
     <template slot="secondary">
-      <Search />
       <Archive />
+      <Search />
       <ButtonLink :model="{link: '#', text: 'Donate now', icon: 'donate'}" />
     </template>
   </TwoColumns>

@@ -77,9 +77,12 @@ export default {
 
 .site-nav__sublist {
   position: absolute;
-  bottom: -36px;
   left: 0;
   right: 0;
+  bottom: -46px;
+  padding: 14px 0 12px;
+  border-bottom: 1px solid #eee;
+  background: white;
 }
 
 .site-nav__item,
