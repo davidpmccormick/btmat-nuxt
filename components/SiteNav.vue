@@ -80,8 +80,9 @@ export default {
   position: absolute;
   left: 0;
   right: 0;
-  bottom: -46px;
-  padding: 14px 0 12px;
+  bottom: -48px;
+  padding: 14px 0 14px;
+  border-bottom: 6px solid white;
 
   &:before,
   &:after {
@@ -148,7 +149,7 @@ export default {
     position: absolute;
     bottom: -0.2em;
     left: 0;
-    height: 3px;
+    height: 2px;
     border-radius: 3px;
     width: 0%;
     background: white;
