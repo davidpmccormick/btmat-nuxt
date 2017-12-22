@@ -19,23 +19,31 @@ export default {
 
 <style lang="scss">
   .site-header {
-    position: sticky;
     z-index: 1;
     top: -100px;
     background: white;
     font-family: "proxima-soft";
     font-weight: bold;
-    border-bottom: 1px solid #e4e4e4;
     padding-top: 20px;
+
+    @media(min-width: 680px) {
+      border-bottom: 1px solid #e4e4e4;
+      position: sticky;
+    }
 
     &:before,
     &:after {
+      display: none;
       position: absolute;
       content: '';
       height: 5px;
       background: white;
       left: 0;
       right: 0;
+
+      @media(min-width: 680px) {
+        display: block;
+      }
     }
 
     &:before {

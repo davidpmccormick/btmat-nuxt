@@ -1,27 +1,29 @@
 <template>
-  <nav class="site-nav">
-    <ul class="site-nav__list">
-      <li v-for="item in navItems"
-        class="site-nav__item"
-        :class="{'is-route-active': item.routesHandled.indexOf(activeRoute) > -1}"
-        :key="item.title">
-        <nuxt-link class="site-nav__link" :to="item.url">{{ item.title }}</nuxt-link>
-        <transition name="fade">
-          <nav class="site-nav__subnav" v-if="showSubnav(item)">
-            <div class="site-nav__subnav-shadow"></div>
-            <ul class="site-nav__sublist container">
-              <li class="site-nav__subitem" v-for="subnavItem in item.subnavItems" :key="subnavItem.title">
-                <nuxt-link class="site-nav__sublink" :to="subnavItem.url">{{ subnavItem.title }}</nuxt-link>
-              </li>
-            </ul>
-          </nav>
-        </transition>
-      </li>
-    </ul>
-    <div class="site-nav__underline"
-      :class="{'is-white': underlineIsWhite}"
-      :style="{width: underlineWidth, transform: underlineTransform}"></div>
-  </nav>
+  <div class="site-nav-wrap">
+    <button class="site-nav-menu-trigger" @click="setIsMobileNavShown(!isMobileNavShown)">menu</button>
+    <nav class="site-nav">
+      <ul class="site-nav__list">
+        <li v-for="item in navItems"
+          class="site-nav__item"
+          :class="{'is-route-active': item.routesHandled.indexOf(activeRoute) > -1}"
+          :key="item.title">
+          <nuxt-link class="site-nav__link" :to="item.url">{{ item.title }}</nuxt-link>
+          <transition name="fade">
+            <nav class="site-nav__subnav" v-show="showSubnav(item)">
+              <ul class="site-nav__sublist container">
+                <li class="site-nav__subitem" v-for="subnavItem in item.subnavItems" :key="subnavItem.title">
+                  <nuxt-link class="site-nav__sublink" :to="subnavItem.url">{{ subnavItem.title }}</nuxt-link>
+                </li>
+              </ul>
+            </nav>
+          </transition>
+        </li>
+      </ul>
+      <div class="site-nav__underline"
+        :class="{'is-white': underlineIsWhite}"
+        :style="{width: underlineWidth, transform: underlineTransform}"></div>
+    </nav>
+  </div>
 </template>
 
 <script>
@@ -35,7 +37,8 @@ export default {
   data() {
     return {
       itemOffsetLeft: 0,
-      itemOffsetWidth: 0
+      itemOffsetWidth: 0,
+      isActive: false
     };
   },
   mounted() {
@@ -47,7 +50,8 @@ export default {
   computed: {
     ...mapState([
       'navItems',
-      'activeRoute'
+      'activeRoute',
+      'isMobileNavShown'
     ]),
     underlineIsWhite() {
       return whiteSubnavItems.indexOf(this.activeRoute) > -1;
@@ -68,32 +72,73 @@ export default {
     },
     showSubnav(item) {
       return item.subnavItems && this.$route.path.match(item.subnavPath);
+    },
+    setIsMobileNavShown(value) {
+      this.$store.commit('setIsMobileNavShown', value);
     }
   }
 };
 </script>
 
 <style lang="scss">
+.site-nav-menu-trigger {
+  position: absolute;
+  top: 20px;
+  right: 20px;
+  z-index: 4;
+
+  @media(min-width: 680px) {
+    display: none;
+  }
+}
+
 .site-nav {
+  display: none;
+  overflow: auto;
+  position: fixed;
+  top: 0;
+  bottom: 0;
+  left: 0;
+  right: 0;
+  background: white;
+  z-index: 3;
+  padding: 20px;
+
   font-family: "proxima-soft";
   font-size: 0.9rem;
-  position: relative;
-  padding: 15px 0;
+
+  .is-mobile-nav-shown & {
+    display: block;
+  }
+
+  @media(min-width: 680px) {
+    display: block;
+    padding: 15px 0;
+    position: relative;
+    overflow: visible;
+  }
 }
 
 .site-nav__list,
 .site-nav__sublist {
-  display: flex;
+  @media(min-width: 680px) {
+    display: flex;
+  }
 }
 
 .site-nav__subnav {
+  display: none;
   background: #47b784;
-  position: absolute;
   left: -20px;
   right: -20px;
   bottom: -48px;
   padding: 14px 0 14px;
   background: #47b784;
+
+  @media(min-width: 680px) {
+    display: block;
+    position: absolute;
+  }
 
   @media(min-width: 1000px) {
     left: calc(((100vw - 960px) / 2) * -1);
@@ -111,39 +156,16 @@ export default {
   }
 }
 
-.site-nav__subnav-shadow {
-  position: absolute;
-  top: 0;
-  bottom: 0;
-  left: 0;
-  right: 0;
-
-  &:before,
-  &:after {
-    position: absolute;
-    content: '';
-    height: 5px;
-    background: #47b784;
-    left: 0;
-    right: 0;
-  }
-
-  &:before {
-    bottom: 2px;
-    z-index: 2;
-  }
-
-  &:after {
-    z-index: 1;
-    content: '';
-    bottom: -1px;
-    box-shadow: 0 1px 5px rgba(0, 0, 0, 0.1);
-  }
-}
-
 .site-nav__item {
   margin-right: 2em;
-  color: #555
+  padding: 10px 0;
+  border-bottom: 1px solid #eee;
+  color: #555;
+
+  @media(min-width: 680px) {
+    padding: 0;
+    border-bottom: 0;
+  }
 }
 
 .site-nav__subitem {
@@ -192,6 +214,7 @@ export default {
 }
 
 .site-nav__underline {
+  display: none;
   position: absolute;
   top: 100%;
   height: 3px;
@@ -200,6 +223,10 @@ export default {
 
   &.is-white {
     background: white;
+  }
+
+  @media(min-width: 680px) {
+    display: block;
   }
 }
 </style>

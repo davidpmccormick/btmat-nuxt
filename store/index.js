@@ -8,6 +8,7 @@ import {
 const createStore = () => {
   return new Vuex.Store({
     state: {
+      isMobileNavShown: false,
       articleStubs: [],
       article: null,
       page: null,
@@ -40,12 +41,27 @@ const createStore = () => {
             {
               title: 'Burkitt',
               url: '/cancer/burkitt',
-              parent: 'cancer',
               name: 'cancer-burkitt'
             }, {
               title: 'Research',
               url: '/cancer/research',
               name: 'cancer-research'
+            }, {
+              title: 'Follow up',
+              url: '/cancer/follow-up',
+              name: 'cancer-follow-up'
+            }, {
+              title: 'Future',
+              url: '/cancer/future',
+              name: 'cancer-future'
+            }, {
+              title: 'Other cancers',
+              url: '/cancer/other-cancers',
+              name: 'cancer-other-cancers'
+            }, {
+              title: 'Costs',
+              url: '/cancer/diagnostic-and-treatment-costs',
+              name: 'cancer-diagnostic-and-treatment-costs'
             }
           ]
         }, {
@@ -116,6 +132,9 @@ const createStore = () => {
       },
       setPage(state, value) {
         state.page = value;
+      },
+      setIsMobileNavShown(state, value) {
+        state.isMobileNavShown = value;
       }
     }
   });

@@ -9,6 +9,9 @@
           <BodyContent v-else :key="component.id" :model="component.value.html" />
         </template>
       </template>
+      <template slot="secondary">
+        <ButtonLink class="button-link--clear-subnav" :model="{link: '#', text: 'Donate now'}" />
+      </template>
     </TwoColumns>
 
   </div>
@@ -17,6 +20,7 @@
 <script>
 import { mapState } from 'vuex';
 import BodyContent from '~/components/BodyContent';
+import ButtonLink from '~/components/ButtonLink';
 import CaptionedImage from '~/components/CaptionedImage';
 import Standfirst from '~/components/Standfirst';
 import TwoColumns from '~/components/TwoColumns';
@@ -27,12 +31,13 @@ const cancerMap = {
   'follow-up': 32,
   'future': 36,
   'other-cancers': 42,
-  'costs': 575
+  'diagnostic-and-treatment-costs': 575
 };
 
 export default {
   components: {
     BodyContent,
+    ButtonLink,
     CaptionedImage,
     Standfirst,
     TwoColumns

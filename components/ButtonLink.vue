@@ -17,7 +17,6 @@ export default {
 
 <style lang="scss">
   .button-link {
-    position: sticky;
     top: 80px;
     text-decoration: none;
     color: white;
@@ -31,9 +30,17 @@ export default {
     text-align: center;
     display: block;
 
+    @media(min-width: 680px) {
+      position: sticky;
+    }
+
     &:hover,
     &:focus {
       background: rgba(#4cb685, 0.8);
+    }
+
+    &.button-link--clear-subnav {
+      top: 130px;
     }
   }
 </style>
