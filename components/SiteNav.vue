@@ -48,6 +48,7 @@ export default {
   },
   mounted() {
     this.updateNav();
+    window.addEventListener('resize', this.updateNav);
   },
   updated() {
     this.updateNav();
@@ -81,9 +82,6 @@ export default {
     setIsMobileNavShown(value) {
       this.$store.commit('setIsMobileNavShown', value);
     }
-  },
-  created() {
-    window.addEventListener('resize', this.updateNav);
   }
 };
 </script>
@@ -95,13 +93,19 @@ export default {
   right: 20px;
   z-index: 4;
   text-transform: uppercase;
-  color: #555;
+  color: white;
+  background: #4cb685;
   text-decoration: none;
   cursor: pointer;
   font-size: 0.9rem;
   padding: 0.2rem 0.4rem;
-  border: 1px solid #555;
   border-radius: 4px;
+
+  .is-mobile-nav-shown & {
+    background: white;
+    color: #555;
+    border: 1px solid #555;
+  }
 
   @media(min-width: 680px) {
     display: none;
@@ -147,8 +151,8 @@ export default {
   background: #47b784;
   left: -20px;
   right: -20px;
-  bottom: -48px;
-  padding: 14px 0 14px;
+  bottom: -40px;
+  padding: 8px 0 12px;
   background: #47b784;
 
   @media(min-width: 680px) {
@@ -173,7 +177,7 @@ export default {
 }
 
 .site-nav__item {
-  padding: 12px 0;
+  padding: 1rem 0;
   border-bottom: 1px solid #eee;
   color: #555;
 
@@ -208,12 +212,13 @@ export default {
 .site-nav__sublink {
   position: relative;
   transition: color 600ms ease;
+  font-size: 0.7rem;
 
   &:after {
     position: absolute;
     bottom: -0.2em;
     left: 0;
-    height: 3px;
+    height: 2px;
     width: 0%;
     background: white;
     transition: width 600ms ease;

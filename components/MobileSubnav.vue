@@ -1,7 +1,8 @@
 <template>
   <span>
     <span tabindex="0" @keyup.enter="isActive = !isActive" @click="isActive = !isActive"
-      class="mobile-subnav__more"><span v-if="isActive">-</span><span v-else>+</span></span>
+      class="mobile-subnav__more"
+      :class="{'is-active': isActive}"><span v-if="isActive">-</span><span v-else>+</span></span>
     <nav v-if="isActive" class="mobile-subnav__nav">
       <ul class="mobile-subnav__list">
         <li class="mobile-subnav__item" v-for="subnavItem in items" :key="subnavItem.title">
@@ -32,10 +33,19 @@ export default {
   width: 22px;
   display: inline-block;
   text-align: center;
-  border: 1px solid #555;
   border-radius: 4px;
   cursor: pointer;
   margin-left: 1rem;
+  background: #47b784;
+  color: white;
+  border: 1px solid transparent;
+
+  &.is-active {
+    color: #555;
+    background: white;
+    border-color: #555;
+  }
+
   @media(min-width: 680px) {
     display: none;
   }
@@ -61,5 +71,9 @@ export default {
 .mobile-subnav__link {
   color: inherit;
   text-decoration: none;
+
+  &.nuxt-link-exact-active {
+    color: #47b784;
+  }
 }
 </style>

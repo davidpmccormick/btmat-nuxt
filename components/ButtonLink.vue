@@ -17,7 +17,7 @@ export default {
 
 <style lang="scss">
   .button-link {
-    top: 80px;
+    top: 70px;
     text-decoration: none;
     color: white;
     background: #4cb685;
@@ -40,7 +40,7 @@ export default {
     }
 
     &.button-link--clear-subnav {
-      top: 130px;
+      top: 110px;
     }
   }
 </style>

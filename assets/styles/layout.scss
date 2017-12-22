@@ -13,8 +13,11 @@
 }
 
 .main {
-  padding-top: 50px;
   padding-bottom: 50px;
+
+  @media(min-width: 680px) {
+    padding-top: 50px;
+  }
 }
 
 .spaced {

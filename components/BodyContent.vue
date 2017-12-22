@@ -10,6 +10,12 @@ export default {
 
 <style lang="scss">
 .body-content {
+  font-size: 1.1rem;
+
+  @media (min-width: 500px) {
+    font-size: 1.3rem;
+  }
+
   a {
     color: inherit;
     text-decoration-skip: ink;

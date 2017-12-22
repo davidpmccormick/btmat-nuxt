@@ -24,9 +24,9 @@ export default {
     background: white;
     font-family: "proxima-soft";
     font-weight: bold;
-    padding-top: 20px;
 
     @media(min-width: 680px) {
+      padding-top: 20px;
       border-bottom: 1px solid #e4e4e4;
       position: sticky;
     }
