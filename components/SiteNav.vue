@@ -1,6 +1,6 @@
 <template>
   <div class="site-nav-wrap">
-    <button class="site-nav-menu-trigger" @click="setIsMobileNavShown(!isMobileNavShown)">menu</button>
+    <a class="site-nav-menu-trigger" @click="setIsMobileNavShown(!isMobileNavShown)">menu</a>
     <nav class="site-nav">
       <ul class="site-nav__list">
         <li v-for="item in navItems"
@@ -8,6 +8,7 @@
           :class="{'is-route-active': item.routesHandled.indexOf(activeRoute) > -1}"
           :key="item.title">
           <nuxt-link class="site-nav__link" :to="item.url">{{ item.title }}</nuxt-link>
+          <MobileSubnav v-if="item.subnavItems" :items="item.subnavItems" />
           <transition name="fade">
             <nav class="site-nav__subnav" v-show="showSubnav(item)">
               <ul class="site-nav__sublist container">
@@ -28,12 +29,16 @@
 
 <script>
 import { mapState } from 'vuex';
+import MobileSubnav from '~/components/MobileSubnav';
 
 const whiteSubnavItems = [
   'cancer-pageSlug'
 ];
 
 export default {
+  components: {
+    MobileSubnav
+  },
   data() {
     return {
       itemOffsetLeft: 0,
@@ -76,6 +81,9 @@ export default {
     setIsMobileNavShown(value) {
       this.$store.commit('setIsMobileNavShown', value);
     }
+  },
+  created() {
+    window.addEventListener('resize', this.updateNav);
   }
 };
 </script>
@@ -86,6 +94,14 @@ export default {
   top: 20px;
   right: 20px;
   z-index: 4;
+  text-transform: uppercase;
+  color: #555;
+  text-decoration: none;
+  cursor: pointer;
+  font-size: 0.9rem;
+  padding: 0.2rem 0.4rem;
+  border: 1px solid #555;
+  border-radius: 4px;
 
   @media(min-width: 680px) {
     display: none;
@@ -157,12 +173,12 @@ export default {
 }
 
 .site-nav__item {
-  margin-right: 2em;
-  padding: 10px 0;
+  padding: 12px 0;
   border-bottom: 1px solid #eee;
   color: #555;
 
   @media(min-width: 680px) {
+    margin-right: 2em;
     padding: 0;
     border-bottom: 0;
   }
