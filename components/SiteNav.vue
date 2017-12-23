@@ -32,7 +32,9 @@ import { mapState } from 'vuex';
 import MobileSubnav from '~/components/MobileSubnav';
 
 const whiteSubnavItems = [
-  'cancer-pageSlug'
+  'cancer-pageSlug',
+  'about-pageSlug',
+  'support-pageSlug'
 ];
 
 export default {

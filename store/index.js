@@ -34,56 +34,85 @@ const createStore = () => {
           title: 'Cancer',
           url: '/cancer/burkitt',
           subnavPath: '/cancer/',
-          routesHandled: [
-            'cancer-pageSlug'
-          ],
+          routesHandled: ['cancer-pageSlug'],
           subnavItems: [
             {
               title: 'Burkitt',
-              url: '/cancer/burkitt',
-              name: 'cancer-burkitt'
+              url: '/cancer/burkitt'
             }, {
               title: 'Research',
-              url: '/cancer/research',
-              name: 'cancer-research'
+              url: '/cancer/research'
             }, {
               title: 'Follow up',
-              url: '/cancer/follow-up',
-              name: 'cancer-follow-up'
+              url: '/cancer/follow-up'
             }, {
               title: 'Future',
-              url: '/cancer/future',
-              name: 'cancer-future'
+              url: '/cancer/future'
             }, {
               title: 'Other cancers',
-              url: '/cancer/other-cancers',
-              name: 'cancer-other-cancers'
+              url: '/cancer/other-cancers'
             }, {
               title: 'Costs',
-              url: '/cancer/diagnostic-and-treatment-costs',
-              name: 'cancer-diagnostic-and-treatment-costs'
+              url: '/cancer/diagnostic-and-treatment-costs'
             }
           ]
         }, {
           title: 'Hospitals',
-          url: '#',
-          routesHandled: ['hostpitals']
+          url: '/hospitals',
+          routesHandled: ['hospitals']
         }, {
           title: 'Gallery',
-          url: '#',
+          url: '/gallery',
           routesHandled: ['gallery']
         }, {
           title: 'Press',
-          url: '#',
+          url: '/press',
           routesHandled: ['press']
         }, {
           title: 'About',
-          url: '#',
-          routesHandled: ['about']
+          url: '/about/our-work',
+          routesHandled: ['about-pageSlug'],
+          subnavPath: '/about/',
+          subnavItems: [
+            {
+              title: 'Our work',
+              url: '/about/our-work'
+            },
+            {
+              title: 'The trust',
+              url: '/about/the-trust'
+            },
+            {
+              title: 'Founder',
+              url: '/about/founder'
+            },
+            {
+              title: 'Supporters',
+              url: '/about/supporters'
+            },
+            {
+              title: 'HQ',
+              url: '/about/hq'
+            },
+            {
+              title: 'South Africa',
+              url: '/about/south-africa'
+            }
+          ]
         }, {
           title: 'Support',
-          url: '#',
-          routesHandled: ['support']
+          url: '/support/donate',
+          routesHandled: ['support-pageSlug'],
+          subnavPath: '/support/',
+          subnavItems: [
+            {
+              title: 'Donate',
+              url: '/support/donate'
+            }, {
+              title: 'Work with us',
+              url: '/support/work-with-us'
+            }
+          ]
         }
       ]
     },
