@@ -9,6 +9,9 @@ import {
 const createStore = () => {
   return new Vuex.Store({
     state: {
+      researchProjects: null,
+      newProjects: null,
+      publicationsAndAbstracts: null,
       isMobileNavShown: false,
       articleStubs: [],
       article: null,
@@ -35,7 +38,10 @@ const createStore = () => {
           title: 'Cancer',
           url: '/cancer/burkitt',
           subnavPath: '/cancer/',
-          routesHandled: ['cancer-pageSlug'],
+          routesHandled: [
+            'cancer-pageSlug',
+            'cancer-research'
+          ],
           subnavItems: [
             {
               title: 'Burkitt',
@@ -146,6 +152,19 @@ const createStore = () => {
         const post = await getPostById(id);
 
         commit('setPage', post);
+      },
+      async getResearch({ commit }, id) {
+        const researchProjects = getArticleStubs({per_page: 50}, 4);
+        const newProjects = getArticleStubs({per_page: 50}, 7);
+        const publicationsAndAbstracts = getArticleStubs({per_page: 50}, 6);
+
+        await Promise.all([researchProjects, newProjects, publicationsAndAbstracts]).then(v => {
+          const [researchProjects, newProjects, publicationsAndAbstracts] = v;
+
+          commit('setResearchProjects', researchProjects);
+          commit('setNewProjects', newProjects);
+          commit('setPublicationsAndAbstracts', publicationsAndAbstracts);
+        });
       }
     },
     mutations: {
@@ -172,6 +191,15 @@ const createStore = () => {
       },
       setIsMobileNavShown(state, value) {
         state.isMobileNavShown = value;
+      },
+      setResearchProjects(state, value) {
+        state.researchProjects = value;
+      },
+      setNewProjects(state, value) {
+        state.newProjects = value;
+      },
+      setPublicationsAndAbstracts(state, value) {
+        state.publicationsAndAbstracts = value;
       }
     }
   });
