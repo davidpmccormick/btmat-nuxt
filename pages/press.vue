@@ -1,6 +1,6 @@
 <template>
   <div>
-    <h2>{{ page.title }}</h2>
+    <h2>Press</h2>
     <TwoColumns class="spaced">
       <template slot="primary">
         <template v-for="component in page.components">
@@ -33,8 +33,8 @@ export default {
     Standfirst,
     TwoColumns
   },
-  async fetch({ store, params }) {
-    await store.dispatch('getPageById', 18);
+  async fetch({ store }) {
+    await store.dispatch('getPostById', 204);
   },
   computed: {
     ...mapState([

@@ -1,12 +1,15 @@
 <template>
   <div>
-    <h2>{{ page.title }}</h2>
+    <h2>Gallery</h2>
     <TwoColumns class="spaced">
       <template slot="primary">
-        <template v-for="component in page.components">
-          <Standfirst :key="component.id" v-if="component.type === 'standfirst'" :model="component.value" />
-          <CaptionedImage :key="component.id" v-else-if="component.type === 'image'" :model="component.value" />
-          <BodyContent v-else :key="component.id" :model="component.value.html" />
+        <template v-for="article in articleStubs">
+          <CaptionedImage :key="article.id"
+            :model="{
+              src: article.featuredMedia.media_details.sizes['single-post-thumbnail'].source_url,
+              alt: article.title,
+              caption: article.title
+            }" />
         </template>
       </template>
       <template slot="secondary">
@@ -19,26 +22,22 @@
 
 <script>
 import { mapState } from 'vuex';
-import BodyContent from '~/components/BodyContent';
 import ButtonLink from '~/components/ButtonLink';
 import CaptionedImage from '~/components/CaptionedImage';
-import Standfirst from '~/components/Standfirst';
 import TwoColumns from '~/components/TwoColumns';
 
 export default {
   components: {
-    BodyContent,
     ButtonLink,
     CaptionedImage,
-    Standfirst,
     TwoColumns
   },
   async fetch({ store, params }) {
-    await store.dispatch('getPageById', 96);
+    await store.dispatch('getArticleStubs', {query: {per_page: 20}, categories: 5});
   },
   computed: {
     ...mapState([
-      'page'
+      'articleStubs'
     ])
   }
 };

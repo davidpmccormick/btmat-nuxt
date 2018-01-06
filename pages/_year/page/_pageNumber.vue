@@ -19,7 +19,7 @@ export default {
     const before = `${nextYear}-01-01T00:00:00`;
     const page = Number(params.pageNumber);
 
-    await store.dispatch('getArticleStubs', {before, after, page});
+    await store.dispatch('getArticleStubs', {query: {before, after, page}});
   }
 };
 </script>

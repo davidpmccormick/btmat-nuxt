@@ -5,7 +5,7 @@ export default {
     const search = route.query && route.query.search;
     const page = params.pageNumber;
 
-    await store.dispatch('getArticleStubs', {page, search});
+    await store.dispatch('getArticleStubs', {query: {page, search}});
   }
 };
 </script>

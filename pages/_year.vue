@@ -19,7 +19,7 @@ export default {
     const after = `${params.year}-01-01T00:00:00`;
     const before = `${nextYear}-01-01T00:00:00`;
 
-    await store.dispatch('getArticleStubs', {before, after});
+    await store.dispatch('getArticleStubs', {query: {before, after}});
   },
   computed: {
     shouldDisplay() {

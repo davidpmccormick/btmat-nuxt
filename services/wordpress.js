@@ -9,9 +9,9 @@ let http = wrapper(axios, {
 });
 http.__addFilter(/.*/); // Cache everything
 
-export async function getArticleStubs(query = {}) {
-  const articleStubFields = 'id,title.rendered,slug,excerpt.rendered,date';
-  const params = Object.assign(query, {fields: articleStubFields, categories: 1});
+export async function getArticleStubs(query = {}, categories = 1) {
+  const articleStubFields = 'id,title.rendered,slug,excerpt.rendered,date,better_featured_image';
+  const params = Object.assign(query, {fields: articleStubFields, categories: categories});
 
   const { data, headers, config } = await http({
     url: `${baseUrl}/posts`,
@@ -34,7 +34,8 @@ export async function getArticleStubs(query = {}) {
       excerpt: article.excerpt && `${article.excerpt.rendered.slice(0, -16)}&hellip;</p>`,
       year: year,
       month: month,
-      date: date
+      date: date,
+      featuredMedia: article.better_featured_image
     };
   });
 
@@ -75,6 +76,20 @@ export async function getPageById(id) {
 
   return {
     title: page.data.title.rendered,
+    components: components
+  };
+}
+
+export async function getPostById(id) {
+  const post = await http({
+    url: `${baseUrl}/posts/${id}`,
+    method: 'get'
+  });
+
+  const components = bodyParser(post.data.content.rendered);
+
+  return {
+    title: post.data.title.rendered,
     components: components
   };
 }

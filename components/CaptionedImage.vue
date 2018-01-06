@@ -32,7 +32,7 @@ export default {
     font-family: "proxima-soft";
     font-size: 1rem;
 
-    svg {
+    .icon svg {
       height: 2em;
       top: -0.1em;
       margin-right: 0.3em;

@@ -2,7 +2,8 @@ import Vuex from 'vuex';
 import {
   getArticleStubs,
   getArticleBySlug,
-  getPageById
+  getPageById,
+  getPostById
 } from '~/services/wordpress';
 
 const createStore = () => {
@@ -117,13 +118,15 @@ const createStore = () => {
       ]
     },
     actions: {
-      async getArticleStubs({ commit }, query = {}) {
+      async getArticleStubs({ commit }, data) {
+        const query = data.query || {};
+        const categories = data.categories || 1;
         const queryWithPage = query.page ? query : {...query, page: 1};
         const {
           articleStubs,
           totalPages,
           currentPage
-        } = await getArticleStubs(queryWithPage);
+        } = await getArticleStubs(queryWithPage, categories);
 
         commit('setCurrentPage', currentPage);
         commit('setTotalPages', totalPages);
@@ -138,6 +141,11 @@ const createStore = () => {
         const page = await getPageById(id);
 
         commit('setPage', page);
+      },
+      async getPostById({ commit }, id) {
+        const post = await getPostById(id);
+
+        commit('setPage', post);
       }
     },
     mutations: {
