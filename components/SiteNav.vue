@@ -33,6 +33,7 @@ import MobileSubnav from '~/components/MobileSubnav';
 
 const whiteSubnavItems = [
   'cancer-pageSlug',
+  'cancer-research',
   'about-pageSlug',
   'support-pageSlug'
 ];

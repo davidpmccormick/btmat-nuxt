@@ -41,7 +41,8 @@ function cleanNodes(nodes, cleaners) {
 
 function convertToComponents(nodes) {
   const converters = [
-    convertImage
+    convertImage,
+    convertList
   ];
 
   return nodes.map((node, index) => {
@@ -94,6 +95,20 @@ function getAttrValue(node, attrName) {
   const attr = node.attrs && node.attrs.find(a => a.name && a.name === attrName);
 
   return attr && attr.value;
+}
+
+function convertList(node, index) {
+  if (node.tagName !== 'ul') return node;
+
+  node.attrs = [{name: 'class', value: 'list'}];
+
+  return {
+    type: 'list',
+    value: {
+      id: index,
+      html: serializeNode(node)
+    }
+  };
 }
 
 function convertImage(node, index) {
