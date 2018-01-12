@@ -1,16 +1,14 @@
 <template>
   <header class="site-header">
-    <div class="container">
-      <div class="site-header__inner">
+    <div class="site-header__inner">
+      <div class="container">
         <h1 class="site-header__title">
           BTMAT
           <span class="site-header__subtitle">Beryl Thyer Memorial Africa Trust, caring for African children with cancer.</span>
         </h1>
-        <div class="site-header__social">
-          <a class="social twitter" href="#"><Icon class="social-icon" name="twitter" /></a>
-          <a class="social facebook" href="#"><Icon class="social-icon" name="facebook" /></a>
-        </div>
       </div>
+    </div>
+    <div class="container">
       <SiteNav />
     </div>
   </header>
@@ -35,6 +33,7 @@ export default {
   background: white;
   font-family: "proxima-soft";
   font-weight: bold;
+  padding-top: 10px;
 
   @media(min-width: 680px) {
     padding-top: 20px;
@@ -71,8 +70,7 @@ export default {
 }
 
 .site-header__inner {
-  display: flex;
-  justify-content: space-between;
+  border-bottom: 3px solid #47b784;
 }
 
 .site-header__title {
@@ -89,40 +87,6 @@ export default {
   display: block;
   margin-top: 0.5em;
   margin-bottom: 1em;
-  padding-right: 60px;
-  color: #aaa;
-}
-
-.site-header__social {
-  position: absolute;
-  right: 20px;
-  top: 55px;
-
-  @media (min-width: 680px) {
-    position: static;
-  }
-}
-
-.twitter {
-  margin-right: 0.2em;
-}
-
-.facebook {
-  position: relative;
-  top: -0.1em;
-}
-
-.icon.social-icon svg {
-  height: 1.5em;
-  fill: #aaa;
-  transition: all 600ms ease;
-
-  .social:hover & {
-    fill: #333;
-  }
-}
-
-.facebook .social-icon svg {
-  height: 1.4em;
+  color: #555;
 }
 </style>
