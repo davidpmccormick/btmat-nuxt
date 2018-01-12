@@ -111,14 +111,22 @@ function convertList(node, index) {
   };
 }
 
+function getImage(nodes) {
+  if (nodes[0].tagName === 'img') {
+    return nodes[0];
+  } else {
+    // it's wrapped in an <a>
+    return nodes[0].childNodes[0];
+  }
+}
+
 function convertImage(node, index) {
   const classNames = getAttrValue(node, 'class');
   const classNamesArray = classNames && classNames.split(' ');
   const isImageWrapper = classNamesArray && classNamesArray.includes('wp-caption');
 
   if (!isImageWrapper) return node;
-
-  const image = node.childNodes && node.childNodes[0] && node.childNodes[0].childNodes[0];
+  const image = getImage(node.childNodes);
   const caption = node.childNodes && node.childNodes[1];
 
   return {

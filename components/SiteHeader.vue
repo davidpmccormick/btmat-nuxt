@@ -29,14 +29,12 @@ export default {
 <style lang="scss">
 .site-header {
   z-index: 1;
-  top: -116px;
+  top: -126px;
   background: white;
   font-family: "proxima-soft";
   font-weight: bold;
-  padding-top: 10px;
 
   @media(min-width: 680px) {
-    padding-top: 20px;
     border-bottom: 1px solid #e4e4e4;
     position: sticky;
   }
@@ -70,16 +68,24 @@ export default {
 }
 
 .site-header__inner {
-  border-bottom: 3px solid #47b784;
+  background: #47b784;
+  border-bottom: 3px solid #35485d;
+  padding: 10px 0;
+
+
+  @media(min-width: 680px) {
+    padding-top: 20px;
+  }
 }
 
 .site-header__title {
   font-weight: bold;
-  color: #47b784;
+  color: #35485d;
   font-size: 3.2rem;
   line-height: 1;
   margin-bottom: 0;
   margin-right: 1rem;
+  text-shadow: -0.025em -0.025em rgba(255, 255, 255, 0.1)
 }
 
 .site-header__subtitle {
@@ -87,6 +93,6 @@ export default {
   display: block;
   margin-top: 0.5em;
   margin-bottom: 1em;
-  color: #555;
+  color: #35485d;
 }
 </style>
