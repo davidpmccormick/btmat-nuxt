@@ -37,7 +37,10 @@
 
 <style lang="scss">
 .cards {
-  margin-top: -20px;
+  @media (min-width: 680px) {
+    margin-top: -30px;
+  }
+
   display: flex;
   flex-wrap: wrap;
   justify-content: space-between;
