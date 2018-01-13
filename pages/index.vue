@@ -1,46 +1,54 @@
 <template>
-  <div class="cards">
-    <div class="cards__card">
-      <div class="card__header">
-        <h3 class="card__heading">Welcome</h3>
+  <div>
+    <Intro />
+    <div class="cards">
+      <div class="cards__card">
+        <div class="card__header">
+          <h3 class="card__heading">Welcome</h3>
+        </div>
+        <div class="card__body">
+          <p>Our Trust addresses the fearful problem of rescuing African children suffering the most aggressive cancer known: Burkitt’s lymphoma. This horrific disease is invariably fatal if untreated, and yet it is potentially cureable.</p>
+        </div>
       </div>
-      <div class="card__body">
-        <p>Our Trust addresses the fearful problem of rescuing African children suffering the most aggressive cancer known: Burkitt’s lymphoma. This horrific disease is invariably fatal if untreated, and yet it is potentially cureable.</p>
+      <div class="cards__card">
+        <div class="card__header">
+          <h3 class="card__heading">About the trust</h3>
+        </div>
+        <div class="card__body">
+          <p>Find out more about our trust, its founder, our work and our supporters.</p>
+        </div>
       </div>
-    </div>
-    <div class="cards__card">
-      <div class="card__header">
-        <h3 class="card__heading">About the trust</h3>
+      <div class="cards__card">
+        <div class="card__header">
+          <h3 class="card__heading">You can help</h3>
+        </div>
+        <div class="card__body">
+          <p>Every single penny that you donate goes directly towards supporting the work that we do in Africa.</p>
+        </div>
       </div>
-      <div class="card__body">
-        <p>Find out more about our trust, its founder, our work and our supporters.</p>
-      </div>
-    </div>
-    <div class="cards__card">
-      <div class="card__header">
-        <h3 class="card__heading">You can help</h3>
-      </div>
-      <div class="card__body">
-        <p>Every single penny that you donate goes directly towards supporting the work that we do in Africa.</p>
-      </div>
-    </div>
-    <div class="cards__card">
-      <div class="card__header">
-        <h3 class="card__heading">Latest news</h3>
-      </div>
-      <div class="card__body">
-        <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Numquam eum omnis aut iusto blanditiis quas culpa vel animi ratione iure maiores quibusdam magnam architecto accusantium dolorum odit, eius provident maxime?</p>
+      <div class="cards__card">
+        <div class="card__header">
+          <h3 class="card__heading">Latest news</h3>
+        </div>
+        <div class="card__body">
+          <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Numquam eum omnis aut iusto blanditiis quas culpa vel animi ratione iure maiores quibusdam magnam architecto accusantium dolorum odit, eius provident maxime?</p>
+        </div>
       </div>
     </div>
   </div>
 </template>
+<script>
+import Intro from '~/components/Intro';
+
+export default {
+  components: {
+    Intro
+  }
+};
+</script>
 
 <style lang="scss">
 .cards {
-  @media (min-width: 680px) {
-    margin-top: -30px;
-  }
-
   display: flex;
   flex-wrap: wrap;
   justify-content: space-between;
