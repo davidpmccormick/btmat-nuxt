@@ -68,8 +68,8 @@ export default {
 }
 
 .site-header__inner {
-  background: #47b784;
-  border-bottom: 3px solid #35485d;
+  background: #35485d;
+  border-bottom: 3px solid #47b784;
   padding: 10px 0;
 
 
@@ -79,13 +79,11 @@ export default {
 }
 
 .site-header__title {
-  font-weight: bold;
-  color: #35485d;
+  color: #47b784;
   font-size: 3.2rem;
   line-height: 1;
   margin-bottom: 0;
   margin-right: 1rem;
-  text-shadow: -0.025em -0.025em rgba(255, 255, 255, 0.1)
 }
 
 .site-header__subtitle {
@@ -93,6 +91,5 @@ export default {
   display: block;
   margin-top: 0.5em;
   margin-bottom: 1em;
-  color: #35485d;
 }
 </style>

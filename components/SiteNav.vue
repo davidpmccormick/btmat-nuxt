@@ -21,7 +21,6 @@
         </li>
       </ul>
       <div class="site-nav__underline"
-        :class="{'is-white': underlineIsWhite}"
         :style="{width: underlineWidth, transform: underlineTransform}"></div>
     </nav>
   </div>
@@ -30,13 +29,6 @@
 <script>
 import { mapState } from 'vuex';
 import MobileSubnav from '~/components/MobileSubnav';
-
-const whiteSubnavItems = [
-  'cancer-pageSlug',
-  'cancer-research',
-  'about-pageSlug',
-  'support-pageSlug'
-];
 
 export default {
   components: {
@@ -62,9 +54,6 @@ export default {
       'activeRoute',
       'isMobileNavShown'
     ]),
-    underlineIsWhite() {
-      return whiteSubnavItems.indexOf(this.activeRoute) > -1;
-    },
     underlineWidth() {
       return `${this.itemOffsetWidth}px`;
     },
@@ -151,12 +140,11 @@ export default {
 
 .site-nav__subnav {
   display: none;
-  background: #47b784;
+  background: #35485d;
   left: -20px;
   right: -20px;
   bottom: -40px;
   padding: 8px 0 12px;
-  background: #47b784;
 
   @media(min-width: 680px) {
     display: block;
@@ -193,7 +181,7 @@ export default {
 
 .site-nav__subitem {
   margin-right: 2em;
-  color: white;
+  color: #47b784;
 }
 
 .site-nav__link,
@@ -223,7 +211,7 @@ export default {
     left: 0;
     height: 2px;
     width: 0%;
-    background: white;
+    background: #47b784;
     transition: width 600ms ease;
     content: '';
   }
@@ -244,10 +232,6 @@ export default {
   height: 3px;
   background: #47b784;
   transition: transform 600ms ease, width 600ms ease, background 600ms ease, color 600ms ease;
-
-  &.is-white {
-    background: white;
-  }
 
   @media(min-width: 680px) {
     display: block;
