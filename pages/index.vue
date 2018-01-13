@@ -24,6 +24,7 @@
         </div>
         <div class="card__body">
           <p>Every single penny that you donate goes directly towards supporting the work that we do in Africa.</p>
+          <ButtonLink class="button-link--in-card" :model="{link: '#', text: 'Donate now'}" />
         </div>
       </div>
       <div class="cards__card">
@@ -39,10 +40,12 @@
 </template>
 <script>
 import Intro from '~/components/Intro';
+import ButtonLink from '~/components/ButtonLink';
 
 export default {
   components: {
-    Intro
+    Intro,
+    ButtonLink
   }
 };
 </script>
