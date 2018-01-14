@@ -22,6 +22,7 @@ export default {
   font-size: 1rem;
   padding: 50px 0;
   border-top: 1px solid #eee;
+  color: #555;
 }
 
 .footer__social {

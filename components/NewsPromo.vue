@@ -27,6 +27,11 @@ export default {
   margin-bottom: 2rem;
   padding-bottom: 1rem;
   border-bottom: 1px solid #eee;
+
+  &.news-promo--in-card {
+    border-bottom: 0;
+    margin-bottom: 0;
+  }
 }
 
 .news-promo__link {
@@ -39,6 +44,10 @@ export default {
 
     .news-promo__heading {
       color: #4cb685;
+
+      .news-promo--in-card & {
+        color: white;
+      }
     }
   }
 }
@@ -46,9 +55,21 @@ export default {
 .news-promo__heading {
   margin-bottom: 0.5rem;
   transition: color 600ms ease;
+
+  .news-promo--in-card & {
+    text-decoration: underline;
+  }
 }
 
 .news-promo__timestamp {
   margin-bottom: 1rem;
+
+  .news-promo--in-card & {
+    color: white;
+
+    svg {
+      fill: white;
+    }
+  }
 }
 </style>

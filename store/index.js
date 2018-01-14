@@ -124,7 +124,7 @@ const createStore = () => {
       ]
     },
     actions: {
-      async getArticleStubs({ commit }, data) {
+      async getArticleStubs({ commit }, data = {}) {
         const query = data.query || {};
         const categories = data.categories || 1;
         const queryWithPage = query.page ? query : {...query, page: 1};

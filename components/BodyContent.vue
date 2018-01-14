@@ -18,7 +18,6 @@ export default {
 
   a {
     color: inherit;
-    text-decoration-skip: ink;
     transition: color 600ms ease;
 
     &:hover,

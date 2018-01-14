@@ -3,7 +3,7 @@
     <div class="site-header__inner">
       <div class="container">
         <h1 class="site-header__title">
-          BTMAT
+          <nuxt-link class="site-header__link" to="/">BTMAT</nuxt-link>
           <span class="site-header__subtitle">Beryl Thyer Memorial Africa Trust, caring for African children with cancer.</span>
         </h1>
       </div>
@@ -30,40 +30,26 @@ export default {
 .site-header {
   z-index: 1;
   top: -126px;
-  background: white;
   font-family: "proxima-soft";
   font-weight: bold;
 
   @media(min-width: 680px) {
-    border-bottom: 1px solid #e4e4e4;
     position: sticky;
   }
 
-  &:before,
   &:after {
     display: none;
     position: absolute;
     content: '';
-    height: 5px;
-    background: white;
+    top: 100%;
     left: 0;
     right: 0;
+    height: 3px;
+    background: rgba(#f5f5f5, 0.7);
 
     @media(min-width: 680px) {
       display: block;
     }
-  }
-
-  &:before {
-    bottom: 2px;
-    z-index: 2;
-  }
-
-  &:after {
-    z-index: 1;
-    content: '';
-    bottom: -1px;
-    box-shadow: 0 1px 5px rgba(0, 0, 0, 0.1);
   }
 }
 
@@ -84,6 +70,11 @@ export default {
   line-height: 1;
   margin-bottom: 0;
   margin-right: 1rem;
+}
+
+.site-header__link {
+  color: #47b784;
+  text-decoration: none;
 }
 
 .site-header__subtitle {

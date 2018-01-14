@@ -15,7 +15,7 @@ export default {
       typeSpeed: 50,
       showCursor: false,
       disableBackTyping: true,
-      strings: [`Only one in ten children survive cancer in developing countries.`, `BTMAT's projects in Cameroon rescue between 60 and 65% of its children with cancer.`],
+      strings: [`Only one in ten children survive cancer in developing countries.`, `BTMAT's projects in Cameroon rescue between 60% and 65% of its children with cancer.`],
       loop: false,
       backSpeed: 20,
       backDelay: 1000
