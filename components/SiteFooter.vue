@@ -21,7 +21,7 @@ export default {
   font-family: 'proxima-soft';
   font-size: 1rem;
   padding: 50px 0;
-  border-top: 1px solid #eee;
+  border-top: 3px solid rgba(#f5f5f5, 0.8);
   color: #555;
 }
 

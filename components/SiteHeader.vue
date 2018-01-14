@@ -32,6 +32,7 @@ export default {
   top: -126px;
   font-family: "proxima-soft";
   font-weight: bold;
+  background: white;
 
   @media(min-width: 680px) {
     position: sticky;
