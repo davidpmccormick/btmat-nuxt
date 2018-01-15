@@ -21,8 +21,8 @@ export default {
   font-family: 'proxima-soft';
   font-size: 1rem;
   padding: 50px 0;
-  border-top: 3px solid rgba(#f5f5f5, 0.8);
-  color: #555;
+  border-top: 3px solid rgba($c-smoke, 0.8);
+  color: $c-grey;
 }
 
 .footer__social {
@@ -31,7 +31,7 @@ export default {
 
 .footer__link {
   text-decoration: none;
-  color: #47b784;
+  color: $c-green;
   margin-right: 1em;
   position: relative;
 
@@ -42,7 +42,7 @@ export default {
     bottom: 0;
     left: 0;
     width: 0;
-    background: #47b784;
+    background: $c-green;
     transition: width 600ms ease;
   }
 

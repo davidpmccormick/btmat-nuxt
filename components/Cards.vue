@@ -74,13 +74,12 @@ export default {
 }
 
 .cards__card {
-  background: #47b784;
+  background: $c-green;
   margin-bottom: 20px;
   border-radius: 6px;
   overflow: hidden;
   width: 100%;
   padding-bottom: 1rem;
-  box-shadow: 0 0 5px rgba(#47b784, 0.8);
 
   @media (min-width: 600px) {
     margin-right: 10px;
@@ -97,14 +96,14 @@ export default {
   padding: 1rem;
 
   a {
-    color: white;
+    color: $c-white;
   }
 }
 
 .card__header {
   position: relative;
-  background: #35485d;
-  color: #47b784;
+  background: $c-petrol;
+  color: $c-green;
 }
 
 .card__heading {
@@ -140,6 +139,6 @@ export default {
 
 .card__body {
   font-size: 1rem;
-  color: white;
+  color: $c-white;
 }
 </style>

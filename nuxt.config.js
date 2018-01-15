@@ -17,7 +17,7 @@ module.exports = {
   /*
   ** Customize the progress bar color
   */
-  loading: { color: '#47b784', height: '3px' },
+  loading: { color: '#35485d', height: '3px' },
   /*
   ** Add global styles
   */
@@ -40,6 +40,12 @@ module.exports = {
           exclude: /(node_modules)/
         });
       }
+
+      config.module.rules.forEach((rule) => {
+        if (rule.test.toString() === '/\\.vue$/') {
+          rule.options.loaders.scss[2].options.data = '@import "./assets/styles/utilities/variables";';
+        }
+      });
     }
   },
   plugins: [{src: '~/plugins/navigation.js'}]

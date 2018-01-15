@@ -32,33 +32,18 @@ export default {
   top: -126px;
   font-family: "proxima-soft";
   font-weight: bold;
-  background: white;
+  background: $c-white;
 
   @media(min-width: 680px) {
+    border-bottom: 3px solid rgba($c-smoke, 0.7);
     position: sticky;
-  }
-
-  &:after {
-    display: none;
-    position: absolute;
-    content: '';
-    top: 100%;
-    left: 0;
-    right: 0;
-    height: 3px;
-    background: rgba(#f5f5f5, 0.7);
-
-    @media(min-width: 680px) {
-      display: block;
-    }
   }
 }
 
 .site-header__inner {
-  background: #35485d;
-  border-bottom: 3px solid #47b784;
   padding: 10px 0;
-
+  background: $c-green;
+  border-bottom: 3px solid $c-petrol;
 
   @media(min-width: 680px) {
     padding-top: 20px;
@@ -66,7 +51,7 @@ export default {
 }
 
 .site-header__title {
-  color: #47b784;
+  color: $c-white;
   font-size: 3.2rem;
   line-height: 1;
   margin-bottom: 0;
@@ -74,7 +59,7 @@ export default {
 }
 
 .site-header__link {
-  color: #47b784;
+  color: $c-white;
   text-decoration: none;
 }
 

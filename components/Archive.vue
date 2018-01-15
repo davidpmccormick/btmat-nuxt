@@ -47,14 +47,14 @@ function range(start, end) {
   font-family: "proxima-soft";
   font-size: 1rem;
   padding: 0.5em 0;
-  border-bottom: 1px solid #eee;
+  border-bottom: 1px solid $c-light-grey;
   text-decoration: none;
   transition: color 600ms ease;
 
   &:hover,
   &:focus,
   &.nuxt-link-active {
-    color: #4cb685;
+    color: $c-green;
   }
 }
 </style>

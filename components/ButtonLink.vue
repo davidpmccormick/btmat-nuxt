@@ -19,7 +19,7 @@ export default {
 .button-link {
   top: 70px;
   text-decoration: none;
-  color: white;
+  color: $c-white;
   background: #4cb685;
   font-family: 'proxima-soft';
   padding: 0.8em;
@@ -46,7 +46,7 @@ export default {
   &.button-link--in-card {
     background: white;
     margin-top: 2rem;
-    color: #4cb685;
+    color: $c-green;
 
     @media (min-width: 680px) {
       position: static;

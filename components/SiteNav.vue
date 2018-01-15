@@ -85,7 +85,7 @@ export default {
   right: 20px;
   z-index: 4;
   text-transform: uppercase;
-  color: white;
+  color: $c-white;
   background: #4cb685;
   text-decoration: none;
   cursor: pointer;
@@ -95,8 +95,8 @@ export default {
 
   .is-mobile-nav-shown & {
     background: white;
-    color: #555;
-    border: 1px solid #555;
+    color: $c-grey;
+    border: 1px solid $c-grey;
   }
 
   @media(min-width: 680px) {
@@ -140,37 +140,29 @@ export default {
 
 .site-nav__subnav {
   display: none;
-  background: #35485d;
+  background: $c-white;
   left: -20px;
   right: -20px;
-  bottom: -40px;
-  padding: 8px 0 12px;
+  top: 100%;
+  padding: 10px 0;
+  margin-top: 3px;
 
   @media(min-width: 680px) {
     display: block;
     position: absolute;
+    border-bottom: 3px solid rgba($c-smoke, 0.7);
   }
 
   @media(min-width: 1000px) {
     left: calc(((100vw - 960px) / 2) * -1);
     right: calc(((100vw - 960px) / 2) * -1);
   }
-
-  &:after {
-    position: absolute;
-    content: '';
-    top: 100%;
-    left: 0;
-    right: 0;
-    height: 4px;
-    background: rgba(255, 255, 255, 0.7);
-  }
 }
 
 .site-nav__item {
   padding: 1rem 0;
-  border-bottom: 1px solid #eee;
-  color: #555;
+  border-bottom: 1px solid $c-light-grey;
+  color: $c-grey;
 
   @media(min-width: 680px) {
     margin-right: 2em;
@@ -180,8 +172,7 @@ export default {
 }
 
 .site-nav__subitem {
-  margin-right: 2em;
-  color: #47b784;
+  margin-right: 1em;
 }
 
 .site-nav__link,
@@ -196,32 +187,23 @@ export default {
   &:hover,
   &:focus,
   .is-route-active & {
-    color: #47b784;
+    color: $c-green;
   }
 }
 
 .site-nav__sublink {
   position: relative;
-  transition: color 600ms ease;
+  transition: all 600ms ease;
   font-size: 0.7rem;
-
-  &:after {
-    position: absolute;
-    bottom: -0.2em;
-    left: 0;
-    height: 2px;
-    width: 0%;
-    background: #47b784;
-    transition: width 600ms ease;
-    content: '';
-  }
+  border-radius: 3px;
+  padding: 0.2em 0.5em;
+  display: inline-block;
 
   &:hover,
   &:focus,
   &.nuxt-link-exact-active {
-    &:after {
-      width: 100%;
-    }
+    background: $c-green;
+    color: $c-white;
   }
 }
 
@@ -230,7 +212,7 @@ export default {
   position: absolute;
   top: 100%;
   height: 3px;
-  background: #47b784;
+  background: $c-green;
   transition: transform 600ms ease, width 600ms ease, background 600ms ease, color 600ms ease;
 
   @media(min-width: 680px) {

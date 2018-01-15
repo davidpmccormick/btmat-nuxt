@@ -26,7 +26,7 @@ export default {
 .news-promo {
   margin-bottom: 2rem;
   padding-bottom: 1rem;
-  border-bottom: 1px solid #eee;
+  border-bottom: 1px solid $c-light-grey;
 
   &.news-promo--in-card {
     border-bottom: 0;
@@ -43,10 +43,10 @@ export default {
     outline: 0;
 
     .news-promo__heading {
-      color: #4cb685;
+      color: $c-green;
 
       .news-promo--in-card & {
-        color: white;
+        color: $c-white;
       }
     }
   }
@@ -65,7 +65,7 @@ export default {
   margin-bottom: 1rem;
 
   .news-promo--in-card & {
-    color: white;
+    color: $c-white;
 
     svg {
       fill: white;

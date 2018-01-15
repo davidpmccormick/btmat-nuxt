@@ -32,7 +32,7 @@
   flex: 1;
   @media(min-width: 680px) {
     padding-left: 20px;
-    border-left: 1px solid #eee;
+    border-left: 1px solid $c-light-grey;
   }
 }
 </style>

@@ -40,13 +40,13 @@ export default {
 };
 </script>
 
-<style>
+<style lang="scss">
   .timestamp {
     display: flex;
     font-family: 'proxima-soft';
     align-items: center;
     font-size: 1rem;
-    color: #aaa;
+    color: $c-mid-grey;
   }
 
   .timestamp__icon {

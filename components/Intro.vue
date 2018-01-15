@@ -27,7 +27,7 @@ export default {
 <style lang="scss">
 .intro {
   min-height: 30px;
-  color: #555;
+  color: $c-grey;
 
   @media (min-width: 680px) {
     margin-top: -30px;

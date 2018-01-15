@@ -22,7 +22,7 @@ export default {
 
     &:hover,
     &:focus {
-      color: #4cb685;
+      color: $c-green;
     }
   }
 
@@ -32,7 +32,7 @@ export default {
     width: 100%;
 
     tr {
-      border-bottom: 1px solid #eee;
+      border-bottom: 1px solid $c-light-grey;
     }
 
     td {

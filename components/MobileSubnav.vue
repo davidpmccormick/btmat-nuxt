@@ -36,14 +36,14 @@ export default {
   border-radius: 4px;
   cursor: pointer;
   margin-left: 1rem;
-  background: #47b784;
-  color: white;
+  background: $c-green;
+  color: $c-white;
   border: 1px solid transparent;
 
   &.is-active {
-    color: #555;
+    color: $c-grey;
     background: white;
-    border-color: #555;
+    border-color: $c-grey;
   }
 
   @media(min-width: 680px) {
@@ -61,7 +61,7 @@ export default {
 
 .mobile-subnav__item {
   padding: 0.2rem 0;
-  border-bottom: 1px solid #eee;
+  border-bottom: 1px solid $c-light-grey;
 
   &:last-child {
     border-bottom: 0;
@@ -73,7 +73,7 @@ export default {
   text-decoration: none;
 
   &.nuxt-link-exact-active {
-    color: #47b784;
+    color: $c-green;
   }
 }
 </style>

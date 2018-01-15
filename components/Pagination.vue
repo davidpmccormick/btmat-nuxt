@@ -62,7 +62,7 @@ export default {
 
     &:hover,
     &:focus {
-      color: #4cb685;
+      color: $c-green;
     }
   }
 </style>

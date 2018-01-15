@@ -36,7 +36,7 @@
 
   &:focus {
     outline: 0;
-    border-color: #4cb685;
+    border-color: $c-green;
   }
 }
 
@@ -57,8 +57,8 @@
 
   &:hover,
   &:focus {
-    color: white;
-    background: #47b784;
+    color: $c-white;
+    background: $c-green;
     outline: 0;
   }
 }
