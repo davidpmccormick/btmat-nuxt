@@ -144,13 +144,13 @@ export default {
   left: -20px;
   right: -20px;
   top: 100%;
-  padding: 10px 0;
-  margin-top: 3px;
+  padding: 8px 0 12px;
+  margin-top: 1px;
 
   @media(min-width: 680px) {
     display: block;
     position: absolute;
-    border-bottom: 3px solid rgba($c-smoke, 0.7);
+    border-bottom: 1px solid $c-light-grey;
   }
 
   @media(min-width: 1000px) {
@@ -210,9 +210,9 @@ export default {
 .site-nav__underline {
   display: none;
   position: absolute;
-  top: 100%;
+  bottom: 100%;
   height: 3px;
-  background: $c-green;
+  background: $c-white;
   transition: transform 600ms ease, width 600ms ease, background 600ms ease, color 600ms ease;
 
   @media(min-width: 680px) {

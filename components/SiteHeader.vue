@@ -35,7 +35,7 @@ export default {
   background: $c-white;
 
   @media(min-width: 680px) {
-    border-bottom: 3px solid rgba($c-smoke, 0.7);
+    border-bottom: 1px solid $c-light-grey;
     position: sticky;
   }
 }
@@ -43,7 +43,6 @@ export default {
 .site-header__inner {
   padding: 10px 0;
   background: $c-green;
-  border-bottom: 3px solid $c-petrol;
 
   @media(min-width: 680px) {
     padding-top: 20px;
