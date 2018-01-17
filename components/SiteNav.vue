@@ -144,13 +144,21 @@ export default {
   left: -20px;
   right: -20px;
   top: 100%;
-  padding: 8px 0 12px;
-  margin-top: 1px;
+  padding: 8px 0;
 
   @media(min-width: 680px) {
     display: block;
     position: absolute;
-    border-bottom: 1px solid $c-light-grey;
+
+    &:after {
+      content: '';
+      position: absolute;
+      top: 100%;
+      height: 3px;
+      left: 0;
+      right: 0;
+      background: rgba($c-white, 0.7);
+    }
   }
 
   @media(min-width: 1000px) {
@@ -162,7 +170,6 @@ export default {
 .site-nav__item {
   padding: 1rem 0;
   border-bottom: 1px solid $c-light-grey;
-  color: $c-grey;
 
   @media(min-width: 680px) {
     margin-right: 2em;
@@ -196,7 +203,7 @@ export default {
   transition: all 600ms ease;
   font-size: 0.7rem;
   border-radius: 3px;
-  padding: 0.2em 0.5em;
+  padding: 0.3em 0.6em 0.2em;
   display: inline-block;
 
   &:hover,

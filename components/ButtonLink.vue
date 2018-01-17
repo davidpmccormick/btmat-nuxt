@@ -17,7 +17,7 @@ export default {
 
 <style lang="scss">
 .button-link {
-  top: 70px;
+  top: 51px;
   text-decoration: none;
   color: $c-white;
   background: #4cb685;
@@ -40,17 +40,7 @@ export default {
   }
 
   &.button-link--clear-subnav {
-    top: 110px;
-  }
-
-  &.button-link--in-card {
-    background: white;
-    margin-top: 2rem;
-    color: $c-green;
-
-    @media (min-width: 680px) {
-      position: static;
-    }
+    top: 88px;
   }
 }
 </style>

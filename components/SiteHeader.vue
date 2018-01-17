@@ -34,15 +34,25 @@ export default {
   font-weight: bold;
   background: $c-white;
 
+
   @media(min-width: 680px) {
-    border-bottom: 1px solid $c-light-grey;
     position: sticky;
+
+    &:after {
+      content: '';
+      position: absolute;
+      top: 100%;
+      background: rgba($c-white, 0.7);
+      height: 3px;
+      left: 0;
+      right: 0;
+    }
   }
 }
 
 .site-header__inner {
   padding: 10px 0;
-  background: $c-green;
+  border-bottom: 3px solid $c-charcoal;
 
   @media(min-width: 680px) {
     padding-top: 20px;
@@ -50,7 +60,6 @@ export default {
 }
 
 .site-header__title {
-  color: $c-white;
   font-size: 3.2rem;
   line-height: 1;
   margin-bottom: 0;
@@ -58,7 +67,7 @@ export default {
 }
 
 .site-header__link {
-  color: $c-white;
+  color: $c-charcoal;
   text-decoration: none;
 }
 

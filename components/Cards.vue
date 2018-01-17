@@ -31,7 +31,7 @@
       </div>
       <div class="card__body">
         <p>Every single penny that you donate goes directly towards supporting the work that we do in Africa.</p>
-        <ButtonLink class="button-link--in-card" :model="{link: '#', text: 'Donate now'}" />
+        <ButtonLink :model="{link: '#', text: 'Donate now'}" />
       </div>
     </div>
     <div class="cards__card">
@@ -40,7 +40,7 @@
       </div>
       <div class="card__body">
         <ul>
-          <NewsPromo class="news-promo--in-card" :model="articleStubs[0]" />
+          <NewsPromo :model="articleStubs[0]" />
         </ul>
       </div>
     </div>
@@ -74,12 +74,12 @@ export default {
 }
 
 .cards__card {
-  background: $c-green;
   margin-bottom: 20px;
   border-radius: 6px;
   overflow: hidden;
   width: 100%;
   padding-bottom: 1rem;
+  border: 3px solid $c-charcoal;
 
   @media (min-width: 600px) {
     margin-right: 10px;
@@ -95,15 +95,13 @@ export default {
 .card__body {
   padding: 1rem;
 
-  a {
-    color: $c-white;
+  p a {
+    color: inherit;
   }
 }
 
 .card__header {
   position: relative;
-  background: $c-petrol;
-  color: $c-green;
 }
 
 .card__heading {
@@ -139,6 +137,5 @@ export default {
 
 .card__body {
   font-size: 1rem;
-  color: $c-white;
 }
 </style>
