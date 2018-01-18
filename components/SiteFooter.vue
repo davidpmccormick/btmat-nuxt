@@ -46,7 +46,8 @@ export default {
     transition: width 600ms ease;
   }
 
-  &:hover {
+  &:hover,
+  &:focus {
     &:after {
       width: 100%;
     }

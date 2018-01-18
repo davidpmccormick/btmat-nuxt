@@ -25,10 +25,10 @@ export default {
   padding: 0.8em;
   display: flex;
   align-items: center;
-  border-radius: 6px;
   transition: background 600ms ease;
   text-align: center;
   display: block;
+  box-shadow: 5px 5px 0 $c-charcoal;
 
   @media (min-width: 680px) {
     position: sticky;

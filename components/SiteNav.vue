@@ -203,7 +203,6 @@ export default {
   position: relative;
   transition: all 600ms ease;
   font-size: 0.7rem;
-  border-radius: 3px;
   padding: 0.3em 0.6em 0.2em;
   display: inline-block;
 
@@ -212,6 +211,10 @@ export default {
   &.nuxt-link-exact-active {
     background: $c-green;
     color: $c-white;
+  }
+
+  &.nuxt-link-exact-active {
+    box-shadow: 3px 3px 0 $c-charcoal;
   }
 }
 

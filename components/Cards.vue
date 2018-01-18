@@ -95,7 +95,7 @@ export default {
   padding: 1rem;
 
   p a {
-    color: inherit;
+    color: $c-green;
   }
 }
 
@@ -117,7 +117,7 @@ export default {
     left: 0;
     right: 0;
     height: 4px;
-    background: rgba(white, 0.3);
+    background: rgba($c-white, 0.3);
   }
 
   &:before {
