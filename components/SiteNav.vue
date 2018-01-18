@@ -91,8 +91,9 @@ export default {
   cursor: pointer;
   font-size: 0.9rem;
   padding: 0.2rem 0.4rem;
-  border-radius: 4px;
   border: 3px solid $c-green;
+  box-shadow: 3px 3px 0 $c-charcoal;
+
 
   .is-mobile-nav-shown & {
     background: white;

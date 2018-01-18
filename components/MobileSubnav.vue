@@ -33,12 +33,12 @@ export default {
   width: 26px;
   display: inline-block;
   text-align: center;
-  border-radius: 4px;
   cursor: pointer;
   margin-left: 1rem;
   background: $c-green;
   color: $c-white;
   border: 3px solid $c-green;
+  box-shadow: 3px 3px 0 $c-charcoal;
 
   &.is-active {
     color: $c-grey;
