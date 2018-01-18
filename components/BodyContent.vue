@@ -32,7 +32,7 @@ export default {
     width: 100%;
 
     tr {
-      border-bottom: 1px solid $c-light-grey;
+      border-bottom: 3px solid $c-charcoal;
     }
 
     td {

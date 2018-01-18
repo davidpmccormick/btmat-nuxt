@@ -17,10 +17,10 @@ export default {
 
 <style lang="scss">
 .button-link {
-  top: 51px;
+  top: 59px;
   text-decoration: none;
   color: $c-white;
-  background: #4cb685;
+  background: $c-green;
   font-family: 'proxima-soft';
   padding: 0.8em;
   display: flex;
@@ -36,11 +36,15 @@ export default {
 
   &:hover,
   &:focus {
-    background: rgba(#4cb685, 0.8);
+    background: rgba($c-green, 0.8);
   }
 
   &.button-link--clear-subnav {
-    top: 88px;
+    top: 96px;
   }
+}
+
+.button-link--in-card {
+  margin-top: 2rem;
 }
 </style>

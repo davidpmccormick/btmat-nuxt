@@ -47,7 +47,7 @@ function range(start, end) {
   font-family: "proxima-soft";
   font-size: 1rem;
   padding: 0.5em 0;
-  border-bottom: 1px solid $c-light-grey;
+  border-bottom: 3px solid $c-charcoal;
   text-decoration: none;
   transition: color 600ms ease;
 

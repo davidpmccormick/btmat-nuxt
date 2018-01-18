@@ -30,7 +30,7 @@ export default {
     outline: 0;
   }
 
-  width: 22px;
+  width: 26px;
   display: inline-block;
   text-align: center;
   border-radius: 4px;
@@ -38,12 +38,12 @@ export default {
   margin-left: 1rem;
   background: $c-green;
   color: $c-white;
-  border: 1px solid transparent;
+  border: 3px solid $c-green;
 
   &.is-active {
     color: $c-grey;
     background: white;
-    border-color: $c-grey;
+    border-color: $c-charcoal;
   }
 
   @media(min-width: 680px) {
@@ -61,7 +61,7 @@ export default {
 
 .mobile-subnav__item {
   padding: 0.2rem 0;
-  border-bottom: 1px solid $c-light-grey;
+  border-bottom: 3px solid $c-charcoal;
 
   &:last-child {
     border-bottom: 0;

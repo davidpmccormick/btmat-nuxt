@@ -10,7 +10,7 @@ export default {
 
 <style lang="scss">
   .standfirst {
-    border-left: 4px solid #4cb685;
+    border-left: 3px solid $c-green;
     font-size: 1.3rem;
     padding-left: 1em;
     margin-bottom: 1.4em;

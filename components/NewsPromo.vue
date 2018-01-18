@@ -26,7 +26,12 @@ export default {
 .news-promo {
   margin-bottom: 2rem;
   padding-bottom: 1rem;
-  border-bottom: 1px solid $c-light-grey;
+  border-bottom: 3px solid $c-charcoal;
+
+  &.news-promo--in-card {
+    border-bottom: 0;
+    margin-bottom: 0;
+  }
 }
 
 .news-promo__link {

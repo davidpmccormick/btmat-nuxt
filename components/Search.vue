@@ -3,11 +3,21 @@
     <h2 class="search__heading">Search</h2>
     <form class="search__form" action="/news" method="GET">
       <label class="search__label" for="search">Search</label>
-      <input class="search__input" name="search" />
-      <button class="search__button">Go</button>
+      <input @focus="isInputFocused = true" @blur="isInputFocused = false" class="search__input" name="search" />
+      <button :class="{'is-active': isInputFocused}" class="search__button">Go</button>
     </form>
   </div>
 </template>
+
+<script>
+export default {
+  data() {
+    return {
+      isInputFocused: false
+    };
+  }
+};
+</script>
 
 <style lang="scss">
 .search {
@@ -30,7 +40,7 @@
   font-size: 1rem;
   padding: 0.8rem 1rem;
   width: 100%;
-  border: 1px solid #ccc;
+  border: 3px solid $c-charcoal;
   border-radius: 0;
   transition: border-color 600ms ease;
 
@@ -42,9 +52,9 @@
 
 .search__button {
   position: absolute;
-  top: 1px;
-  right: 1px;
-  bottom: 1px;
+  top: 3px;
+  right: 3px;
+  bottom: 3px;
   padding: 0 20px;
   font-family: 'proxima-soft';
   appearance: none;
@@ -53,7 +63,11 @@
   font-size: 1rem;
   transition: all 600ms ease;
   border: 0;
-  border-left: 1px solid #ccc;
+  border-left: 3px solid $c-charcoal;
+
+  &.is-active {
+    border-color: $c-green;
+  }
 
   &:hover,
   &:focus {

@@ -86,17 +86,18 @@ export default {
   z-index: 4;
   text-transform: uppercase;
   color: $c-white;
-  background: #4cb685;
+  background: $c-green;
   text-decoration: none;
   cursor: pointer;
   font-size: 0.9rem;
   padding: 0.2rem 0.4rem;
   border-radius: 4px;
+  border: 3px solid $c-green;
 
   .is-mobile-nav-shown & {
     background: white;
     color: $c-grey;
-    border: 1px solid $c-grey;
+    border-color: $c-charcoal;
   }
 
   @media(min-width: 680px) {
@@ -169,7 +170,7 @@ export default {
 
 .site-nav__item {
   padding: 1rem 0;
-  border-bottom: 1px solid $c-light-grey;
+  border-bottom: 3px solid $c-charcoal;
 
   @media(min-width: 680px) {
     margin-right: 2em;
@@ -221,6 +222,7 @@ export default {
   height: 3px;
   background: $c-white;
   transition: transform 600ms ease, width 600ms ease, background 600ms ease, color 600ms ease;
+
 
   @media(min-width: 680px) {
     display: block;
