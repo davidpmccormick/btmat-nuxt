@@ -26,7 +26,7 @@ export default {
 .news-promo {
   margin-bottom: 2rem;
   padding-bottom: 1rem;
-  border-bottom: 3px solid $c-charcoal;
+  border-bottom: 1px solid $c-testing;
 
   &.news-promo--in-card {
     border-bottom: 0;

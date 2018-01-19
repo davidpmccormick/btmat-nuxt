@@ -61,7 +61,7 @@ export default {
 
 .mobile-subnav__item {
   padding: 0.2rem 0;
-  border-bottom: 3px solid $c-charcoal;
+  border-bottom: 1px solid $c-testing;
 
   &:last-child {
     border-bottom: 0;

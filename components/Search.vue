@@ -40,7 +40,7 @@ export default {
   font-size: 1rem;
   padding: 0.8rem 1rem;
   width: 100%;
-  border: 3px solid $c-charcoal;
+  border: 1px solid $c-testing;
   border-radius: 0;
   transition: border-color 600ms ease;
 
@@ -52,9 +52,9 @@ export default {
 
 .search__button {
   position: absolute;
-  top: 3px;
-  right: 3px;
-  bottom: 3px;
+  top: 1px;
+  right: 1px;
+  bottom: 1px;
   padding: 0 20px;
   font-family: 'proxima-soft';
   appearance: none;
@@ -63,7 +63,7 @@ export default {
   font-size: 1rem;
   transition: all 600ms ease;
   border: 0;
-  border-left: 3px solid $c-charcoal;
+  border-left: 1px solid $c-testing;
 
   &.is-active {
     border-color: $c-green;

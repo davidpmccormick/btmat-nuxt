@@ -77,8 +77,9 @@ export default {
   margin-bottom: 20px;
   width: 100%;
   padding-bottom: 1rem;
-  border: 3px solid $c-charcoal;
-  box-shadow: 5px 5px 0 $c-charcoal;
+  border: 1px solid $c-testing;
+  background: $c-white;
+
 
   @media (min-width: 600px) {
     margin-right: 10px;

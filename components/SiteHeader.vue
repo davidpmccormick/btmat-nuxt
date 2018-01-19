@@ -34,25 +34,15 @@ export default {
   font-weight: bold;
   background: $c-white;
 
-
   @media(min-width: 680px) {
     position: sticky;
-
-    &:after {
-      content: '';
-      position: absolute;
-      top: 100%;
-      background: rgba($c-white, 0.7);
-      height: 3px;
-      left: 0;
-      right: 0;
-    }
+    border-bottom: 1px solid $c-testing;
   }
 }
 
 .site-header__inner {
   padding: 10px 0;
-  border-bottom: 3px solid $c-charcoal;
+  border-bottom: 5px solid $c-testing;
 
   @media(min-width: 680px) {
     padding-top: 20px;

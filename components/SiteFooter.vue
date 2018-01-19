@@ -21,8 +21,9 @@ export default {
   font-family: 'proxima-soft';
   font-size: 1rem;
   padding: 50px 0;
-  border-top: 3px solid $c-charcoal;
+  border-top: 1px solid $c-testing;
   color: $c-grey;
+  background: $c-white;
 }
 
 .footer__social {
