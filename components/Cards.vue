@@ -77,7 +77,7 @@ export default {
   margin-bottom: 20px;
   width: 100%;
   padding-bottom: 1rem;
-  border: 1px solid $c-testing;
+  border: 1px solid $c-keyline;
   background: $c-white;
 
 

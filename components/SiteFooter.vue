@@ -21,7 +21,7 @@ export default {
   font-family: 'proxima-soft';
   font-size: 1rem;
   padding: 50px 0;
-  border-top: 1px solid $c-testing;
+  border-top: 1px solid $c-keyline;
   color: $c-grey;
   background: $c-white;
 }

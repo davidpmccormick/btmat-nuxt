@@ -36,13 +36,13 @@ export default {
 
   @media(min-width: 680px) {
     position: sticky;
-    border-bottom: 1px solid $c-testing;
+    border-bottom: 1px solid $c-keyline;
   }
 }
 
 .site-header__inner {
   padding: 10px 0;
-  border-bottom: 5px solid $c-testing;
+  border-bottom: 5px solid $c-keyline;
 
   @media(min-width: 680px) {
     padding-top: 20px;

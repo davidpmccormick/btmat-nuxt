@@ -40,7 +40,7 @@ export default {
   font-size: 1rem;
   padding: 0.8rem 1rem;
   width: 100%;
-  border: 1px solid $c-testing;
+  border: 1px solid $c-keyline;
   border-radius: 0;
   transition: border-color 600ms ease;
 
@@ -63,7 +63,7 @@ export default {
   font-size: 1rem;
   transition: all 600ms ease;
   border: 0;
-  border-left: 1px solid $c-testing;
+  border-left: 1px solid $c-keyline;
 
   &.is-active {
     border-color: $c-green;

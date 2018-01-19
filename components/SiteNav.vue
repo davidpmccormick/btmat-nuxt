@@ -159,7 +159,7 @@ export default {
       height: 1px;
       left: 0;
       right: 0;
-      background: $c-testing;
+      background: $c-keyline;
     }
   }
 
@@ -171,7 +171,7 @@ export default {
 
 .site-nav__item {
   padding: 1rem 0;
-  border-bottom: 1px solid $c-testing;
+  border-bottom: 1px solid $c-keyline;
 
   @media(min-width: 680px) {
     margin-right: 2em;
