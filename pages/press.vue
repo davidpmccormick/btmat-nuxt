@@ -3,6 +3,7 @@
     <h2>Press</h2>
     <TwoColumns class="spaced">
       <template slot="primary">
+        <h3>{{ page.title }}</h3>
         <template v-for="component in page.components">
           <Standfirst :key="component.id" v-if="component.type === 'standfirst'" :model="component.value" />
           <CaptionedImage :key="component.id" v-else-if="component.type === 'image'" :model="component.value" />

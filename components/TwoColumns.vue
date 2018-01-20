@@ -1,11 +1,11 @@
 <template>
   <div class="two-columns">
-    <div class="two-columns__primary">
+    <article class="two-columns__primary">
       <slot name="primary"></slot>
-    </div>
-    <div class="two-columns__secondary">
+    </article>
+    <aside class="two-columns__secondary">
       <slot name="secondary"></slot>
-    </div>
+    </aside>
   </div>
 </template>
 

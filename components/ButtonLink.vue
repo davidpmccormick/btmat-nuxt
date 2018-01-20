@@ -21,7 +21,7 @@ export default {
   text-decoration: none;
   color: $c-white;
   background: $c-green;
-  font-family: 'proxima-soft';
+  font-family: $f-sans;
   padding: 0.8em;
   display: flex;
   align-items: center;

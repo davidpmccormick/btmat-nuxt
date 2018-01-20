@@ -9,6 +9,9 @@ module.exports = {
       { name: 'viewport', content: 'width=device-width, initial-scale=1' },
       { hid: 'description', name: 'description', content: 'Nuxt.js project' }
     ],
+    script: [
+      { src: 'https://cdn.polyfill.io/v2/polyfill.js?features=Array.prototype.includes,Array.prototype.find,Promise' }
+    ],
     link: [
       { rel: 'stylesheet', href: 'https://use.typekit.net/lxm7jly.css' },
       { rel: 'icon', type: 'image/x-icon', href: '/favicon.ico' }

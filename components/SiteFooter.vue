@@ -18,7 +18,7 @@ export default {
 
 <style lang="scss">
 .footer {
-  font-family: 'proxima-soft';
+  font-family: $f-sans;
   font-size: 1rem;
   padding: 50px 0;
   border-top: 1px solid $c-keyline;

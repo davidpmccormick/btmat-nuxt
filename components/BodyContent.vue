@@ -27,7 +27,7 @@ export default {
   }
 
   table {
-    font-family: 'proxima-soft';
+    font-family: $f-sans;
     font-size: 1rem;
     width: 100%;
 

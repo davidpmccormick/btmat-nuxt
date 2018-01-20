@@ -43,7 +43,7 @@ export default {
 <style lang="scss">
   .timestamp {
     display: flex;
-    font-family: 'proxima-soft';
+    font-family: $f-sans;
     align-items: center;
     font-size: 1rem;
     color: $c-mid-grey;

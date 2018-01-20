@@ -3,8 +3,11 @@
     <h2 class="search__heading">Search</h2>
     <form class="search__form" action="/news" method="GET">
       <label class="search__label" for="search">Search</label>
-      <input @focus="isInputFocused = true" @blur="isInputFocused = false" class="search__input" name="search" />
-      <button :class="{'is-active': isInputFocused}" class="search__button">Go</button>
+      <input @focus="isInputFocused = true" @blur="isInputFocused = false" class="search__input" name="search"
+      :class="{'is-active': isButtonFocused}" />
+      <button @focus="isButtonFocused = true" @blur="isButtonFocused = false" :class="{'is-active': isInputFocused}" class="search__button">
+        <span>Go</span>
+      </button>
     </form>
   </div>
 </template>
@@ -13,6 +16,7 @@
 export default {
   data() {
     return {
+      isButtonFocused: false,
       isInputFocused: false
     };
   }
@@ -36,7 +40,7 @@ export default {
 }
 
 .search__input {
-  font-family: 'proxima-soft';
+  font-family: $f-sans;
   font-size: 1rem;
   padding: 0.8rem 1rem;
   width: 100%;
@@ -44,7 +48,8 @@ export default {
   border-radius: 0;
   transition: border-color 600ms ease;
 
-  &:focus {
+  &:focus,
+  &.is-active {
     outline: 0;
     border-color: $c-green;
   }
@@ -55,15 +60,19 @@ export default {
   top: 1px;
   right: 1px;
   bottom: 1px;
-  padding: 0 20px;
-  font-family: 'proxima-soft';
+  width: 60px;
+  font-family: $f-sans;
   appearance: none;
+  background: $c-white;
   display: flex;
   border-radius: 0;
   font-size: 1rem;
   transition: all 600ms ease;
   border: 0;
   border-left: 1px solid $c-keyline;
+  display: flex;
+  align-items: center;
+  justify-content: center;
 
   &.is-active {
     border-color: $c-green;
@@ -73,6 +82,7 @@ export default {
   &:focus {
     color: $c-white;
     background: $c-green;
+    border-color: $c-green;
     outline: 0;
   }
 }

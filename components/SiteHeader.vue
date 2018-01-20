@@ -30,7 +30,7 @@ export default {
 .site-header {
   z-index: 1;
   top: -126px;
-  font-family: "proxima-soft";
+  font-family: $f-sans;
   font-weight: bold;
   background: $c-white;
 

@@ -29,7 +29,7 @@ export default {
   .captioned-image__caption {
     display: flex;
     align-items: flex-start;
-    font-family: "proxima-soft";
+    font-family: $f-sans;
     font-size: 1rem;
 
     .icon svg {

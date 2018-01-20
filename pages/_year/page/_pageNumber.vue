@@ -11,6 +11,7 @@ export default {
   components: {
     NewsList
   },
+  scrollToTop: true,
   async fetch({ params, store }) {
     if (params.pageSlug) return;
 

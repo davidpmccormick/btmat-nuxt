@@ -2,7 +2,7 @@
   <div class="page-layout"
     :class="{'is-mobile-nav-shown': isMobileNavShown}">
     <SiteHeader />
-    <div class="container main">
+    <div class="container main" role="main">
       <nuxt />
     </div>
     <SiteFooter />

@@ -70,7 +70,7 @@ export default {
   display: flex;
   flex-wrap: wrap;
   justify-content: space-between;
-  font-family: "proxima-soft";
+  font-family: $f-sans;
 }
 
 .cards__card {

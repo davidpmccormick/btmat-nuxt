@@ -47,7 +47,7 @@ export default {
 
 <style lang="scss">
   .pagination {
-    font-family: 'proxima-soft';
+    font-family: $f-sans;
     display: flex;
   }
 

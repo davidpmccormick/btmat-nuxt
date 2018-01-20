@@ -118,7 +118,7 @@ export default {
   z-index: 3;
   padding: 20px;
 
-  font-family: "proxima-soft";
+  font-family: $f-sans;
   font-size: 0.9rem;
 
   .is-mobile-nav-shown & {
