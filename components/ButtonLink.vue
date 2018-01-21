@@ -1,19 +1,8 @@
 <template>
-  <a :href="model.link" class="button-link">
-    <span>{{ model.text }}</span>
+  <a href="https://uk.virginmoneygiving.com/donation-web/charity?charityId=1004443" class="button-link">
+    <span>Donate now</span>
   </a>
 </template>
-
-<script>
-import Icon from '~/components/Icon';
-
-export default {
-  components: {
-    Icon
-  },
-  props: ['model']
-};
-</script>
 
 <style lang="scss">
 .button-link {
@@ -30,7 +19,7 @@ export default {
   display: block;
   box-shadow: 5px 5px 0 $c-charcoal;
 
-  @media (min-width: 680px) {
+  @media (min-width: $b-large) {
     position: sticky;
   }
 

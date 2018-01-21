@@ -1,6 +1,7 @@
 <template>
   <div class="search">
-    <h2 class="search__heading">Search</h2>
+    <h3 v-if="inCard" class="card__heading">Search news</h3>
+    <h2 v-else class="search__heading">Search</h2>
     <form class="search__form" action="/news" method="GET">
       <label class="search__label" for="search">Search</label>
       <input @focus="isInputFocused = true" @blur="isInputFocused = false" class="search__input" name="search"
@@ -14,6 +15,7 @@
 
 <script>
 export default {
+  props: ['inCard'],
   data() {
     return {
       isButtonFocused: false,
@@ -42,7 +44,7 @@ export default {
 .search__input {
   font-family: $f-sans;
   font-size: 1rem;
-  padding: 0.8rem 1rem;
+  padding: 0.8rem calc(1rem + 60px) 0.8rem 1rem;
   width: 100%;
   border: 1px solid $c-keyline;
   border-radius: 0;

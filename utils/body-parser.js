@@ -39,6 +39,13 @@ function cleanNodes(nodes, cleaners) {
   });
 }
 
+function isOrContainsImage(node) {
+  if (!node || !node.childNodes) return false;
+  if (node.tagName === 'img') return true;
+
+  return isOrContainsImage(node.childNodes[0]);
+}
+
 function convertToComponents(nodes) {
   const converters = [
     convertImage,
@@ -46,7 +53,9 @@ function convertToComponents(nodes) {
   ];
 
   return nodes.map((node, index) => {
-    if (index === 0 && node.tagName === 'p') return convertStandfirst(node, index);
+    if (index === 0 && node.tagName === 'p' && !isOrContainsImage(node)) {
+      return convertStandfirst(node, index);
+    }
 
     const component = converters.reduce((node, converter) => converter(node, index), node);
 

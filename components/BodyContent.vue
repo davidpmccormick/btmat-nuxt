@@ -12,7 +12,7 @@ export default {
 .body-content {
   font-size: 1.1rem;
 
-  @media (min-width: 500px) {
+  @media (min-width: $b-medium) {
     font-size: 1.3rem;
   }
 

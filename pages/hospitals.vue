@@ -10,7 +10,7 @@
         </template>
       </template>
       <template slot="secondary">
-        <ButtonLink :model="{link: '#', text: 'Donate now'}" />
+        <ButtonLink />
       </template>
     </TwoColumns>
 

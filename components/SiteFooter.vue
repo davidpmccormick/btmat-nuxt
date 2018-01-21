@@ -3,8 +3,8 @@
     <div class="container">
       <p>&copy; Beryl Thyer Memorial Africa Trust. Registered Charity Number 1112603.</p>
       <div class="footer__social">
-        <a class="footer__link" href="#">twitter</a>
-        <a class="footer__link" href="#">facebook</a>
+        <a class="footer__link" href="https://twitter.com/btmat">twitter</a>
+        <a class="footer__link" href="https://www.facebook.com/Beryl-Thyer-Memorial-Africa-Trust-168568809870673/">facebook</a>
       </div>
     </div>
   </div>

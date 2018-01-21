@@ -101,7 +101,7 @@ export default {
     border-color: $c-charcoal;
   }
 
-  @media(min-width: 680px) {
+  @media (min-width: $b-large) {
     display: none;
   }
 }
@@ -125,7 +125,7 @@ export default {
     display: block;
   }
 
-  @media(min-width: 680px) {
+  @media (min-width: $b-large) {
     display: block;
     padding: 15px 0;
     position: relative;
@@ -135,7 +135,7 @@ export default {
 
 .site-nav__list,
 .site-nav__sublist {
-  @media(min-width: 680px) {
+  @media (min-width: $b-large) {
     display: flex;
   }
 }
@@ -148,7 +148,7 @@ export default {
   top: 100%;
   padding-bottom: 12px;
 
-  @media(min-width: 680px) {
+  @media (min-width: $b-large) {
     display: block;
     position: absolute;
 
@@ -163,7 +163,7 @@ export default {
     }
   }
 
-  @media(min-width: 1000px) {
+  @media (min-width: $b-x-large) {
     left: calc(((100vw - 960px) / 2) * -1);
     right: calc(((100vw - 960px) / 2) * -1);
   }
@@ -173,7 +173,7 @@ export default {
   padding: 1rem 0;
   border-bottom: 1px solid $c-keyline;
 
-  @media(min-width: 680px) {
+  @media (min-width: $b-large) {
     margin-right: 2em;
     padding: 0;
     border-bottom: 0;
@@ -228,7 +228,7 @@ export default {
   transition: transform 600ms ease, width 600ms ease, background 600ms ease, color 600ms ease;
 
 
-  @media(min-width: 680px) {
+  @media (min-width: $b-large) {
     display: block;
   }
 }

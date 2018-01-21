@@ -27,11 +27,6 @@ export default {
   margin-bottom: 2rem;
   padding-bottom: 1rem;
   border-bottom: 1px solid $c-keyline;
-
-  &.news-promo--in-card {
-    border-bottom: 0;
-    margin-bottom: 0;
-  }
 }
 
 .news-promo__link {

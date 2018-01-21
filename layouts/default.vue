@@ -33,7 +33,7 @@ export default {
     .footer {
       display: none;
 
-      @media(min-width: 680px) {
+      @media (min-width: $b-large) {
         display: block;
       }
     }

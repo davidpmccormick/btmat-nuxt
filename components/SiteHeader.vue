@@ -34,7 +34,7 @@ export default {
   font-weight: bold;
   background: $c-white;
 
-  @media(min-width: 680px) {
+  @media (min-width: $b-large) {
     position: sticky;
     border-bottom: 1px solid $c-keyline;
   }
@@ -44,7 +44,7 @@ export default {
   padding: 10px 0;
   border-bottom: 5px solid $c-keyline;
 
-  @media(min-width: 680px) {
+  @media (min-width: $b-large) {
     padding-top: 20px;
   }
 }

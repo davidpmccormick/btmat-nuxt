@@ -46,7 +46,7 @@ export default {
     border-color: $c-charcoal;
   }
 
-  @media(min-width: 680px) {
+  @media (min-width: $b-large) {
     display: none;
   }
 }
@@ -54,7 +54,7 @@ export default {
 .mobile-subnav__nav {
   padding: 0.5rem 0;
 
-  @media(min-width: 680px) {
+  @media (min-width: $b-large) {
     display: none;
   }
 }

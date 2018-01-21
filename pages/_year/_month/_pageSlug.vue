@@ -12,7 +12,7 @@
     <template slot="secondary">
       <Archive />
       <Search />
-      <ButtonLink class="article__button-link" :model="{link: '#', text: 'Donate now'}" />
+      <ButtonLink class="article__button-link" />
     </template>
   </TwoColumns>
 </template>
@@ -41,7 +41,7 @@ export default {
     TwoColumns
   },
   scrollToTop: true,
-  async fetch({ store, params }) {
+  async fetch({ store, params, route }) {
     await store.dispatch('getArticleBySlug', params.pageSlug);
   },
   computed: {

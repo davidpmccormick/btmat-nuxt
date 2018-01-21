@@ -154,17 +154,22 @@ const createStore = () => {
         commit('setPage', post);
       },
       async getResearch({ commit }, id) {
-        const researchProjects = getArticleStubs({per_page: 50}, 4);
-        const newProjects = getArticleStubs({per_page: 50}, 7);
-        const publicationsAndAbstracts = getArticleStubs({per_page: 50}, 6);
+        const researchProjectsPromise = getArticleStubs({per_page: 50}, 4);
+        const newProjectsPromise = getArticleStubs({per_page: 50}, 7);
+        const publicationsAndAbstractsPromise = getArticleStubs({per_page: 50}, 6);
+        const [
+          researchProjects,
+          newProjects,
+          publicationsAndAbstracts
+        ] = await Promise.all([
+          researchProjectsPromise,
+          newProjectsPromise,
+          publicationsAndAbstractsPromise
+        ]);
 
-        await Promise.all([researchProjects, newProjects, publicationsAndAbstracts]).then(v => {
-          const [researchProjects, newProjects, publicationsAndAbstracts] = v;
-
-          commit('setResearchProjects', researchProjects);
-          commit('setNewProjects', newProjects);
-          commit('setPublicationsAndAbstracts', publicationsAndAbstracts);
-        });
+        commit('setResearchProjects', researchProjects);
+        commit('setNewProjects', newProjects);
+        commit('setPublicationsAndAbstracts', publicationsAndAbstracts);
       }
     },
     mutations: {

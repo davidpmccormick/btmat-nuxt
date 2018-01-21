@@ -44,7 +44,7 @@ function range(start, end) {
 .archive__link {
   display: block;
   color: inherit;
-  font-family: "proxima-soft";
+  font-family: $f-sans;
   font-size: 1rem;
   padding: 0.5em 0;
   border-bottom: 1px solid $c-keyline;

@@ -11,7 +11,7 @@
   margin: 0 auto;
   padding: 0 15px;
 
-  @media (min-width: 400px) {
+  @media (min-width: $b-small) {
     padding-left: 20px;
     padding-right: 20px;
   }
@@ -21,11 +21,11 @@
   padding-top: 15px;
   padding-bottom: 50px;
 
-  @media (min-width: 400px) {
+  @media (min-width: $b-small) {
     padding-top: 20px;
   }
 
-  @media (min-width: 680px) {
+  @media (min-width: $b-large) {
     padding-top: 50px;
   }
 }

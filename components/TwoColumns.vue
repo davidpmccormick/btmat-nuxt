@@ -13,7 +13,7 @@
 .two-columns {
   margin-bottom: 2rem;
 
-  @media(min-width: 680px) {
+  @media (min-width: $b-large) {
     display: flex;
   }
 }
@@ -22,7 +22,7 @@
   flex: 2;
   margin-bottom: 2rem;
 
-  @media(min-width: 680px) {
+  @media (min-width: $b-large) {
     padding-right: 30px;
     margin-bottom: 0;
   }
@@ -30,7 +30,7 @@
 
 .two-columns__secondary {
   flex: 1;
-  @media(min-width: 680px) {
+  @media (min-width: $b-large) {
     padding-left: 20px;
     border-left: 1px solid $c-keyline;
   }

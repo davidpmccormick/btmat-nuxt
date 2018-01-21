@@ -15,7 +15,17 @@ export default {
     padding-left: 1em;
     margin-bottom: 1.4em;
 
-    @media(min-width: 500px) {
+    a {
+      color: inherit;
+      transition: color 600ms ease;
+
+      &:hover,
+      &:focus {
+        color: $c-green;
+      }
+    }
+
+    @media (min-width: $b-medium) {
       font-size: 1.5rem;
     }
   }

@@ -24,3 +24,28 @@ h2 {
 a {
   text-decoration-skip: ink;
 }
+
+em,
+i {
+  font-style: italic;
+}
+
+strong,
+b {
+  font-weight: bold;
+}
+
+sup {
+  font-size: 0.8em;
+  position: relative;
+  top: -0.4em;
+}
+
+small {
+  font-size: 0.8rem;
+}
+
+ol {
+  list-style-type: decimal;
+  margin-left: 1em;
+}
