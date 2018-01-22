@@ -3,7 +3,9 @@
     :class="{'is-mobile-nav-shown': isMobileNavShown}">
     <SiteHeader />
     <div class="container main" role="main">
-      <nuxt />
+    <h2 v-if="error.statusCode === 404">Page not found</h2>
+    <h2 v-else>Sorry, there was a problem</h2>
+    <nuxt-link class="error-link" to="/">Try the home page.</nuxt-link>
     </div>
     <SiteFooter />
   </div>
@@ -15,6 +17,7 @@ import SiteFooter from '~/components/SiteFooter';
 import SiteHeader from '~/components/SiteHeader';
 
 export default {
+  props: ['error'],
   components: {
     SiteFooter,
     SiteHeader
@@ -28,6 +31,11 @@ export default {
 </script>
 
 <style lang="scss">
+.error-link {
+  font-family: $f-sans;
+  color: $c-green;
+}
+
 .page-layout.is-mobile-nav-shown {
   .main,
   .footer {
