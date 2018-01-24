@@ -51,4 +51,12 @@ export default {
 .news-promo__timestamp {
   margin-bottom: 1rem;
 }
+
+.news-promo__excerpt {
+  font-size: 1.1rem;
+
+  @media (min-width: $b-medium) {
+    font-size: 100%;
+  }
+}
 </style>

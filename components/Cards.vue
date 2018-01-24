@@ -2,7 +2,7 @@
   <div class="cards">
     <div class="cards__card">
       <div class="card__header">
-        <h2 class="card__heading">Welcome</h2>
+        <h2 class="card__heading">Hello</h2>
       </div>
       <div class="card__image-wrap">
         <img class="card__image" src="http://www.btmat.org.uk/wp-content/themes/noise/images/welcome.jpg" alt="" />

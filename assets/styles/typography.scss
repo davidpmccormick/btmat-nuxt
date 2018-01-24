@@ -18,7 +18,15 @@ h6 {
 }
 
 h2 {
-  font-size: 2.5rem;
+  font-size: 1.8rem;
+
+  @media (min-width: $b-small) {
+    font-size: 2.2rem;
+  }
+
+  @media (min-width: $b-medium) {
+    font-size: 2.5rem;
+  }
 }
 
 a {
