@@ -2,7 +2,7 @@
   "name": "nuxt-test",
   "version": "1.0.0",
   "description": "Nuxt.js project",
-  "author": "David McCormick <d.mccormick@wellcome.ac.uk>",
+  "author": "David McCormick <davidpmccormick@gmail.com>",
   "private": true,
   "scripts": {
     "dev": "nuxt",
