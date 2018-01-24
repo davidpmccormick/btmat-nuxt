@@ -187,9 +187,10 @@ export default {
 
 .site-header__inner {
   padding: 10px 0;
-  border-bottom: 5px solid $c-keyline;
+  border-bottom: 1px solid $c-keyline;
 
   @media (min-width: $b-large) {
+    border-bottom-width: 5px;
     padding-top: 20px;
   }
 }

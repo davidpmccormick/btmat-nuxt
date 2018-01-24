@@ -93,6 +93,7 @@ export default {
   padding: 0.2rem 0.4rem;
   border: 3px solid $c-green;
   box-shadow: 3px 3px 0 $c-charcoal;
+  transition: all 600ms ease;
 
 
   .is-mobile-nav-shown & {
