@@ -102,10 +102,6 @@ export default {
 .card__header,
 .card__body {
   padding: 1rem;
-
-  // @media (min-width: $b-medium) {
-  //   padding: 1.3rem;
-  // }
 }
 
 .card__header {
@@ -148,11 +144,15 @@ export default {
 
 .card__copy {
   font-family: $f-sans;
-  font-size: 1.1rem;
+
+  font-size: 1rem;
+
+  @media (min-width: $b-small) {
+    font-size: 1.1rem;
+  }
 
   a {
     color: $c-green;
   }
 }
-
 </style>

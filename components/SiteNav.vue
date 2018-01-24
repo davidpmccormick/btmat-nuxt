@@ -152,14 +152,24 @@ export default {
     display: block;
     position: absolute;
 
+    &:before,
     &:after {
       content: '';
       position: absolute;
       top: 100%;
-      height: 1px;
       left: 0;
       right: 0;
+    }
+
+    &:before {
+      height: 1px;
       background: $c-keyline;
+    }
+
+    &:after {
+      margin-top: 1px;
+      height: 5px;
+      background: rgba($c-beige, 0.6);
     }
   }
 

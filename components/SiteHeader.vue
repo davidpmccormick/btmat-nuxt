@@ -171,6 +171,17 @@ export default {
   @media (min-width: $b-large) {
     position: sticky;
     border-bottom: 1px solid $c-keyline;
+
+    &:after {
+      content: '';
+      position: absolute;
+      top: 100%;
+      margin-top: 1px;
+      height: 5px;
+      left: 0;
+      width: 100%;
+      background: rgba($c-beige, 0.6);
+    }
   }
 }
 
@@ -205,9 +216,14 @@ export default {
 }
 
 .site-header__subtitle {
-  font-size: 1rem;
+  font-size: 0.8rem;
   display: block;
   margin-top: 0.5em;
   margin-bottom: 1em;
+  line-height: 1.3;
+
+  @media (min-width: $b-small) {
+    font-size: 1rem;
+  }
 }
 </style>
