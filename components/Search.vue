@@ -49,6 +49,7 @@ export default {
   border: 1px solid $c-keyline;
   border-radius: 0;
   transition: border-color 600ms ease;
+  background-clip: padding-box;
 
   &:focus,
   &.is-active {
