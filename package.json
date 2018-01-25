@@ -1,7 +1,7 @@
 {
-  "name": "nuxt-test",
+  "name": "btmat-nuxt",
   "version": "1.0.0",
-  "description": "Nuxt.js project",
+  "description": "Nuxt app that consumes BTMAT's WordPress API",
   "author": "David McCormick <davidpmccormick@gmail.com>",
   "private": true,
   "scripts": {

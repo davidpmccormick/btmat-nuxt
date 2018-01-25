@@ -1,6 +1,6 @@
-# nuxt-test
+# BTMAT nuxt
 
-> Nuxt.js project
+A [Nuxt.js](https://nuxtjs.org) project that consumes BTMAT's WordPress API.
 
 ## Build Setup
 
@@ -19,4 +19,4 @@ $ npm start
 $ npm run generate
 ```
 
-For detailed explanation on how things work, checkout the [Nuxt.js docs](https://github.com/nuxt/nuxt.js).
+For detailed explanation on how things work, see the [Nuxt.js docs](https://github.com/nuxt/nuxt.js).
