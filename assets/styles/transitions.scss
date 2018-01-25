@@ -1,9 +1,19 @@
 .fade-enter-active,
 .fade-leave-active {
-  transition: opacity 600ms;
+  transition: opacity 600ms ease-in-out;
 }
 
 .fade-enter,
 .fade-leave-to {
   opacity: 0;
+}
+
+.nav-slide-enter-active,
+.nav-slide-leave-active {
+  transition: transform 600ms ease-in-out;
+}
+
+.nav-slide-enter,
+.nav-slide-leave-to {
+  transform: translateY(-100%);
 }

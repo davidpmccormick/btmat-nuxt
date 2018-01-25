@@ -37,6 +37,7 @@ export default {
     ButtonLink,
     TwoColumns
   },
+  transition: 'fade',
   async fetch({ store }) {
     await store.dispatch('getResearch');
   },

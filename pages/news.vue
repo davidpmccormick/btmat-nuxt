@@ -11,6 +11,7 @@ export default {
   components: {
     NewsList
   },
+  transition: 'fade',
   async fetch({ store, params, route }) {
     if (params.pageNumber) return;
 

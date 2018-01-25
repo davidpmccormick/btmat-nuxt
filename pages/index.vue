@@ -10,6 +10,7 @@ export default {
   components: {
     Cards
   },
+  transition: 'fade',
   async fetch({ store }) {
     await store.dispatch('getArticleStubs');
   }

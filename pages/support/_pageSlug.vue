@@ -38,6 +38,7 @@ export default {
     Standfirst,
     TwoColumns
   },
+  transition: 'fade',
   async fetch({ store, params }) {
     await store.dispatch('getPageById', supportMap[params.pageSlug]);
   },

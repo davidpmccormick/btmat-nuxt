@@ -12,6 +12,7 @@ export default {
   components: {
     NewsList
   },
+  transition: 'fade',
   async fetch({ params, store }) {
     if (params.pageSlug) return;
 

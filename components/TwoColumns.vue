@@ -1,12 +1,12 @@
 <template>
-  <div class="two-columns">
-    <article class="two-columns__primary">
-      <slot name="primary"></slot>
-    </article>
-    <aside class="two-columns__secondary">
-      <slot name="secondary"></slot>
-    </aside>
-  </div>
+    <div class="two-columns">
+      <article class="two-columns__primary">
+        <slot name="primary"></slot>
+      </article>
+      <aside class="two-columns__secondary">
+        <slot name="secondary"></slot>
+      </aside>
+    </div>
 </template>
 
 <style lang="scss">
