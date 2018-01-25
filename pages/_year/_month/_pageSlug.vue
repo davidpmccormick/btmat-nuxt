@@ -39,7 +39,6 @@ export default {
     Timestamp,
     TwoColumns
   },
-  transition: 'fade',
   scrollToTop: true,
   async fetch({ store, params, route }) {
     await store.dispatch('getArticleBySlug', params.pageSlug);

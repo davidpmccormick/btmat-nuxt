@@ -11,7 +11,6 @@ export default {
   components: {
     NewsList
   },
-  transition: 'fade',
   scrollToTop: true,
   async fetch({ params, store }) {
     if (params.pageSlug) return;

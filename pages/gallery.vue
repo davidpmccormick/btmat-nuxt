@@ -31,7 +31,6 @@ export default {
     CaptionedImage,
     TwoColumns
   },
-  transition: 'fade',
   async fetch({ store, params }) {
     await store.dispatch('getArticleStubs', {query: {per_page: 20}, categories: 5});
   },

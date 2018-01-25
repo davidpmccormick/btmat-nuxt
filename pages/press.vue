@@ -34,7 +34,6 @@ export default {
     Standfirst,
     TwoColumns
   },
-  transition: 'fade',
   async fetch({ store }) {
     await store.dispatch('getPostById', 204);
   },
