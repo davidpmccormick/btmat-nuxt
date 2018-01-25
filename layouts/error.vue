@@ -1,13 +1,8 @@
 <template>
-  <div class="page-layout"
-    :class="{'is-mobile-nav-shown': isMobileNavShown}">
-    <SiteHeader />
-    <div class="container main" role="main">
+  <div>
     <h2 v-if="error.statusCode === 404">Page not found</h2>
     <h2 v-else>Sorry, there was a problem</h2>
     <nuxt-link class="error-link" to="/">Try the home page.</nuxt-link>
-    </div>
-    <SiteFooter />
   </div>
 </template>
 
