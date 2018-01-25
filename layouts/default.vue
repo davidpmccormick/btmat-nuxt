@@ -6,16 +6,19 @@
       <nuxt />
     </div>
     <SiteFooter />
+    <CookieBanner />
   </div>
 </template>
 
 <script>
 import { mapState } from 'vuex';
+import CookieBanner from '~/components/CookieBanner';
 import SiteFooter from '~/components/SiteFooter';
 import SiteHeader from '~/components/SiteHeader';
 
 export default {
   components: {
+    CookieBanner,
     SiteFooter,
     SiteHeader
   },
