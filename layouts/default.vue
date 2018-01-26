@@ -6,7 +6,7 @@
       <nuxt />
     </div>
     <SiteFooter />
-    <CookieBanner />
+    <!-- <CookieBanner /> -->
   </div>
 </template>
 
