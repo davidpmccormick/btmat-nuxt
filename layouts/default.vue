@@ -1,12 +1,12 @@
 <template>
   <div class="page-layout"
     :class="{'is-mobile-nav-shown': isMobileNavShown}">
+    <CookieBanner />
     <SiteHeader />
     <div class="container main" role="main">
       <nuxt />
     </div>
     <SiteFooter />
-    <CookieBanner />
   </div>
 </template>
 
