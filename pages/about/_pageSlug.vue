@@ -13,7 +13,6 @@
         <ButtonLink class="button-link--clear-subnav" />
       </template>
     </TwoColumns>
-
   </div>
 </template>
 

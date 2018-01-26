@@ -14,7 +14,6 @@
         <ButtonLink />
       </template>
     </TwoColumns>
-
   </div>
 </template>
 
