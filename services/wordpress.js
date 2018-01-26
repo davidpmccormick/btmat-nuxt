@@ -1,19 +1,13 @@
 import axios from 'axios';
-import wrapper from 'axios-cache-plugin';
 import { bodyParser } from '../utils/body-parser';
 
 const baseUrl = 'http://btmat.org.uk/wp-json/wp/v2';
-
-let http = wrapper(axios, {
-  maxCacheSize: 100
-});
-http.__addFilter(/.*/); // Cache everything
 
 export async function getArticleStubs(query = {}, categories = 1) {
   const articleStubFields = 'id,title.rendered,slug,excerpt.rendered,date,better_featured_image';
   const params = Object.assign(query, {fields: articleStubFields, categories: categories});
 
-  const { data, headers, config } = await http({
+  const { data, headers, config } = await axios({
     url: `${baseUrl}/posts`,
     mthod: 'get',
     params
@@ -49,7 +43,7 @@ export async function getArticleStubs(query = {}, categories = 1) {
 
 export async function getArticleBySlug(slug) {
   const params = {slug};
-  const { data } = await http({
+  const { data } = await axios({
     url: `${baseUrl}/posts`,
     method: 'get',
     params
@@ -67,7 +61,7 @@ export async function getArticleBySlug(slug) {
 }
 
 export async function getPageById(id) {
-  const page = await http({
+  const page = await axios({
     url: `${baseUrl}/pages/${id}`,
     method: 'get'
   });
@@ -81,7 +75,7 @@ export async function getPageById(id) {
 }
 
 export async function getPostById(id) {
-  const post = await http({
+  const post = await axios({
     url: `${baseUrl}/posts/${id}`,
     method: 'get'
   });

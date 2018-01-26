@@ -11,8 +11,8 @@
     stack-trace "0.0.10"
 
 "@types/node@*":
-  version "8.0.57"
-  resolved "https://registry.yarnpkg.com/@types/node/-/node-8.0.57.tgz#e5d8b4dc112763e35cfc51988f4f38da3c486d99"
+  version "9.4.0"
+  resolved "https://registry.yarnpkg.com/@types/node/-/node-9.4.0.tgz#b85a0bcf1e1cc84eb4901b7e96966aedc6f078d1"
 
 abbrev@1:
   version "1.1.1"
@@ -308,10 +308,6 @@ aws-sign2@~0.7.0:
 aws4@^1.2.1, aws4@^1.6.0:
   version "1.6.0"
   resolved "https://registry.yarnpkg.com/aws4/-/aws4-1.6.0.tgz#83ef5ca860b2b32e4a0deedee8c771b9db57471e"
-
-axios-cache-plugin@^0.1.0:
-  version "0.1.0"
-  resolved "https://registry.yarnpkg.com/axios-cache-plugin/-/axios-cache-plugin-0.1.0.tgz#e84f4902029f2e0323bbae739d6a1d0ba5551e89"
 
 axios@^0.17.1:
   version "0.17.1"
@@ -3447,10 +3443,6 @@ isobject@^3.0.0, isobject@^3.0.1:
 isstream@~0.1.2:
   version "0.1.2"
   resolved "https://registry.yarnpkg.com/isstream/-/isstream-0.1.2.tgz#47e63f7af55afa6f92e1500e690eb8b8529c099a"
-
-ityped@^1.0.1:
-  version "1.0.1"
-  resolved "https://registry.yarnpkg.com/ityped/-/ityped-1.0.1.tgz#69b643159b20fe72134946514c9a3499973cf4c9"
 
 js-base64@^2.1.8:
   version "2.3.2"
