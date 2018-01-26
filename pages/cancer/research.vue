@@ -46,7 +46,8 @@ export default {
       'newProjects',
       'publicationsAndAbstracts'
     ])
-  }
+  },
+  transition: 'page'
 };
 </script>
 

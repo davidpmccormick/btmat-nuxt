@@ -47,7 +47,8 @@ export default {
     ...mapState([
       'article'
     ])
-  }
+  },
+  transition: 'page'
 };
 </script>
 

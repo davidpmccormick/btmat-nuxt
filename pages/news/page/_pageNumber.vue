@@ -6,6 +6,7 @@ export default {
     const page = params.pageNumber;
 
     await store.dispatch('getArticleStubs', {query: {page, search}});
-  }
+  },
+  transition: 'page'
 };
 </script>
