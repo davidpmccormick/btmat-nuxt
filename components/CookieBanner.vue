@@ -36,8 +36,6 @@ export default {
         expires: 'Fri, 31 Dec 2036 23:59:59 GMT'
       });
 
-      console.log(this.cookieName);
-
       this.isActive = false;
     }
   }
