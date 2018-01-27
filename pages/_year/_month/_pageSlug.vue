@@ -26,7 +26,6 @@ import Search from '~/components/Search';
 import Standfirst from '~/components/Standfirst';
 import Timestamp from '~/components/Timestamp';
 import TwoColumns from '~/components/TwoColumns';
-import { mapState } from 'vuex';
 
 export default {
   components: {
@@ -40,13 +39,12 @@ export default {
     TwoColumns
   },
   scrollToTop: true,
-  async fetch({ store, params, route }) {
+  async asyncData({ store, params, route }) {
     await store.dispatch('getArticleBySlug', params.pageSlug);
-  },
-  computed: {
-    ...mapState([
-      'article'
-    ])
+
+    return {
+      article: store.state.article
+    };
   }
 };
 </script>

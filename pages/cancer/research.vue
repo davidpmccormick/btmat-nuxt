@@ -28,7 +28,6 @@
 </template>
 
 <script>
-import { mapState } from 'vuex';
 import ButtonLink from '~/components/ButtonLink';
 import TwoColumns from '~/components/TwoColumns';
 
@@ -37,15 +36,14 @@ export default {
     ButtonLink,
     TwoColumns
   },
-  async fetch({ store }) {
+  async asyncData({ store }) {
     await store.dispatch('getResearch');
-  },
-  computed: {
-    ...mapState([
-      'researchProjects',
-      'newProjects',
-      'publicationsAndAbstracts'
-    ])
+
+    return {
+      researchProjects: store.state.researchProjects,
+      newProjects: store.state.newProjects,
+      publicationsAndAbstracts: store.state.publicationsAndAbstracts
+    };
   }
 };
 </script>

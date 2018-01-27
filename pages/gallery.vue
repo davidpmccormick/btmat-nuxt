@@ -20,7 +20,6 @@
 </template>
 
 <script>
-import { mapState } from 'vuex';
 import ButtonLink from '~/components/ButtonLink';
 import CaptionedImage from '~/components/CaptionedImage';
 import TwoColumns from '~/components/TwoColumns';
@@ -31,13 +30,12 @@ export default {
     CaptionedImage,
     TwoColumns
   },
-  async fetch({ store, params }) {
+  async asyncData({ store, params }) {
     await store.dispatch('getArticleStubs', {query: {per_page: 20}, categories: 5});
-  },
-  computed: {
-    ...mapState([
-      'articleStubs'
-    ])
+
+    return {
+      articleStubs: store.state.articleStubs
+    };
   }
 };
 </script>

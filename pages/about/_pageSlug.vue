@@ -17,7 +17,6 @@
 </template>
 
 <script>
-import { mapState } from 'vuex';
 import BodyContent from '~/components/BodyContent';
 import ButtonLink from '~/components/ButtonLink';
 import CaptionedImage from '~/components/CaptionedImage';
@@ -41,13 +40,12 @@ export default {
     Standfirst,
     TwoColumns
   },
-  async fetch({ store, params }) {
+  async asyncData({ store, params }) {
     await store.dispatch('getPageById', aboutMap[params.pageSlug]);
-  },
-  computed: {
-    ...mapState([
-      'page'
-    ])
+
+    return {
+      page: store.state.page
+    };
   }
 };
 </script>
