@@ -38,7 +38,6 @@ export default {
     ...mapState([
       'articleStubs'
     ])
-  },
-  transition: 'page'
+  }
 };
 </script>

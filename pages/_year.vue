@@ -34,7 +34,6 @@ export default {
 
       return !pageSlug && !(hasYearAndPage);
     }
-  },
-  transition: 'page'
+  }
 };
 </script>

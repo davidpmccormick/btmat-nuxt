@@ -13,7 +13,6 @@
         <ButtonLink class="button-link--clear-subnav" />
       </template>
     </TwoColumns>
-
   </div>
 </template>
 
@@ -45,7 +44,6 @@ export default {
     ...mapState([
       'page'
     ])
-  },
-  transition: 'page'
+  }
 };
 </script>

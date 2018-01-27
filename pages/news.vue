@@ -17,7 +17,6 @@ export default {
     const search = route.query && route.query.search;
 
     await store.dispatch('getArticleStubs', {query: {search}});
-  },
-  transition: 'page'
+  }
 };
 </script>

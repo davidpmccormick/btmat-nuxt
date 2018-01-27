@@ -4,7 +4,6 @@ export default {
     if (!params.pageSlug) {
       return redirect('/news');
     }
-  },
-  transition: 'page'
+  }
 };
 </script>

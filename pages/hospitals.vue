@@ -13,7 +13,6 @@
         <ButtonLink />
       </template>
     </TwoColumns>
-
   </div>
 </template>
 
@@ -40,7 +39,6 @@ export default {
     ...mapState([
       'page'
     ])
-  },
-  transition: 'page'
+  }
 };
 </script>

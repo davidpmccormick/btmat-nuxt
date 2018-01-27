@@ -12,7 +12,6 @@ export default {
   },
   async fetch({ store }) {
     await store.dispatch('getArticleStubs');
-  },
-  transition: 'page'
+  }
 };
 </script>

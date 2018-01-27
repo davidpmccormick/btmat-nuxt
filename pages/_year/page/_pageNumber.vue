@@ -21,7 +21,6 @@ export default {
     const page = Number(params.pageNumber);
 
     await store.dispatch('getArticleStubs', {query: {before, after, page}});
-  },
-  transition: 'page'
+  }
 };
 </script>
