@@ -2,7 +2,7 @@
   <TwoColumns>
     <template slot="primary">
       <h2 v-if="search">Search: {{ search }}</h2>
-      <h2 v-else>News</h2>
+      <h2 v-else>News<span v-if="$route.params.year"> from {{ $route.params.year }}</span></h2>
       <ul>
         <NewsPromo v-for="article in articleStubs"
           :key="article.id"

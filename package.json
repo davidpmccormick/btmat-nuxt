@@ -15,6 +15,7 @@
   },
   "dependencies": {
     "axios": "^0.17.1",
+    "axios-cache-plugin": "^0.1.0",
     "cookie-cutter": "^0.2.0",
     "nuxt": "^1.2.1",
     "parse5": "^3.0.3"
