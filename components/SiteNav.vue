@@ -83,7 +83,7 @@ export default {
 <style lang="scss">
 .site-nav-menu-trigger {
   position: absolute;
-  top: 20px;
+  top: 1.5rem;
   right: 20px;
   z-index: 4;
   text-transform: uppercase;
@@ -96,7 +96,6 @@ export default {
   border: 3px solid $c-green;
   box-shadow: 3px 3px 0 $c-charcoal;
   transition: all 600ms ease;
-
 
   .is-mobile-nav-shown & {
     background: white;
@@ -233,7 +232,6 @@ export default {
   height: 5px;
   background: $c-green;
   transition: transform 600ms ease, width 600ms ease, background 600ms ease, color 600ms ease;
-
 
   @media (min-width: $b-large) {
     display: block;

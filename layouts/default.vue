@@ -8,7 +8,9 @@
         <nuxt />
       </div>
     </transition>
-    <SiteFooter />
+    <transition name="fade">
+      <SiteFooter />
+    </transition>
   </div>
 </template>
 

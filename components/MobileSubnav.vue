@@ -61,7 +61,7 @@ export default {
 }
 
 .mobile-subnav__item {
-  padding: 0.2rem 0;
+  padding: 0.5rem 0;
   border-bottom: 1px solid $c-keyline;
 
   &:last-child {
