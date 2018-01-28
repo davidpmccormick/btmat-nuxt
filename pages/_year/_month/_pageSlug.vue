@@ -1,5 +1,6 @@
 <template>
   <TwoColumns class="article spaced">
+    child
     <template slot="primary">
       <h2 class="article__heading" v-html="article.title"></h2>
       <Timestamp class="article__timestamp" :model="{year: article.year, month: article.month, date: article.date}" />

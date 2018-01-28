@@ -1,6 +1,6 @@
 <template>
   <div class="news">
-    <NewsList v-if="shouldDisplay" />
+    <NewsList :articleStubs="articleStubs" v-if="shouldDisplay" />
     <nuxt-child />
   </div>
 </template>
@@ -12,18 +12,23 @@ export default {
   components: {
     NewsList
   },
-  async fetch({ params, store }) {
-    if (params.pageSlug) return;
+  beforeRouteUpdate(to, from, next) {
+    if (to.name === 'year') {
+      this.$store.commit('setCurrentPage', 1);
+    }
 
-    // TODO: work out why params can be
-    // { year: '_nuxt', month: '31e907a181f1a92bc226.hot-update.json' }
-    // which will mean nextYear is NaN. Hot reload only?
-
+    next();
+  },
+  async asyncData({ params, store }) {
     const nextYear = Number(params.year) + 1;
     const after = `${params.year}-01-01T00:00:00`;
     const before = `${nextYear}-01-01T00:00:00`;
 
     await store.dispatch('getArticleStubs', {query: {before, after}});
+
+    return {
+      articleStubs: store.state.articleStubs
+    };
   },
   computed: {
     shouldDisplay() {
