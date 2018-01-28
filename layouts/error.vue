@@ -6,8 +6,9 @@
   </div>
 </template>
 
-<script>
-export default {
-  props: ['error']
-};
-</script>
+<style lang="scss">
+.error-link {
+  font-family: $f-sans;
+  color: $c-green;
+}
+</style>
