@@ -1,28 +1,30 @@
 <template>
   <div class="site-nav-wrap">
     <a class="site-nav-menu-trigger" @click="setIsMobileNavShown(!isMobileNavShown)">menu</a>
-    <nav class="site-nav">
-      <ul class="site-nav__list">
-        <li v-for="item in navItems"
-          class="site-nav__item"
-          :class="{'is-route-active': item.routesHandled.indexOf(activeRoute) > -1}"
-          :key="item.title">
-          <nuxt-link class="site-nav__link" :to="item.url">{{ item.title }}</nuxt-link>
-          <MobileSubnav v-if="item.subnavItems" :items="item.subnavItems" />
-          <transition name="fade">
-            <nav class="site-nav__subnav" v-show="showSubnav(item)">
-              <ul class="site-nav__sublist container">
-                <li class="site-nav__subitem" v-for="subnavItem in item.subnavItems" :key="subnavItem.title">
-                  <nuxt-link class="site-nav__sublink" :to="subnavItem.url">{{ subnavItem.title }}</nuxt-link>
-                </li>
-              </ul>
-            </nav>
-          </transition>
-        </li>
-      </ul>
-      <div class="site-nav__underline"
-        :style="{width: underlineWidth, transform: underlineTransform}"></div>
-    </nav>
+    <transition name="slide-side">
+      <nav v-show="isMobileNavShown" class="site-nav">
+        <ul class="site-nav__list">
+          <li v-for="item in navItems"
+            class="site-nav__item"
+            :class="{'is-route-active': item.routesHandled.indexOf(activeRoute) > -1}"
+            :key="item.title">
+            <nuxt-link class="site-nav__link" :to="item.url">{{ item.title }}</nuxt-link>
+            <MobileSubnav v-if="item.subnavItems" :items="item.subnavItems" />
+            <transition name="fade">
+              <nav class="site-nav__subnav" v-show="showSubnav(item)">
+                <ul class="site-nav__sublist container">
+                  <li class="site-nav__subitem" v-for="subnavItem in item.subnavItems" :key="subnavItem.title">
+                    <nuxt-link class="site-nav__sublink" :to="subnavItem.url">{{ subnavItem.title }}</nuxt-link>
+                  </li>
+                </ul>
+              </nav>
+            </transition>
+          </li>
+        </ul>
+        <div class="site-nav__underline"
+          :style="{width: underlineWidth, transform: underlineTransform}"></div>
+      </nav>
+    </transition>
   </div>
 </template>
 
@@ -108,26 +110,20 @@ export default {
 }
 
 .site-nav {
-  display: none;
   overflow: auto;
   position: fixed;
   top: 0;
   bottom: 0;
   left: 0;
   right: 0;
-  background: white;
+  background: $c-white;
   z-index: 3;
   padding: 20px;
-
   font-family: $f-sans;
   font-size: 0.9rem;
 
-  .is-mobile-nav-shown & {
-    display: block;
-  }
-
   @media (min-width: $b-large) {
-    display: block;
+    display: block !important;
     padding: 15px 0;
     position: relative;
     overflow: visible;

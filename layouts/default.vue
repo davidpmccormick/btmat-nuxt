@@ -3,9 +3,11 @@
     :class="{'is-mobile-nav-shown': isMobileNavShown}">
     <CookieBanner />
     <SiteHeader />
-    <div class="container main" role="main">
-      <nuxt />
-    </div>
+    <transition name="fade">
+      <div v-show="!isMobileNavShown" class="container main" role="main">
+        <nuxt />
+      </div>
+    </transition>
     <SiteFooter />
   </div>
 </template>
@@ -34,10 +36,8 @@ export default {
 .page-layout.is-mobile-nav-shown {
   .main,
   .footer {
-    display: none;
-
     @media (min-width: $b-large) {
-      display: block;
+      display: block !important;
     }
   }
 }

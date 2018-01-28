@@ -7,38 +7,7 @@
 </template>
 
 <script>
-import { mapState } from 'vuex';
-import SiteFooter from '~/components/SiteFooter';
-import SiteHeader from '~/components/SiteHeader';
-
 export default {
-  props: ['error'],
-  components: {
-    SiteFooter,
-    SiteHeader
-  },
-  computed: {
-    ...mapState([
-      'isMobileNavShown'
-    ])
-  }
+  props: ['error']
 };
 </script>
-
-<style lang="scss">
-.error-link {
-  font-family: $f-sans;
-  color: $c-green;
-}
-
-.page-layout.is-mobile-nav-shown {
-  .main,
-  .footer {
-    display: none;
-
-    @media (min-width: $b-large) {
-      display: block;
-    }
-  }
-}
-</style>

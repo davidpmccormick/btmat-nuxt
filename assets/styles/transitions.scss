@@ -8,10 +8,19 @@
   opacity: 0;
 }
 
-.page-enter-active,
-.page-leave-active {
+.page-enter-active {
   transition: all 600ms ease;
 }
+
+.page-leave-active {
+  transition: all 600ms 600ms ease;
+
+  @media (min-width: $b-large) {
+    transition-delay: 0ms;
+  }
+}
+
+
 
 .page-enter,
 .page-leave-to {
@@ -23,10 +32,23 @@
 .slide-down-enter-active,
 .slide-down-leave-active {
   transition: transform 600ms ease;
+
 }
 
 .slide-down-enter,
 .slide-down-leave-to {
   transform: translateY(100%);
+}
+
+
+.slide-side-enter-active,
+.slide-side-leave-active {
+  transition: all 600ms ease-in-out;
+}
+
+.slide-side-enter,
+.slide-side-leave-to {
+  transform: translateX(20px);
+  opacity: 0;
 }
 
