@@ -1,7 +1,7 @@
 <template>
   <div class="news">
-    <NewsList :articleStubs="articleStubs" v-if="shouldDisplay" />
-    <nuxt-child />
+    <NewsList :articleStubs="articleStubs" v-if="$route.name === 'year'" />
+    <nuxt-child v-else />
   </div>
 </template>
 
@@ -29,16 +29,6 @@ export default {
     return {
       articleStubs: store.state.articleStubs
     };
-  },
-  computed: {
-    shouldDisplay() {
-      const pageSlug = this.$route.params.pageSlug;
-      const year = this.$route.params.year;
-      const pageNumber = this.$route.params.pageNumber;
-      const hasYearAndPage = year && pageNumber;
-
-      return !pageSlug && !(hasYearAndPage);
-    }
   }
 };
 </script>
