@@ -19,7 +19,6 @@
 </template>
 
 <script>
-import { mapState } from 'vuex';
 import Archive from '~/components/Archive';
 import ButtonLink from '~/components/ButtonLink';
 import NewsPromo from '~/components/NewsPromo';
@@ -28,6 +27,7 @@ import Search from '~/components/Search';
 import TwoColumns from '~/components/TwoColumns';
 
 export default {
+  props: ['articleStubs'],
   components: {
     Archive,
     ButtonLink,
@@ -37,9 +37,6 @@ export default {
     TwoColumns
   },
   computed: {
-    ...mapState([
-      'articleStubs'
-    ]),
     search() {
       return this.$route.query.search;
     }
