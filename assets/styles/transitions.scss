@@ -8,16 +8,9 @@
   opacity: 0;
 }
 
-.page-enter-active {
-  transition: opacity $ease;
-}
-
+.page-enter-active,
 .page-leave-active {
-  transition: opacity 600ms $ease;
-
-  @media (min-width: $b-large) {
-    transition-delay: 0ms;
-  }
+  transition: opacity $ease;
 }
 
 .page-enter,
@@ -44,5 +37,9 @@
 .slide-side-leave-to {
   transform: translateX(20px);
   opacity: 0;
+}
+
+.slide-side-leave-active {
+  transition-delay: 300ms;
 }
 
