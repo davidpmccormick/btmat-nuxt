@@ -44,7 +44,7 @@ export default {
     left: 0;
     width: 0;
     background: $c-green;
-    transition: width 600ms ease;
+    transition: width $ease;
   }
 
   &:hover,

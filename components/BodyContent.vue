@@ -18,7 +18,7 @@ export default {
 
   a {
     color: inherit;
-    transition: color 600ms ease;
+    transition: color $ease;
 
     &:hover,
     &:focus {

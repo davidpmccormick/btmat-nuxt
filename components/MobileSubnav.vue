@@ -39,7 +39,7 @@ export default {
   color: $c-white;
   border: 3px solid $c-green;
   box-shadow: 3px 3px 0 $c-charcoal;
-  transition: all 600ms ease;
+  transition: all $ease;
 
   &.is-active {
     color: $c-grey;

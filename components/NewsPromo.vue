@@ -45,7 +45,7 @@ export default {
 
 .news-promo__heading {
   margin-bottom: 0.5rem;
-  transition: color 600ms ease;
+  transition: color $ease;
 }
 
 .news-promo__timestamp {

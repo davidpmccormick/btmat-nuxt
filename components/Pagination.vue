@@ -58,7 +58,7 @@ export default {
 
   .pagination__link {
     color: inherit;
-    transition: color 600ms ease;
+    transition: color $ease;
 
     &:hover,
     &:focus {

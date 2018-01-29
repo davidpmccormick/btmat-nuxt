@@ -49,7 +49,7 @@ function range(start, end) {
   padding: 0.5em 0;
   border-bottom: 1px solid $c-keyline;
   text-decoration: none;
-  transition: color 600ms ease;
+  transition: color $ease;
 
   &:hover,
   &:focus,

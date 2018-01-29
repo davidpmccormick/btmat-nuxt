@@ -14,7 +14,7 @@
   padding: 0.8em;
   display: flex;
   align-items: center;
-  transition: background 600ms ease;
+  transition: background $ease;
   text-align: center;
   display: block;
   box-shadow: 5px 5px 0 $c-charcoal;

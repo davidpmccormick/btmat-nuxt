@@ -48,7 +48,7 @@ export default {
   width: 100%;
   border: 1px solid $c-keyline;
   border-radius: 0;
-  transition: border-color 600ms ease;
+  transition: border-color $ease;
   background-clip: padding-box;
 
   &:focus,
@@ -70,7 +70,7 @@ export default {
   display: flex;
   border-radius: 0;
   font-size: 1rem;
-  transition: all 600ms ease;
+  transition: all $ease;
   border: 0;
   border-left: 1px solid $c-keyline;
   display: flex;

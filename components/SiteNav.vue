@@ -95,7 +95,7 @@ export default {
   padding: 0.2rem 0.4rem;
   border: 3px solid $c-green;
   box-shadow: 3px 3px 0 $c-charcoal;
-  transition: all 600ms ease;
+  transition: all $ease;
 
   .is-mobile-nav-shown & {
     background: white;
@@ -195,7 +195,7 @@ export default {
   text-decoration: none;
   color: inherit;
   text-transform: uppercase;
-  transition: color 600ms ease;
+  transition: color $ease;
 }
 
 .site-nav__link {
@@ -208,7 +208,7 @@ export default {
 
 .site-nav__sublink {
   position: relative;
-  transition: all 600ms ease;
+  transition: all $ease;
   font-size: 0.7rem;
   padding: 0.3em 0.6em 0.2em;
   display: inline-block;
@@ -231,7 +231,7 @@ export default {
   bottom: 100%;
   height: 5px;
   background: $c-green;
-  transition: transform 600ms ease, width 600ms ease, background 600ms ease, color 600ms ease;
+  transition: transform $ease, width $ease, background $ease, color $ease;
 
   @media (min-width: $b-large) {
     display: block;
