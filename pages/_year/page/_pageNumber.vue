@@ -1,7 +1,5 @@
 <template>
-  <div class="news">
-    <NewsList :articleStubs="articleStubs" />
-  </div>
+  <NewsList :articleStubs="articleStubs" />
 </template>
 
 <script>
