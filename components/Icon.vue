@@ -1,12 +1,13 @@
 <template>
   <div class="icon">
-    <canvas class="icon__canvas" height="100" width="100"></canvas>
+    <canvas class="icon__canvas" :height="height" :width="width"></canvas>
     <component :is="icon" />
   </div>
 </template>
 
 <script>
 import Icons from '~/icons';
+
 export default {
   components: {
     Icons
@@ -15,6 +16,12 @@ export default {
   computed: {
     icon() {
       return Icons[this.name];
+    },
+    height() {
+      return this.icon.data().viewBox.split(' ')[2];
+    },
+    width() {
+      return this.icon.data().viewBox.split(' ')[3];
     }
   }
 };
