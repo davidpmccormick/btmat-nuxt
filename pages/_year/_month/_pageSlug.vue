@@ -74,4 +74,19 @@ export default {
   .article__timestamp {
     margin-bottom: 3rem;
   }
+
+  .article__related {
+    padding-top: 2em;
+    position: relative;
+
+    &:before {
+      content: '';
+      position: absolute;
+      height: 3px;
+      width: 100px;
+      background: $c-green;
+      top: 0;
+      left: 0;
+    }
+  }
 </style>
