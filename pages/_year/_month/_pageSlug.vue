@@ -9,6 +9,20 @@
         <CaptionedImage :key="component.id" v-else-if="component.type === 'image'" :model="component.value" />
         <BodyContent v-else :key="component.id" :model="component.value.html" />
       </template>
+
+      <div class="article__related" v-if="article.relatedArticles">
+        <h2>Related articles</h2>
+        <ul>
+          <NewsPromo v-for="relatedArticle in article.relatedArticles" :key="relatedArticle.slug" :model="{
+            year: relatedArticle.year,
+            month: relatedArticle.month,
+            date: relatedArticle.date,
+            slug: relatedArticle.slug,
+            title: relatedArticle.title,
+            excerpt: relatedArticle.excerpt
+          }" />
+        </ul>
+      </div>
     </template>
     <template slot="secondary">
       <Archive />
@@ -23,6 +37,7 @@ import Archive from '~/components/Archive';
 import BodyContent from '~/components/BodyContent';
 import ButtonLink from '~/components/ButtonLink';
 import CaptionedImage from '~/components/CaptionedImage';
+import NewsPromo from '~/components/NewsPromo';
 import Search from '~/components/Search';
 import Standfirst from '~/components/Standfirst';
 import Timestamp from '~/components/Timestamp';
@@ -33,6 +48,7 @@ export default {
     Archive,
     BodyContent,
     ButtonLink,
+    NewsPromo,
     CaptionedImage,
     Search,
     Standfirst,

@@ -56,13 +56,32 @@ export async function getArticleBySlug(slug) {
   });
   const article = data[0];
   const components = bodyParser(article.content.rendered);
+  const relatedArticles = article['jetpack-related-posts'].map(a => {
+    const fullDate = new Date(a.date);
+    const year = fullDate.getFullYear();
+    const month = (fullDate.getMonth() + 1).toString();
+    const paddedMonth = month.length < 2 ? `0${month}` : month;
+    const date = fullDate.getDate();
+    const splitUrl = a.url.split('/');
+    const slug = splitUrl[splitUrl.length - 2];
+
+    return {
+      title: a.title,
+      excerpt: a.excerpt,
+      slug: slug,
+      year: year,
+      month: paddedMonth,
+      date: date
+    };
+  });
 
   return {
     title: article.title.rendered,
     components: components,
     year: article.date.slice(0, 4),
     month: article.date.slice(5, 7),
-    date: article.date.slice(8, 10)
+    date: article.date.slice(8, 10),
+    relatedArticles: relatedArticles
   };
 }
 

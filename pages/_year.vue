@@ -29,6 +29,7 @@ export default {
     return {
       articleStubs: store.state.articleStubs
     };
-  }
+  },
+  scrollToTop: true
 };
 </script>
