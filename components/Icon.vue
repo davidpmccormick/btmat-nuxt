@@ -1,16 +1,22 @@
 <template>
   <div class="icon">
-    <canvas v-if="name === 'clock'" class="icon__canvas" height="100" width="100"></canvas>
-    <svg v-if="name === 'clock'" class="icon__svg" viewBox="0 0 100 100" x="0px" y="0px"><path d="M50,3.2A46.8,46.8,0,1,0,96.8,50,46.85,46.85,0,0,0,50,3.2Zm0,83.6A36.8,36.8,0,1,1,86.8,50,36.84,36.84,0,0,1,50,86.8Z"/><path d="M54,48.46V26.79a5,5,0,0,0-10,0v24a5,5,0,0,0,1.78,3.83l21,17.67a5,5,0,1,0,6.44-7.65Z"/></svg>
-
-    <canvas v-if="name === 'image'" class="icon__canvas" height="100" width="125"></canvas>
-    <svg v-if="name === 'image'" class="icon__svg" viewBox="0 0 100 125"><path d="M82.33,74V26a3,3,0,0,0-3-3H20.67a3,3,0,0,0-3,3V74a3,3,0,0,0,3,3H79.33A3,3,0,0,0,82.33,74Zm-6-45V57.34L62.24,50.94a3,3,0,0,0-3,.29l-13,9.36L23.67,48.85V29ZM23.67,55.61l17.08,8.9L31.7,71h-8ZM42,71,61.34,57.12l15,6.82V71Z"/><path d="M42,50.57a8.9,8.9,0,1,0-8.9-8.9A8.91,8.91,0,0,0,42,50.57Zm0-11.8a2.9,2.9,0,1,1-2.9,2.9A2.9,2.9,0,0,1,42,38.77Z"/></svg>
+    <canvas class="icon__canvas" height="100" width="100"></canvas>
+    <component :is="icon" />
   </div>
 </template>
 
 <script>
+import Icons from '~/icons';
 export default {
-  props: ['name']
+  components: {
+    Icons
+  },
+  props: ['name'],
+  computed: {
+    icon() {
+      return Icons[this.name];
+    }
+  }
 };
 </script>
 

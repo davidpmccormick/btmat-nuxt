@@ -2,7 +2,7 @@
   <figure class="captioned-image">
     <img class="captioned-image__image" :src="model.src" :alt="model.alt" />
     <figcaption class="captioned-image__caption" v-if="model.caption">
-      <Icon name="image" />
+      <Icon name="Image" />
       <span v-html="model.caption"></span>
     </figcaption>
   </figure>

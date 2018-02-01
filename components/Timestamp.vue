@@ -1,6 +1,6 @@
 <template>
   <div class="timestamp">
-    <Icon name="clock" class="timestamp__icon" />
+    <Icon name="Clock" class="timestamp__icon" />
     {{ displayDate }}
   </div>
 </template>
