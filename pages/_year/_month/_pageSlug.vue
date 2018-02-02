@@ -44,11 +44,17 @@ import Timestamp from '~/components/Timestamp';
 import TwoColumns from '~/components/TwoColumns';
 
 export default {
-  head: {
-    titleTemplate: '%s | Article',
-    meta: [
-      { hid: 'description', name: 'description', content: 'BTMAT news article' }
-    ]
+  head() {
+    return {
+      titleTemplate: `%s | ${this.article.title}`,
+      meta: [
+        {
+          hid: 'description',
+          name: 'description',
+          content: this.article.components.find(a => a.type === 'standfirst') && this.article.components.find(a => a.type === 'standfirst').value.html
+        }
+      ]
+    };
   },
   components: {
     Archive,
