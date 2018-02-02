@@ -17,11 +17,14 @@ export default {
     icon() {
       return Icons[this.name];
     },
+    viewBox() {
+      return this.icon.data().viewBox.split(' ');
+    },
     height() {
-      return this.icon.data().viewBox.split(' ')[2];
+      return this.viewBox[2];
     },
     width() {
-      return this.icon.data().viewBox.split(' ')[3];
+      return this.viewBox[3];
     }
   }
 };
