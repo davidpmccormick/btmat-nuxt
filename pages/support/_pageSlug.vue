@@ -29,6 +29,12 @@ const supportMap = {
 };
 
 export default {
+  head: {
+    titleTemplate: '%s | Support us',
+    meta: [
+      { hid: 'description', name: 'description', content: 'Support BTMAT' }
+    ]
+  },
   components: {
     BodyContent,
     ButtonLink,

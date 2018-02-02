@@ -7,14 +7,14 @@ module.exports = {
     meta: [
       { charset: 'utf-8' },
       { name: 'viewport', content: 'width=device-width, initial-scale=1' },
-      { hid: 'description', name: 'description', content: 'Nuxt.js project' }
+      { hid: 'description', name: 'description', content: 'Beryl Thyer Memorial Africa Trust | Caring for African children with cancer' }
     ],
     script: [
       { src: 'https://cdn.polyfill.io/v2/polyfill.js?features=Array.prototype.includes,Array.prototype.find,Promise' }
     ],
     link: [
       { rel: 'stylesheet', href: 'https://use.typekit.net/lxm7jly.css' },
-      { rel: 'icon', type: 'image/x-icon', href: '/favicon.ico' }
+      { rel: 'icon', type: 'image/png', href: '/favicon.png' }
     ]
   },
   /*

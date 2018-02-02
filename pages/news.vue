@@ -9,6 +9,12 @@
 import NewsList from '~/components/NewsList';
 
 export default {
+  head: {
+    titleTemplate: '%s | News',
+    meta: [
+      { hid: 'description', name: 'description', content: 'Latest news from BTMAT' }
+    ]
+  },
   components: {
     NewsList
   },

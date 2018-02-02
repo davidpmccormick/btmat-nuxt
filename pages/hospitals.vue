@@ -24,6 +24,12 @@ import Standfirst from '~/components/Standfirst';
 import TwoColumns from '~/components/TwoColumns';
 
 export default {
+  head: {
+    titleTemplate: '%s | Hospitals',
+    meta: [
+      { hid: 'description', name: 'description', content: 'BTMAT hospitals' }
+    ]
+  },
   components: {
     BodyContent,
     ButtonLink,

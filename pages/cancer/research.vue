@@ -32,6 +32,12 @@ import ButtonLink from '~/components/ButtonLink';
 import TwoColumns from '~/components/TwoColumns';
 
 export default {
+  head: {
+    titleTemplate: '%s | Cancers',
+    meta: [
+      { hid: 'description', name: 'description', content: 'BTMAT and cancer' }
+    ]
+  },
   components: {
     ButtonLink,
     TwoColumns

@@ -34,6 +34,12 @@ const cancerMap = {
 };
 
 export default {
+  head: {
+    titleTemplate: '%s | Cancers',
+    meta: [
+      { hid: 'description', name: 'description', content: 'BTMAT and cancer' }
+    ]
+  },
   components: {
     BodyContent,
     ButtonLink,

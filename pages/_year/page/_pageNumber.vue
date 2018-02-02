@@ -6,6 +6,12 @@
 import NewsList from '~/components/NewsList';
 
 export default {
+  head: {
+    titleTemplate: '%s | Paginated news',
+    meta: [
+      { hid: 'description', name: 'description', content: 'BTMAT articles' }
+    ]
+  },
   components: {
     NewsList
   },

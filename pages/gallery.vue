@@ -25,6 +25,12 @@ import CaptionedImage from '~/components/CaptionedImage';
 import TwoColumns from '~/components/TwoColumns';
 
 export default {
+  head: {
+    titleTemplate: '%s | Gallery',
+    meta: [
+      { hid: 'description', name: 'description', content: 'BTMAT image gallery' }
+    ]
+  },
   components: {
     ButtonLink,
     CaptionedImage,

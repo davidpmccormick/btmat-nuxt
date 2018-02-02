@@ -25,6 +25,12 @@ import Standfirst from '~/components/Standfirst';
 import TwoColumns from '~/components/TwoColumns';
 
 export default {
+  head: {
+    titleTemplate: '%s | Press',
+    meta: [
+      { hid: 'description', name: 'description', content: 'BTMAT press' }
+    ]
+  },
   components: {
     BodyContent,
     ButtonLink,

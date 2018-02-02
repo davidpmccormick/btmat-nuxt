@@ -33,6 +33,12 @@ const aboutMap = {
 };
 
 export default {
+  head: {
+    titleTemplate: '%s | About the trust',
+    meta: [
+      { hid: 'description', name: 'description', content: 'BTMAT trust information' }
+    ]
+  },
   components: {
     BodyContent,
     ButtonLink,

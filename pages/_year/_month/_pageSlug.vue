@@ -44,6 +44,12 @@ import Timestamp from '~/components/Timestamp';
 import TwoColumns from '~/components/TwoColumns';
 
 export default {
+  head: {
+    titleTemplate: '%s | Article',
+    meta: [
+      { hid: 'description', name: 'description', content: 'BTMAT news article' }
+    ]
+  },
   components: {
     Archive,
     BodyContent,
