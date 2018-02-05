@@ -85,9 +85,8 @@ export default {
   margin-bottom: 20px;
   width: 100%;
   padding-bottom: 1rem;
-  border: 1px solid $c-keyline;
   background: $c-white;
-
+  box-shadow: 0 1px 1px 0 rgba($c-charcoal, 0.1);
 
   @media (min-width: 600px) {
     margin-right: 10px;

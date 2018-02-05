@@ -163,7 +163,7 @@ export default {
 <style lang="scss">
 .site-header {
   z-index: 1;
-  top: -135px;
+  top: -130px;
   font-family: $f-sans;
   font-weight: bold;
   background: $c-white;
