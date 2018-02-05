@@ -18,6 +18,10 @@ export default {
   components: {
     NewsList
   },
+  validate ({ params }) {
+    // Must be a four-digit number
+    return /^\d\d\d\d$/.test(params.year);
+  },
   beforeRouteUpdate(to, from, next) {
     if (to.name === 'year') {
       this.$store.commit('setCurrentPage', 1);
