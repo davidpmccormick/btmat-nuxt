@@ -5,7 +5,11 @@
     <nuxt-link class="error-link" to="/">Try the home page.</nuxt-link>
   </div>
 </template>
-
+<script>
+export default {
+  props: ['error']
+};
+</script>
 <style lang="scss">
 .error-link {
   font-family: $f-sans;
