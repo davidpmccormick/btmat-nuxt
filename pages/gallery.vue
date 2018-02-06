@@ -36,12 +36,19 @@ export default {
     CaptionedImage,
     TwoColumns
   },
-  async asyncData({ store, params }) {
-    await store.dispatch('getArticleStubs', {query: {per_page: 20}, categories: 5});
+  async asyncData({ store, params, error }) {
+    try {
+      await store.dispatch('getArticleStubs', {query: {per_page: 20}, categories: 5});
 
-    return {
-      articleStubs: store.state.articleStubs
-    };
+      return {
+        articleStubs: store.state.articleStubs
+      };
+    } catch (err) {
+      const maybeStatus = err.response && err.response.status;
+      const status = maybeStatus || 404;
+
+      error({ statusCode: status });
+    }
   }
 };
 </script>

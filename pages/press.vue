@@ -38,12 +38,19 @@ export default {
     Standfirst,
     TwoColumns
   },
-  async asyncData({ store }) {
-    await store.dispatch('getPostById', 204);
+  async asyncData({ store, error }) {
+    try {
+      await store.dispatch('getPostById', 204);
 
-    return {
-      page: store.state.page
-    };
+      return {
+        page: store.state.page
+      };
+    } catch (err) {
+      const maybeStatus = err.response && err.response.status;
+      const status = maybeStatus || 404;
+
+      error({ statusCode: status });
+    }
   }
 };
 </script>

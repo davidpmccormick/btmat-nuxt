@@ -68,12 +68,19 @@ export default {
     TwoColumns
   },
   scrollToTop: true,
-  async asyncData({ store, params, route }) {
-    await store.dispatch('getArticleBySlug', params.pageSlug);
+  async asyncData({ store, params, route, error }) {
+    try {
+      await store.dispatch('getArticleBySlug', params.pageSlug);
 
-    return {
-      article: store.state.article
-    };
+      return {
+        article: store.state.article
+      };
+    } catch (err) {
+      const maybeStatus = err.response && err.response.status;
+      const status = maybeStatus || 404;
+
+      error({ statusCode: status });
+    }
   }
 };
 </script>

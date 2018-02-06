@@ -46,12 +46,19 @@ export default {
     Standfirst,
     TwoColumns
   },
-  async asyncData({ store, params }) {
-    await store.dispatch('getPageById', aboutMap[params.pageSlug]);
+  async asyncData({ store, params, error }) {
+    try {
+      await store.dispatch('getPageById', aboutMap[params.pageSlug]);
 
-    return {
-      page: store.state.page
-    };
+      return {
+        page: store.state.page
+      };
+    } catch (err) {
+      const maybeStatus = err.response && err.response.status;
+      const status = maybeStatus || 404;
+
+      error({ statusCode: status });
+    }
   }
 };
 </script>

@@ -16,8 +16,15 @@ export default {
   components: {
     Cards
   },
-  async fetch({ store }) {
-    await store.dispatch('getArticleStubs');
+  async fetch({ store, error }) {
+    try {
+      await store.dispatch('getArticleStubs');
+    } catch (err) {
+      const maybeStatus = err.response && err.response.status;
+      const status = maybeStatus || 404;
+
+      error({ statusCode: status });
+    }
   }
 };
 </script>

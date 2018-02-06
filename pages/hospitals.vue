@@ -37,12 +37,19 @@ export default {
     Standfirst,
     TwoColumns
   },
-  async asyncData({ store, params }) {
-    await store.dispatch('getPageById', 7);
+  async asyncData({ store, params, error }) {
+    try {
+      await store.dispatch('getPageById', 7);
 
-    return {
-      page: store.state.page
-    };
+      return {
+        page: store.state.page
+      };
+    } catch (err) {
+      const maybeStatus = err.response && err.response.status;
+      const status = maybeStatus || 404;
+
+      error({ statusCode: status });
+    }
   }
 };
 </script>

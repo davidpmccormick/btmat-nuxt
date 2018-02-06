@@ -42,14 +42,21 @@ export default {
     ButtonLink,
     TwoColumns
   },
-  async asyncData({ store }) {
-    await store.dispatch('getResearch');
+  async asyncData({ store, error }) {
+    try {
+      await store.dispatch('getResearch');
 
-    return {
-      researchProjects: store.state.researchProjects,
-      newProjects: store.state.newProjects,
-      publicationsAndAbstracts: store.state.publicationsAndAbstracts
-    };
+      return {
+        researchProjects: store.state.researchProjects,
+        newProjects: store.state.newProjects,
+        publicationsAndAbstracts: store.state.publicationsAndAbstracts
+      };
+    } catch (err) {
+      const maybeStatus = err.response && err.response.status;
+      const status = maybeStatus || 404;
+
+      error({ statusCode: status });
+    }
   }
 };
 </script>
