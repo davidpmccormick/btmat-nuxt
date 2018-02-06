@@ -208,20 +208,14 @@ export default {
 
 .site-nav__sublink {
   position: relative;
-  transition: all $ease;
   font-size: 0.7rem;
-  padding: 0.3em 0.6em 0.2em;
+  padding: 0.3em 0 0.2em;
   display: inline-block;
 
   &:hover,
   &:focus,
   &.nuxt-link-exact-active {
-    background: $c-green;
-    color: $c-white;
-  }
-
-  &.nuxt-link-exact-active {
-    box-shadow: 3px 3px 0 $c-charcoal;
+    color: $c-green;
   }
 }
 
