@@ -1,7 +1,7 @@
 <template>
   <div class="site-nav-wrap">
     <a class="site-nav-menu-trigger" @click="setIsMobileNavShown(!isMobileNavShown)">menu</a>
-    <transition name="slide-side">
+    <transition name="scale">
       <nav v-show="isMobileNavShown" class="site-nav">
         <ul class="site-nav__list">
           <li v-for="item in navItems"

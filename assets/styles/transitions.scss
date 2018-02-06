@@ -28,18 +28,18 @@
   transform: translateY(100%);
 }
 
-.slide-side-enter-active,
-.slide-side-leave-active {
+.scale-enter-active,
+.scale-leave-active {
   transition: all $ease;
 }
 
-.slide-side-enter,
-.slide-side-leave-to {
-  transform: translateX(20px);
+.scale-enter,
+.scale-leave-to {
+  transform: scale(0.95);
   opacity: 0;
 }
 
-.slide-side-leave-active {
+.scale-leave-active {
   transition-delay: 300ms;
 }
 
