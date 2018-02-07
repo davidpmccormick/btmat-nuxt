@@ -42,23 +42,14 @@ export default {
     ButtonLink,
     TwoColumns
   },
-  async asyncData({ store, error }) {
-    try {
-      // await store.dispatch('getResearch');
-      throw new Error();
-      // return {
-      //   researchProjects: store.state.researchProjects,
-      //   newProjects: store.state.newProjects,
-      //   publicationsAndAbstracts: store.state.publicationsAndAbstracts
-      // };
-    } catch (err) {
-      throw new Error();
+  async asyncData({ store }) {
+    await store.dispatch('getResearch');
 
-      // const maybeStatus = err.response && err.response.status;
-      // const status = maybeStatus || 404;
-
-      // error({ statusCode: status });
-    }
+    return {
+      researchProjects: store.state.researchProjects,
+      newProjects: store.state.newProjects,
+      publicationsAndAbstracts: store.state.publicationsAndAbstracts
+    };
   }
 };
 </script>
