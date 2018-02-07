@@ -21,7 +21,7 @@ module.exports = {
     '@nuxtjs/sentry'
   ],
   sentry: {
-    public_dsn: 'https://dfda62d8d7b849d28eeed952e5edd2c7@sentry.io/284042'
+    dsn: 'https://dfda62d8d7b849d28eeed952e5edd2c7:da9df06b4d774989b0b639fb611a3ebe@sentry.io/284042'
   },
   /*
   ** Customize the progress bar color
