@@ -188,10 +188,6 @@ export default {
 .site-header__inner {
   padding: 20px 0 10px;
   border-bottom: 1px solid $c-keyline;
-
-  @media (min-width: $b-large) {
-    border-bottom-width: 5px;
-  }
 }
 
 .site-header__svg {

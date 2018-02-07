@@ -222,8 +222,9 @@ export default {
 .site-nav__underline {
   display: none;
   position: absolute;
-  bottom: 100%;
-  height: 5px;
+  top: 61%;
+  height: 2px;
+  border-radius: 4px;
   background: $c-green;
   transition: transform $ease, width $ease, background $ease, color $ease;
 
