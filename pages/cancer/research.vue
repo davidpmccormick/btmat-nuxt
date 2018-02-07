@@ -44,18 +44,20 @@ export default {
   },
   async asyncData({ store, error }) {
     try {
-      await store.dispatch('getResearch');
-
-      return {
-        researchProjects: store.state.researchProjects,
-        newProjects: store.state.newProjects,
-        publicationsAndAbstracts: store.state.publicationsAndAbstracts
-      };
+      // await store.dispatch('getResearch');
+      throw new Error();
+      // return {
+      //   researchProjects: store.state.researchProjects,
+      //   newProjects: store.state.newProjects,
+      //   publicationsAndAbstracts: store.state.publicationsAndAbstracts
+      // };
     } catch (err) {
-      const maybeStatus = err.response && err.response.status;
-      const status = maybeStatus || 404;
+      throw new Error();
 
-      error({ statusCode: status });
+      // const maybeStatus = err.response && err.response.status;
+      // const status = maybeStatus || 404;
+
+      // error({ statusCode: status });
     }
   }
 };
