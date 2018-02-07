@@ -17,6 +17,12 @@ module.exports = {
       { rel: 'icon', type: 'image/png', href: '/favicon.png' }
     ]
   },
+  modules: [
+    '@nuxtjs/sentry'
+  ],
+  sentry: {
+    public_dsn: 'https://dfda62d8d7b849d28eeed952e5edd2c7@sentry.io/284042'
+  },
   /*
   ** Customize the progress bar color
   */
