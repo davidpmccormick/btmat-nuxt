@@ -2,7 +2,7 @@ import axios from 'axios';
 import wrapper from 'axios-cache-plugin';
 import { bodyParser } from '../utils/body-parser';
 
-const baseUrl = 'http://btmat.org.uk/wp-json/wp/v2';
+const baseUrl = 'https://api.btmat.org.uk/wp-json/wp/v2';
 
 const http = wrapper(axios, {
   maxCacheSize: 100
