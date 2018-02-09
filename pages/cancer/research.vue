@@ -21,7 +21,7 @@
             :key="project.id">{{ project.title }}</li>
         </ul>
 
-        <ButtonLink class="button-link--clear-subnav" />
+        <ButtonLink />
       </template>
     </TwoColumns>
   </div>

@@ -138,7 +138,6 @@
                 c-0.1-0.1-0.3-0.2-0.3-0.4c-0.1-0.1-0.1-0.3-0.1-0.5c0-0.2,0-0.3,0-0.5V4.3z"/>
             </svg>
           </nuxt-link>
-          <span class="site-header__subtitle">Beryl Thyer Memorial Africa Trust, caring for African children with cancer.</span>
         </h1>
       </div>
     </div>
@@ -163,7 +162,7 @@ export default {
 <style lang="scss">
 .site-header {
   z-index: 1;
-  top: -130px;
+  top: -81px;
   font-family: $f-sans;
   font-weight: bold;
   background: $c-white;
@@ -186,8 +185,13 @@ export default {
 }
 
 .site-header__inner {
-  padding: 20px 0 10px;
+  padding: 10px 0;
   border-bottom: 1px solid $c-keyline;
+
+  @media (min-width: $b-large) {
+    padding-top: 20px;
+    border-bottom: 0;
+  }
 }
 
 .site-header__svg {
@@ -209,17 +213,5 @@ export default {
 .site-header__link {
   color: $c-charcoal;
   text-decoration: none;
-}
-
-.site-header__subtitle {
-  font-size: 0.8rem;
-  display: block;
-  margin-top: 0.5em;
-  margin-bottom: 1em;
-  line-height: 1.3;
-
-  @media (min-width: $b-small) {
-    font-size: 1rem;
-  }
 }
 </style>

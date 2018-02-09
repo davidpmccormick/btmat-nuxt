@@ -83,7 +83,7 @@ export default {
 <style lang="scss">
 .site-nav-menu-trigger {
   position: absolute;
-  top: 1.5rem;
+  top: 1rem;
   right: 20px;
   z-index: 4;
   text-transform: uppercase;
@@ -117,13 +117,13 @@ export default {
   right: 0;
   background: $c-white;
   z-index: 3;
-  padding: 20px;
+  padding: 10px 20px 20px;
   font-family: $f-sans;
   font-size: 0.9rem;
 
   @media (min-width: $b-large) {
     display: block !important;
-    padding: 15px 0;
+    padding: 10px 0;
     position: relative;
     overflow: visible;
   }
@@ -138,10 +138,12 @@ export default {
 
 .site-nav__subnav {
   display: none;
-  background: $c-white;
+  background: $c-beige;
   left: -20px;
   right: -20px;
   top: 100%;
+  margin-top: 1px;
+  padding-top: 10px;
   padding-bottom: 12px;
 
   @media (min-width: $b-large) {
@@ -157,13 +159,7 @@ export default {
       right: 0;
     }
 
-    &:before {
-      height: 1px;
-      background: $c-keyline;
-    }
-
     &:after {
-      margin-top: 1px;
       height: 5px;
       background: rgba($c-beige, 0.6);
     }
@@ -180,7 +176,7 @@ export default {
   border-bottom: 1px solid $c-keyline;
 
   @media (min-width: $b-large) {
-    margin-right: 2em;
+    margin-right: 1.6em;
     padding: 0;
     border-bottom: 0;
   }
@@ -222,7 +218,7 @@ export default {
 .site-nav__underline {
   display: none;
   position: absolute;
-  top: 61%;
+  top: 100%;
   height: 2px;
   border-radius: 4px;
   background: $c-green;

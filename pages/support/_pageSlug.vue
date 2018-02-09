@@ -10,7 +10,7 @@
         </template>
       </template>
       <template slot="secondary">
-        <ButtonLink class="button-link--clear-subnav" />
+        <ButtonLink />
       </template>
     </TwoColumns>
   </div>

@@ -6,7 +6,7 @@
 
 <style lang="scss">
 .button-link {
-  top: 66px;
+  top: 90px;
   text-decoration: none;
   color: $c-white;
   background: $c-green;
@@ -26,10 +26,6 @@
   &:hover,
   &:focus {
     background: rgba($c-green, 0.8);
-  }
-
-  &.button-link--clear-subnav {
-    top: 100px;
   }
 }
 
