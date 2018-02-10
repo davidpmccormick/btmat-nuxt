@@ -83,7 +83,7 @@ export default {
 <style lang="scss">
 .site-nav-menu-trigger {
   position: absolute;
-  top: 1rem;
+  top: 1.2rem;
   right: 20px;
   z-index: 4;
   text-transform: uppercase;

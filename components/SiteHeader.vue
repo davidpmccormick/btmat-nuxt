@@ -195,8 +195,12 @@ export default {
 }
 
 .site-header__svg {
-  height: 40px;
+  height: 35px;
   fill: $c-green;
+
+  @media (min-width: $b-medium) {
+    height: 40px;
+  }
 
   path {
     box-shadow: 5px 5px 0 $c-charcoal;
