@@ -1,35 +1,37 @@
 <template>
-  <TwoColumns class="article spaced">
-    child
-    <template slot="primary">
-      <h2 class="article__heading" v-html="article.title"></h2>
-      <Timestamp class="article__timestamp" :model="{year: article.year, month: article.month, date: article.date}" />
-      <template v-for="component in article.components">
-        <Standfirst :key="component.id" v-if="component.type === 'standfirst'" :model="component.value" />
-        <CaptionedImage :key="component.id" v-else-if="component.type === 'image'" :model="component.value" />
-        <BodyContent v-else :key="component.id" :model="component.value.html" />
-      </template>
+  <div>
+    <h2 class="article__heading" v-html="article.title"></h2>
+    <Timestamp class="article__timestamp" :model="{year: article.year, month: article.month, date: article.date}" />
+    <TwoColumns class="article spaced">
+      child
+      <template slot="primary">
+        <template v-for="component in article.components">
+          <Standfirst :key="component.id" v-if="component.type === 'standfirst'" :model="component.value" />
+          <CaptionedImage :key="component.id" v-else-if="component.type === 'image'" :model="component.value" />
+          <BodyContent v-else :key="component.id" :model="component.value.html" />
+        </template>
 
-      <div class="article__related" v-if="article.relatedArticles">
-        <h2>Related articles</h2>
-        <ul>
-          <NewsPromo v-for="relatedArticle in article.relatedArticles" :key="relatedArticle.slug" :model="{
-            year: relatedArticle.year,
-            month: relatedArticle.month,
-            date: relatedArticle.date,
-            slug: relatedArticle.slug,
-            title: relatedArticle.title,
-            excerpt: relatedArticle.excerpt
-          }" />
-        </ul>
-      </div>
-    </template>
-    <template slot="secondary">
-      <Archive />
-      <Search />
-      <ButtonLink class="article__button-link" />
-    </template>
-  </TwoColumns>
+        <div class="article__related" v-if="article.relatedArticles">
+          <h2>Related articles</h2>
+          <ul>
+            <NewsPromo v-for="relatedArticle in article.relatedArticles" :key="relatedArticle.slug" :model="{
+              year: relatedArticle.year,
+              month: relatedArticle.month,
+              date: relatedArticle.date,
+              slug: relatedArticle.slug,
+              title: relatedArticle.title,
+              excerpt: relatedArticle.excerpt
+            }" />
+          </ul>
+        </div>
+      </template>
+      <template slot="secondary">
+        <Archive />
+        <Search />
+        <ButtonLink class="article__button-link" />
+      </template>
+    </TwoColumns>
+  </div>
 </template>
 
 <script>
@@ -87,7 +89,15 @@ export default {
 
 <style lang="scss">
   .article__heading {
-    margin-bottom: 0;
+    margin-bottom: 0.4em;
+
+    @media (min-width: $b-large) {
+      padding-right: 26%;
+    }
+
+    @media (min-width: $b-x-large) {
+      padding-right: 30%;
+    }
   }
 
   .article__timestamp {

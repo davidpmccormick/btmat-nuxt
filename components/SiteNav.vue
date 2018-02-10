@@ -145,23 +145,21 @@ export default {
   margin-top: 1px;
   padding-top: 10px;
   padding-bottom: 12px;
+  border-bottom: 1px solid $c-keyline;
 
   @media (min-width: $b-large) {
     display: block;
     position: absolute;
 
-    &:before,
     &:after {
       content: '';
       position: absolute;
       top: 100%;
       left: 0;
       right: 0;
-    }
-
-    &:after {
       height: 5px;
       background: rgba($c-beige, 0.6);
+      margin-top: 1px;
     }
   }
 
@@ -183,7 +181,7 @@ export default {
 }
 
 .site-nav__subitem {
-  margin-right: 1em;
+  margin-right: 1.4em;
 }
 
 .site-nav__link,

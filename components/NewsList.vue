@@ -1,21 +1,23 @@
 <template>
-  <TwoColumns>
-    <template slot="primary">
-      <h2 v-if="search">Search: {{ search }}</h2>
-      <h2 v-else>News<span v-if="$route.params.year"> from {{ $route.params.year }}</span></h2>
-      <ul>
-        <NewsPromo v-for="article in articleStubs"
-          :key="article.id"
-          :model="article" />
-      </ul>
-      <Pagination />
-    </template>
-    <template slot="secondary">
-      <Archive />
-      <Search />
-      <ButtonLink />
-    </template>
-  </TwoColumns>
+  <div>
+    <h2 v-if="search">Search: {{ search }}</h2>
+    <h2 v-else>News<span v-if="$route.params.year"> from {{ $route.params.year }}</span></h2>
+    <TwoColumns>
+      <template slot="primary">
+        <ul>
+          <NewsPromo v-for="article in articleStubs"
+            :key="article.id"
+            :model="article" />
+        </ul>
+        <Pagination />
+      </template>
+      <template slot="secondary">
+        <Archive />
+        <Search />
+        <ButtonLink />
+      </template>
+    </TwoColumns>
+  </div>
 </template>
 
 <script>
