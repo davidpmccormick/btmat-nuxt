@@ -13,7 +13,6 @@ module.exports = {
       { src: 'https://cdn.polyfill.io/v2/polyfill.js?features=Array.prototype.includes,Array.prototype.find,Promise' }
     ],
     link: [
-      { rel: 'stylesheet', href: 'https://use.typekit.net/lxm7jly.css' },
       { rel: 'icon', type: 'image/png', href: '/favicon.png' }
     ]
   },

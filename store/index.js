@@ -9,6 +9,7 @@ import {
 const createStore = () => {
   return new Vuex.Store({
     state: {
+      fontsLoaded: false,
       researchProjects: null,
       newProjects: null,
       publicationsAndAbstracts: null,
@@ -205,6 +206,9 @@ const createStore = () => {
       },
       setPublicationsAndAbstracts(state, value) {
         state.publicationsAndAbstracts = value;
+      },
+      setFontsLoaded(state) {
+        state.fontsLoaded = true;
       }
     }
   });

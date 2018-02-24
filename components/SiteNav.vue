@@ -50,11 +50,17 @@ export default {
   updated() {
     this.updateNav();
   },
+  watch: {
+    fontsLoaded() {
+      this.updateNav();
+    }
+  },
   computed: {
     ...mapState([
       'navItems',
       'activeRoute',
-      'isMobileNavShown'
+      'isMobileNavShown',
+      'fontsLoaded'
     ]),
     underlineWidth() {
       return `${this.itemOffsetWidth}px`;
