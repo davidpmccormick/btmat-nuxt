@@ -4,7 +4,7 @@
     <h2 v-else class="search__heading">Search</h2>
     <form class="search__form" action="/news" method="GET">
       <label class="search__label" for="search">Search</label>
-      <input @focus="isInputFocused = true" @blur="isInputFocused = false" class="search__input" name="search"
+      <input @focus="isInputFocused = true" @blur="isInputFocused = false" class="search__input" name="search" id="search"
       :class="{'is-active': isButtonFocused}" />
       <button @focus="isButtonFocused = true" @blur="isButtonFocused = false" :class="{'is-active': isInputFocused}" class="search__button">
         <span>Go</span>
