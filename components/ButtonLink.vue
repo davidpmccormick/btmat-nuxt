@@ -8,7 +8,7 @@
 @import "./assets/styles/utilities/variables";
 
 .button-link {
-  top: 105px;
+  top: 60px;
   text-decoration: none;
   color: $c-white;
   background: $c-green;

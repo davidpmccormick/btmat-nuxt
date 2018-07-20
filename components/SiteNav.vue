@@ -148,7 +148,7 @@ export default {
   display: none;
   background: $c-beige;
   left: -20px;
-  right: -20px;
+  width: percentage(2/3);
   top: 100%;
   margin-top: 1px;
   padding-top: 10px;
@@ -168,11 +168,6 @@ export default {
       background: rgba($c-beige, 0.6);
       margin-top: 1px;
     }
-  }
-
-  @media (min-width: $b-x-large) {
-    left: calc(((100vw - 960px) / 2) * -1);
-    right: calc(((100vw - 960px) / 2) * -1);
   }
 }
 
