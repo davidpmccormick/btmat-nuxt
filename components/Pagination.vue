@@ -46,6 +46,8 @@ export default {
 </script>
 
 <style lang="scss">
+@import "./assets/styles/utilities/variables";
+
   .pagination {
     font-family: $f-sans;
     display: flex;

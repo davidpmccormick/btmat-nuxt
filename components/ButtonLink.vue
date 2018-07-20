@@ -5,6 +5,8 @@
 </template>
 
 <style lang="scss">
+@import "./assets/styles/utilities/variables";
+
 .button-link {
   top: 105px;
   text-decoration: none;

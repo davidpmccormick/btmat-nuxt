@@ -160,6 +160,8 @@ export default {
 </script>
 
 <style lang="scss">
+@import "./assets/styles/utilities/variables";
+
 .site-header {
   z-index: 1;
   top: -81px;

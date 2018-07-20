@@ -87,6 +87,8 @@ export default {
 </script>
 
 <style lang="scss">
+@import "./assets/styles/utilities/variables";
+
 .site-nav-menu-trigger {
   position: absolute;
   top: 1.2rem;
@@ -151,7 +153,6 @@ export default {
   margin-top: 1px;
   padding-top: 10px;
   padding-bottom: 12px;
-  border-bottom: 1px solid $c-keyline;
 
   @media (min-width: $b-large) {
     display: block;

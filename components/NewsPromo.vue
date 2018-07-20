@@ -23,6 +23,8 @@ export default {
 </script>
 
 <style lang="scss">
+@import "./assets/styles/utilities/variables";
+
 .news-promo {
   margin-bottom: 2rem;
   padding-bottom: 1rem;

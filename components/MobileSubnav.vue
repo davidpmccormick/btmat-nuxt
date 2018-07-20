@@ -25,6 +25,8 @@ export default {
 </script>
 
 <style lang="scss">
+@import "./assets/styles/utilities/variables";
+
 .mobile-subnav__more {
   &:focus {
     outline: 0;

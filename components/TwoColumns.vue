@@ -10,6 +10,8 @@
 </template>
 
 <style lang="scss">
+@import "./assets/styles/utilities/variables";
+
 .two-columns {
   margin-bottom: 2rem;
 
@@ -45,7 +47,6 @@
 
   @media (min-width: $b-large) {
     padding-left: 20px;
-    border-left: 1px solid $c-keyline;
   }
 }
 </style>

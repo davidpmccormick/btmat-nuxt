@@ -30,6 +30,8 @@ function range(start, end) {
 </script>
 
 <style lang="scss">
+@import "./assets/styles/utilities/variables";
+
 .archive {
   margin-bottom: 2rem;
 }

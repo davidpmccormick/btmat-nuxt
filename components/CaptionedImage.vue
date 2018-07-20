@@ -20,6 +20,8 @@ export default {
 </script>
 
 <style lang="scss">
+@import "./assets/styles/utilities/variables";
+
   .captioned-image__image {
     display: block;
     width: 100%;

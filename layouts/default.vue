@@ -51,6 +51,8 @@ export default {
 </script>
 
 <style lang="scss">
+@import "./assets/styles/utilities/variables";
+
 .page-layout.is-mobile-nav-shown {
   .main,
   .footer {

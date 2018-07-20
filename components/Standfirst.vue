@@ -9,6 +9,8 @@ export default {
 </script>
 
 <style lang="scss">
+@import "./assets/styles/utilities/variables";
+
   .standfirst {
     border-left: 3px solid $c-green;
     font-size: 1.3rem;

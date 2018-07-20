@@ -17,6 +17,8 @@ export default {
 </script>
 
 <style lang="scss">
+@import "./assets/styles/utilities/variables";
+
 .footer {
   font-family: $f-sans;
   font-size: 1rem;

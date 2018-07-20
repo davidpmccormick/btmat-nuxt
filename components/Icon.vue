@@ -31,6 +31,8 @@ export default {
 </script>
 
 <style lang="scss">
+@import "./assets/styles/utilities/variables";
+
 .icon {
   height: 1em;
   display: inline-block;

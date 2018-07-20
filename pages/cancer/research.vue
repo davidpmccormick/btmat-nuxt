@@ -55,6 +55,8 @@ export default {
 </script>
 
 <style lang="scss">
+@import "./assets/styles/utilities/variables";
+
 .research__list {
   font-size: 1rem;
 }

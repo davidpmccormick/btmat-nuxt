@@ -88,6 +88,8 @@ export default {
 </script>
 
 <style lang="scss">
+@import "./assets/styles/utilities/variables";
+
   .article__heading {
     margin-bottom: 0.4em;
 

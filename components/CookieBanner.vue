@@ -43,6 +43,8 @@ export default {
 </script>
 
 <style lang="scss">
+@import "./assets/styles/utilities/variables";
+
 .cookie-banner {
   position: fixed;
   z-index: 1;

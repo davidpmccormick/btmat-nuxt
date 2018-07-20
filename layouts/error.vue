@@ -11,6 +11,8 @@ export default {
 };
 </script>
 <style lang="scss">
+@import "./assets/styles/utilities/variables";
+
 .error-link {
   font-family: $f-sans;
   color: $c-green;

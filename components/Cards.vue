@@ -75,6 +75,8 @@ export default {
 </script>
 
 <style lang="scss">
+@import "./assets/styles/utilities/variables";
+
 .cards {
   display: flex;
   flex-wrap: wrap;
