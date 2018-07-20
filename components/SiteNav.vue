@@ -161,7 +161,7 @@ export default {
     &:after {
       content: '';
       position: absolute;
-      top: 100%;
+      bottom: -5px;
       left: 0;
       right: 0;
       height: 5px;

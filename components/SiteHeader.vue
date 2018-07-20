@@ -176,7 +176,7 @@ export default {
     &:after {
       content: '';
       position: absolute;
-      top: 100%;
+      bottom: -5px;
       margin-top: 1px;
       height: 5px;
       left: 0;

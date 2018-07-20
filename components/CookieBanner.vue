@@ -58,7 +58,7 @@ export default {
     content: '';
     height: 6px;
     position: absolute;
-    bottom: 100%;
+    top: -6px;
     left: 0;
     right: 0;
     background: rgba($c-beige, 0.6);
@@ -73,6 +73,7 @@ export default {
 }
 
 .cookie-banner__button {
+  font-family: $f-sans;
   appearance: none;
   border: 0;
   font-size: 1rem;
