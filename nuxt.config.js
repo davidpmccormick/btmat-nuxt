@@ -39,10 +39,6 @@ module.exports = {
   ** Build configuration
   */
   build: {
-    vendor: ['axios'],
-    /*
-    ** Run ESLint on save
-    */
     extend (config, ctx) {
       if (ctx.isDev && process.client) {
         config.module.rules.push({
