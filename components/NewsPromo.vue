@@ -30,7 +30,16 @@ export default {
   padding: 1rem;
   background: $c-white;
   border-radius: 6px;
-  box-shadow: 0 1px 1px 0 rgba(51,51,51,.1);
+  transition: all 400ms ease;
+
+  &:not(.news-promo--in-card) {
+    box-shadow: 0 1px 1px 0 rgba(51,51,51,.1);
+  }
+
+  &:hover:not(.news-promo--in-card) {
+    transform: translateY(-5px);
+    box-shadow: 0 2px 2px 0 rgba(51,51,51,.1);
+  }
 }
 
 .news-promo__link {
