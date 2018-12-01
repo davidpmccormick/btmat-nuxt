@@ -27,8 +27,10 @@ export default {
 
 .news-promo {
   margin-bottom: 2rem;
-  padding-bottom: 1rem;
-  border-bottom: 1px solid $c-keyline;
+  padding: 1rem;
+  background: $c-white;
+  border-radius: 6px;
+  box-shadow: 0 1px 1px 0 rgba(51,51,51,.1);
 }
 
 .news-promo__link {

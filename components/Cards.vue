@@ -80,7 +80,7 @@ export default {
   padding-bottom: 1rem;
   background: $c-white;
   box-shadow: 0 1px 1px 0 rgba($c-charcoal, 0.1);
-  border-radius: 3px;
+  border-radius: 6px;
   overflow: hidden;
 
   @media (min-width: 600px) {

@@ -3,7 +3,6 @@
     <h2 class="article__heading" v-html="article.title"></h2>
     <Timestamp class="article__timestamp" :model="{year: article.year, month: article.month, date: article.date}" />
     <TwoColumns class="article spaced">
-      child
       <template slot="primary">
         <template v-for="component in article.components">
           <Standfirst :key="component.id" v-if="component.type === 'standfirst'" :model="component.value" />
@@ -69,7 +68,6 @@ export default {
     Timestamp,
     TwoColumns
   },
-  scrollToTop: true,
   async asyncData({ store, params, route, error }) {
     try {
       await store.dispatch('getArticleBySlug', params.pageSlug);
@@ -83,7 +81,8 @@ export default {
 
       error({ statusCode: status });
     }
-  }
+  },
+  scrollToTop: true
 };
 </script>
 
