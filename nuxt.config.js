@@ -13,14 +13,20 @@ module.exports = {
       { hid: 'description', name: 'description', content: 'Beryl Thyer Memorial Africa Trust | Caring for African children with cancer' }
     ],
     script: [
-      { src: 'https://cdn.polyfill.io/v2/polyfill.js?features=Array.prototype.includes,Array.prototype.find,Promise' }
+      { src: 'https://cdn.polyfill.io/v2/polyfill.js?features=Array.prototype.includes,Array.prototype.find,Promise' },
+      { innerHTML: `document.documentElement.classList.add('enhanced')` }
     ],
+    __dangerouslyDisableSanitizers: ['script'],
     link: [
       { rel: 'icon', type: 'image/png', href: '/favicon.png' }
     ]
   },
   modules: [
     '@nuxtjs/sentry'
+  ],
+  plugins: [
+    {src: '~/plugins/webfont-loader.js', ssr: false},
+    {src: '~/plugins/navigation.js'}
   ],
   sentry: {
     dsn: 'https://dfda62d8d7b849d28eeed952e5edd2c7:da9df06b4d774989b0b639fb611a3ebe@sentry.io/284042'
@@ -49,6 +55,5 @@ module.exports = {
         });
       }
     }
-  },
-  plugins: [{src: '~/plugins/navigation.js'}]
+  }
 };
