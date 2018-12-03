@@ -33,12 +33,11 @@ export default {
   transition: all 400ms ease;
 
   &:not(.news-promo--in-card) {
-    box-shadow: 0 1px 1px 0 rgba(51,51,51,.1);
+    box-shadow: 0 1px 6px rgba($c-charcoal,.1);
   }
 
   &:hover:not(.news-promo--in-card) {
-    transform: translateY(-5px);
-    box-shadow: 0 2px 2px 0 rgba(51,51,51,.1);
+    box-shadow: 0 1px 30px rgba($c-charcoal,.1);
   }
 }
 

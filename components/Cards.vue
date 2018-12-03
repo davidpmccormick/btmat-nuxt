@@ -79,7 +79,7 @@ export default {
   width: 100%;
   padding-bottom: 1rem;
   background: $c-white;
-  box-shadow: 0 1px 1px 0 rgba($c-charcoal, 0.1);
+  box-shadow: 0 1px 6px rgba($c-charcoal,.1);
   border-radius: 6px;
   overflow: hidden;
 
