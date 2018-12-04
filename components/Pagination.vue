@@ -22,6 +22,7 @@ export default {
 
       return keys.reduce((acc, curr, index) => {
         const isLast = (keys.length - 1 === index);
+
         return acc.concat(`${curr}=${this.$route.query[curr]}${isLast ? '' : '&'}`);
       }, ['?']).join('');
     },

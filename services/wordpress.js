@@ -15,7 +15,7 @@ export async function getArticleStubs(query = {}, categories = 1) {
 
   const { data, headers, config } = await http({
     url: `${baseUrl}/posts`,
-    mthod: 'get',
+    method: 'get',
     params
   });
   const totalArticles = headers['x-wp-total'];
