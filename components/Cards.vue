@@ -4,6 +4,9 @@
       <div class="card__header">
         <h2 class="card__heading">Hello</h2>
       </div>
+      <div class="card__image-wrap">
+        <img src="~/assets/images/home_1.jpg" alt="" class="card__image">
+      </div>
       <div class="card__body">
         <div class="card__copy">
           <p>Our Trust addresses the fearful problem of rescuing African children suffering the most aggressive cancer known: <nuxt-link to="/cancer/burkitt">Burkitt’s lymphoma</nuxt-link>. This horrific disease is invariably fatal if untreated, and yet it is potentially cureable.</p>
@@ -14,6 +17,9 @@
       <div class="card__header">
         <h2 class="card__heading">About the trust</h2>
       </div>
+      <div class="card__image-wrap">
+        <img src="~/assets/images/home_3.jpg" alt="" class="card__image">
+      </div>
       <div class="card__body">
         <div class="card__copy">
           <p>Find out more about <nuxt-link to="/about/the-trust">the trust</nuxt-link>, its <nuxt-link to="/about/founder">founder</nuxt-link>, <nuxt-link to="/about/our-work/">our work</nuxt-link> and our <nuxt-link to="/about/supporters">supporters</nuxt-link>.</p>
@@ -23,6 +29,9 @@
     <div class="cards__card">
       <div class="card__header">
         <h2 class="card__heading">You can help</h2>
+      </div>
+      <div class="card__image-wrap">
+        <img src="~/assets/images/home_2.jpg" alt="" class="card__image">
       </div>
       <div class="card__body">
         <div class="card__copy">
