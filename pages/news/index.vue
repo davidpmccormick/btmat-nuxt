@@ -1,7 +1,6 @@
 <template>
   <div class="news">
-    <NewsList :articleStubs="articleStubs" v-if="$route.name === 'news'" />
-    <nuxt-child v-else />
+    <NewsList :articleStubs="articleStubs" />
   </div>
 </template>
 
@@ -17,13 +16,6 @@ export default {
   },
   components: {
     NewsList
-  },
-  beforeRouteUpdate (to, from, next) {
-    if (to.name === 'news') {
-      this.$store.commit('setCurrentPage', 1);
-    }
-
-    next();
   },
   async asyncData({ store, route, error }) {
     const search = route.query && route.query.search;
