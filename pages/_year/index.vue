@@ -1,5 +1,5 @@
 <template>
-   <NewsList :articleStubs="articleStubs" v-if="$route.name === 'year'" />
+   <NewsList :articleStubs="articleStubs" />
 </template>
 
 <script>
@@ -26,7 +26,6 @@ export default {
       const status = maybeStatus || 404;
       error({ statusCode: status });
     }
-  },
-  scrollToTop: true
+  }
 };
 </script>
