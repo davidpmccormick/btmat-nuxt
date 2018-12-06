@@ -27,12 +27,12 @@ export default {
 
 .news-promo {
   margin-bottom: 2rem;
-  padding: 1rem;
   background: $c-white;
   border-radius: 6px;
   transition: all 400ms ease;
 
   &:not(.news-promo--in-card) {
+    padding: 1rem;
     box-shadow: 0 1px 6px rgba($c-charcoal,.1);
   }
 
