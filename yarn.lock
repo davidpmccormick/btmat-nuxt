@@ -868,6 +868,11 @@
   dependencies:
     consola "^2.0.7"
 
+"@nuxtjs/google-tag-manager@^2.1.0":
+  version "2.1.0"
+  resolved "https://registry.yarnpkg.com/@nuxtjs/google-tag-manager/-/google-tag-manager-2.1.0.tgz#82bb4acbea7f63bbd9a0ccea4daac39feb3d43b9"
+  integrity sha512-NmEqiidNC/sPjizURKT8fMIe41Q/R2egIFICeOfNcCqZfxJjHttUjQaYMJ+ef7bn50N724tCain+vQocUZjliw==
+
 "@nuxtjs/opencollective@^0.2.0":
   version "0.2.0"
   resolved "https://registry.yarnpkg.com/@nuxtjs/opencollective/-/opencollective-0.2.0.tgz#2badff33d6fd2dcd5dc5ce95e2171c8095f12d25"
@@ -4546,11 +4551,6 @@ lodash.templatesettings@^4.0.0:
   integrity sha1-K01OlbpEDZFf8IvImeRVNmZxMxY=
   dependencies:
     lodash._reinterpolate "~3.0.0"
-
-lodash.unescape@^4.0.1:
-  version "4.0.1"
-  resolved "https://registry.yarnpkg.com/lodash.unescape/-/lodash.unescape-4.0.1.tgz#bf2249886ce514cda112fae9218cdc065211fc9c"
-  integrity sha1-vyJJiGzlFM2hEvrpIYzcBlIR/Jw=
 
 lodash.uniq@^4.5.0:
   version "4.5.0"

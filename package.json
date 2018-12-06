@@ -13,6 +13,7 @@
     "test": ""
   },
   "dependencies": {
+    "@nuxtjs/google-tag-manager": "^2.1.0",
     "@nuxtjs/sentry": "^1.0.1",
     "axios": "^0.17.1",
     "axios-cache-plugin": "^0.1.0",

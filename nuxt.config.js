@@ -22,11 +22,17 @@ module.exports = {
     ]
   },
   modules: [
-    '@nuxtjs/sentry'
+    '@nuxtjs/sentry',
+    ['@nuxtjs/google-tag-manager', {
+      id: 'GTM-544B7R3',
+      layer: 'dataLayer',
+      pageTracking: false
+    }]
   ],
   plugins: [
     {src: '~/plugins/webfont-loader.js', ssr: false},
-    {src: '~/plugins/navigation.js'}
+    {src: '~/plugins/navigation.js'},
+    {src: '~/plugins/ga.js', ssr: false}
   ],
   sentry: {
     dsn: 'https://dfda62d8d7b849d28eeed952e5edd2c7:da9df06b4d774989b0b639fb611a3ebe@sentry.io/284042'
