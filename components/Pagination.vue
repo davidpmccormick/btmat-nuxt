@@ -1,10 +1,10 @@
 <template>
   <div class="pagination">
-    <nuxt-link class="pagination__link" v-if="currentPage < totalPages" :to="olderPageNumberLink">Older</nuxt-link>
+    <nuxt-link class="pagination__link" v-if="clonedCurrentPage < totalPages" :to="olderPageNumberLink">Older</nuxt-link>
 
-    <p v-if="totalPages" class="pagination__info">Page {{ currentPage }} of {{ totalPages }}</p>
+    <p v-if="totalPages" class="pagination__info">Page {{ clonedCurrentPage }} of {{ totalPages }}</p>
     <p v-else class="pagination__info">No results</p>
-    <nuxt-link class="pagination__link" v-if="currentPage > 1" :to="newerPageNumberLink">Newer</nuxt-link>
+    <nuxt-link class="pagination__link" v-if="clonedCurrentPage > 1" :to="newerPageNumberLink">Newer</nuxt-link>
   </div>
 </template>
 
@@ -12,6 +12,9 @@
 import { mapState } from 'vuex';
 
 export default {
+  created() {
+    this.clonedCurrentPage = this.currentPage;
+  },
   computed: {
     ...mapState([
       'totalPages',
@@ -49,23 +52,23 @@ export default {
 <style lang="scss">
 @import "./assets/styles/utilities/variables";
 
-  .pagination {
-    font-family: $f-sans;
-    display: flex;
-  }
+.pagination {
+  font-family: $f-sans;
+  display: flex;
+}
 
-  .pagination__link,
-  .pagination__info {
-    margin-right: 1em;
-  }
+.pagination__link,
+.pagination__info {
+  margin-right: 1em;
+}
 
-  .pagination__link {
-    color: inherit;
-    transition: color $ease;
+.pagination__link {
+  color: inherit;
+  transition: color $ease;
 
-    &:hover,
-    &:focus {
-      color: $c-green;
-    }
+  &:hover,
+  &:focus {
+    color: $c-green;
   }
+}
 </style>
