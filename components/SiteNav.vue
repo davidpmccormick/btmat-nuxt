@@ -173,12 +173,10 @@ export default {
 
 .site-nav__item {
   padding: 1rem 0;
-  border-bottom: 1px solid $c-keyline;
 
   @media (min-width: $b-large) {
     margin-right: 1.6em;
     padding: 0;
-    border-bottom: 0;
   }
 }
 
