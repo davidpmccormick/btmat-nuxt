@@ -51,10 +51,28 @@ html {
 }
 
 .list {
+  li {
+    margin-left: 1em;
+    position: relative;
+
+    &:before {
+      content: '';
+      position: absolute;
+      top: 0.4em;
+      width: 0.5em;
+      height: 0.5em;
+      left: -1em;
+      border-radius: 2px;
+      background: $c-green;
+    }
+  }
   li + li {
     margin-top: 0.5em;
     padding-top: 0.5em;
-    border-top: 1px solid $c-keyline;
+
+    &:before {
+      top: 0.9em;
+    }
   }
 }
 

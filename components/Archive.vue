@@ -49,7 +49,6 @@ function range(start, end) {
   font-family: $f-sans;
   font-size: 1rem;
   padding: 0.5em 0;
-  border-bottom: 1px solid $c-keyline;
   text-decoration: none;
   transition: color $ease;
 
