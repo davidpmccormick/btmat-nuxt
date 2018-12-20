@@ -22,12 +22,7 @@ module.exports = {
     ]
   },
   modules: [
-    '@nuxtjs/sentry',
-    ['@nuxtjs/google-tag-manager', {
-      id: 'GTM-544B7R3',
-      layer: 'dataLayer',
-      pageTracking: false
-    }]
+    '@nuxtjs/sentry'
   ],
   plugins: [
     {src: '~/plugins/webfont-loader.js', ssr: false},
