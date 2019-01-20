@@ -36,7 +36,7 @@ export default {
   head: {
     titleTemplate: '%s | About the trust',
     meta: [
-      { hid: 'description', name: 'description', content: 'BTMAT trust information' }
+      { hid: 'description', name: 'description', content: 'Beryl Thyer Memorial Africa Trust trust information' }
     ]
   },
   components: {

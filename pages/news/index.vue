@@ -11,7 +11,7 @@ export default {
   head: {
     titleTemplate: '%s | News',
     meta: [
-      { hid: 'description', name: 'description', content: 'Latest news from BTMAT' }
+      { hid: 'description', name: 'description', content: 'Latest news from Beryl Thyer Memorial Africa Trust' }
     ]
   },
   components: {

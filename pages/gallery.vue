@@ -28,7 +28,7 @@ export default {
   head: {
     titleTemplate: '%s | Gallery',
     meta: [
-      { hid: 'description', name: 'description', content: 'BTMAT image gallery' }
+      { hid: 'description', name: 'description', content: 'Beryl Thyer Memorial Africa Trust image gallery' }
     ]
   },
   components: {

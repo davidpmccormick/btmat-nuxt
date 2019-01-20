@@ -28,7 +28,7 @@ export default {
   head: {
     titleTemplate: '%s | Press',
     meta: [
-      { hid: 'description', name: 'description', content: 'BTMAT press' }
+      { hid: 'description', name: 'description', content: 'Beryl Thyer Memorial Africa Trust press' }
     ]
   },
   components: {
