@@ -32,7 +32,7 @@ export default {
   head: {
     titleTemplate: '%s | Support us',
     meta: [
-      { hid: 'description', name: 'description', content: 'Support BTMAT' }
+      { hid: 'description', name: 'description', content: 'Support Beryl Thyer Memorial Africa Trust' }
     ]
   },
   components: {

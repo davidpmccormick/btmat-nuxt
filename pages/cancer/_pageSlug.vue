@@ -36,7 +36,7 @@ export default {
   head: {
     titleTemplate: '%s | Cancers',
     meta: [
-      { hid: 'description', name: 'description', content: 'BTMAT and cancer' }
+      { hid: 'description', name: 'description', content: 'Beryl Thyer Memorial Africa Trust and cancer' }
     ]
   },
   components: {

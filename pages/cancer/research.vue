@@ -33,9 +33,9 @@ import TwoColumns from '~/components/TwoColumns';
 
 export default {
   head: {
-    titleTemplate: '%s | Cancers',
+    titleTemplate: '%s | Research',
     meta: [
-      { hid: 'description', name: 'description', content: 'BTMAT and cancer' }
+      { hid: 'description', name: 'description', content: 'Beryl Thyer Memorial Africa Trust research' }
     ]
   },
   components: {

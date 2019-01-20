@@ -27,7 +27,7 @@ export default {
   head: {
     titleTemplate: '%s | Hospitals',
     meta: [
-      { hid: 'description', name: 'description', content: 'BTMAT hospitals' }
+      { hid: 'description', name: 'description', content: 'Beryl Thyer Memorial Africa Trust hospitals' }
     ]
   },
   components: {

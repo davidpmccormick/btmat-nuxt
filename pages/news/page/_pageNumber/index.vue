@@ -11,7 +11,7 @@ export default {
   head: {
     titleTemplate: '%s | Paginated news',
     meta: [
-      { hid: 'description', name: 'description', content: 'BTMAT articles' }
+      { hid: 'description', name: 'description', content: 'Beryl Thyer Memorial Africa Trust articles' }
     ]
   },
   components: {

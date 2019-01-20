@@ -3,9 +3,10 @@
     <div class="site-header__inner">
       <div class="container">
         <h1 class="site-header__title">
+          <span class="visually-hidden">Beryl Thyer Memorial Africa Trust</span>
           <nuxt-link class="site-header__link" to="/">
             <svg class="site-header__svg" viewBox="0 0 100 21">
-              <title>BTMAT</title>
+              <title>Beryl Thyer Memorial Africa Trust</title>
               <path d="M0.3,7.2c0-0.2,0-0.5,0-1c0-0.5-0.1-0.9-0.1-1.3c0-0.2,0-0.4,0-0.6c0-0.2,0-0.4,0-0.6c0-0.7,0-1.2,0.1-1.6
                 c0-0.4,0.1-0.7,0.2-0.9C0.5,1,0.6,0.9,0.8,0.7c0.1-0.1,0.3-0.2,0.5-0.4c0.1-0.1,0.3-0.1,0.5-0.2c0.2-0.1,0.5-0.1,1-0.1
                 c0,0,0.1,0,0.2,0c0.1,0,0.2,0,0.3,0c0.1,0,0.2,0,0.3,0c0.1,0,0.1,0,0.1,0c0.1,0,0.2,0,0.4,0c0.1,0,0.2,0,0.4,0c0.3,0,0.6,0,0.9,0
