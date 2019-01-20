@@ -10,6 +10,7 @@ module.exports = {
     meta: [
       { charset: 'utf-8' },
       { name: 'viewport', content: 'width=device-width, initial-scale=1' },
+      { name: 'google-site-verification', content: '2FZLnBurZMDuqVZaAY0eo8YWmdqb80Tay42vJrFxVgg' },
       { hid: 'description', name: 'description', content: 'Beryl Thyer Memorial Africa Trust is a UK charity caring for African children with Burkitt lymphoma and other cancers' }
     ],
     script: [
