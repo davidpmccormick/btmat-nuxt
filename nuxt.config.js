@@ -14,7 +14,34 @@ module.exports = {
     ],
     script: [
       { src: 'https://cdn.polyfill.io/v2/polyfill.js?features=Array.prototype.includes,Array.prototype.find,Promise' },
-      { innerHTML: `document.documentElement.classList.add('enhanced')` }
+      { innerHTML: `document.documentElement.classList.add('enhanced')` },
+      { innerHTML: JSON.stringify({
+        '@context': 'https://schema.org',
+        '@type': 'Organization',
+        'url': 'https://btmat.org.uk',
+        'name': 'Beryl Thyer Memorial Africa Trust',
+        'description': 'Beryl Thyer Memorial Africa Trust is a UK charity caring for African children with Burkitt lymphoma and other cancers',
+        'leiCode': '1112603',
+        'contactPoint': {
+          '@type': 'ContactPoint',
+          'telephone': '+44 1536 518008',
+          'contactType': 'HQ',
+          'email': 'info@btmat.org.uk'
+        },
+        'address': {
+          '@type': 'PostalAddress',
+          'postalCode': 'NN16 9XL',
+          'addressRegion': 'Northamptonshire',
+          'addressLocality': 'Near Kettering',
+          'streetAddress': '19 Warkton Village'
+        },
+        'founder': {
+          '@type': 'Person',
+          'familyName': 'McCormick',
+          'givenName': 'Peter'
+        }
+      }),
+      type: 'application/ld+json' }
     ],
     __dangerouslyDisableSanitizers: ['script'],
     link: [
