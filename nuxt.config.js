@@ -20,6 +20,7 @@ module.exports = {
         '@type': 'Organization',
         'url': 'https://btmat.org.uk',
         'name': 'Beryl Thyer Memorial Africa Trust',
+        'alternateName': 'BTMAT',
         'description': 'Beryl Thyer Memorial Africa Trust is a UK charity caring for African children with Burkitt lymphoma and other cancers',
         'leiCode': '1112603',
         'contactPoint': {
