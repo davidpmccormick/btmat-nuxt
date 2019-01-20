@@ -25,7 +25,7 @@ module.exports = {
         'contactPoint': {
           '@type': 'ContactPoint',
           'telephone': '+44 1536 518008',
-          'contactType': 'HQ',
+          'contactType': 'customer support',
           'email': 'info@btmat.org.uk'
         },
         'address': {
