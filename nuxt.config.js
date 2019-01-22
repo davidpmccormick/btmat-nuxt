@@ -51,8 +51,32 @@ module.exports = {
     ]
   },
   modules: [
-    '@nuxtjs/sentry'
+    '@nuxtjs/sentry',
+    '@nuxtjs/sitemap'
   ],
+  sitemap: {
+    routes: [
+      '/',
+      '/news',
+      '/cancer/burkitt',
+      '/cancer/research',
+      '/cancer/follow-up',
+      '/cancer/future',
+      '/cancer/other-cancers',
+      '/cancer/diagnostic-and-treatment-costs',
+      '/hospitals',
+      '/gallery',
+      '/press',
+      '/about/out-work',
+      '/about/the-trust',
+      '/about/founder',
+      '/about/supporters',
+      '/about/hq',
+      '/about/south-africa',
+      '/support/donate',
+      '/support/work-with-us'
+    ]
+  },
   plugins: [
     {src: '~/plugins/webfont-loader.js', ssr: false},
     {src: '~/plugins/navigation.js'},
