@@ -44,8 +44,7 @@ module.exports = {
           'givenName': 'Peter'
         },
         'foundingDate': '20060101T000000-0800',
-        'icon': 'https://btmat.org.uk/logo.svg',
-        'openingHours': 'Mo,Tu,We,Th,Fr,Sa,Su 09:00-18:00'
+        'logo': 'https://btmat.org.uk/logo.svg'
       }),
       type: 'application/ld+json' }
     ],
