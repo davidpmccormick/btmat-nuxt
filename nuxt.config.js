@@ -41,7 +41,8 @@ module.exports = {
           '@type': 'Person',
           'familyName': 'McCormick',
           'givenName': 'Peter'
-        }
+        },
+        'icon': 'https://btmat.org.uk/logo.svg'
       }),
       type: 'application/ld+json' }
     ],
