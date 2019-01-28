@@ -22,6 +22,7 @@ module.exports = {
         'url': 'https://btmat.org.uk',
         'name': 'Beryl Thyer Memorial Africa Trust',
         'alternateName': 'BTMAT',
+        'legalName': 'Beryl Thyer Memorial Africa Trust',
         'description': 'Beryl Thyer Memorial Africa Trust is a UK charity caring for African children with Burkitt lymphoma and other cancers',
         'leiCode': '1112603',
         'contactPoint': {
@@ -42,7 +43,9 @@ module.exports = {
           'familyName': 'McCormick',
           'givenName': 'Peter'
         },
-        'icon': 'https://btmat.org.uk/logo.svg'
+        'foundingDate': '20060101T000000-0800',
+        'icon': 'https://btmat.org.uk/logo.svg',
+        'openingHours': 'Mo,Tu,We,Th,Fr,Sa,Su 09:00-18:00'
       }),
       type: 'application/ld+json' }
     ],
