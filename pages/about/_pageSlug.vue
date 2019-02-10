@@ -25,7 +25,7 @@ import TwoColumns from '~/components/TwoColumns';
 
 const aboutMap = {
   'our-work': 57,
-  'beryl-thyer-memorial-africa-trust': 59,
+  'beryl-thyer-memorial-africa-trust-btmat': 59,
   'founder': 66,
   'supporters': 69,
   'hq': 71,

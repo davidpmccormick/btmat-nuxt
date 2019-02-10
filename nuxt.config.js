@@ -72,7 +72,7 @@ module.exports = {
       '/gallery',
       '/press',
       '/about/out-work',
-      '/about/beryl-thyer-memorial-africa-trust',
+      '/about/beryl-thyer-memorial-africa-trust-btmat',
       '/about/founder',
       '/about/supporters',
       '/about/hq',
@@ -84,7 +84,7 @@ module.exports = {
   redirect: [
     {
       from: '^/about/the-trust',
-      to: '/about/beryl-thyer-memorial-africa-trust',
+      to: '/about/beryl-thyer-memorial-africa-trust-btmat',
       statusCode: 301
     }
   ],
