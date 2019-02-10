@@ -22,7 +22,7 @@
       </div>
       <div class="card__body">
         <div class="card__copy">
-          <p>Find out more about <nuxt-link to="/about/the-trust">the trust</nuxt-link>, its <nuxt-link to="/about/founder">founder</nuxt-link>, <nuxt-link to="/about/our-work/">our work</nuxt-link> and our <nuxt-link to="/about/supporters">supporters</nuxt-link>.</p>
+          <p>Find out more about <nuxt-link to="/about/beryl-thyer-memorial-africa-trust">the trust</nuxt-link>, its <nuxt-link to="/about/founder">founder</nuxt-link>, <nuxt-link to="/about/our-work/">our work</nuxt-link> and our <nuxt-link to="/about/supporters">supporters</nuxt-link>.</p>
         </div>
       </div>
     </div>

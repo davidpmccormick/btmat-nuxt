@@ -88,7 +88,7 @@ const createStore = () => {
             },
             {
               title: 'The trust',
-              url: '/about/the-trust'
+              url: '/about/beryl-thyer-memorial-africa-trust'
             },
             {
               title: 'Founder',

@@ -13,6 +13,7 @@
     "test": ""
   },
   "dependencies": {
+    "@nuxtjs/redirect-module": "^0.2.0",
     "@nuxtjs/sentry": "^1.0.1",
     "@nuxtjs/sitemap": "^0.2.0",
     "axios": "^0.17.1",

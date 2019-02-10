@@ -55,7 +55,8 @@ module.exports = {
   },
   modules: [
     '@nuxtjs/sentry',
-    '@nuxtjs/sitemap'
+    '@nuxtjs/sitemap',
+    '@nuxtjs/redirect-module'
   ],
   sitemap: {
     routes: [
@@ -71,7 +72,7 @@ module.exports = {
       '/gallery',
       '/press',
       '/about/out-work',
-      '/about/the-trust',
+      '/about/beryl-thyer-memorial-africa-trust',
       '/about/founder',
       '/about/supporters',
       '/about/hq',
@@ -80,6 +81,13 @@ module.exports = {
       '/support/work-with-us'
     ]
   },
+  redirect: [
+    {
+      from: '^/about/the-trust',
+      to: '/about/beryl-thyer-memorial-africa-trust',
+      statusCode: 301
+    }
+  ],
   plugins: [
     {src: '~/plugins/webfont-loader.js', ssr: false},
     {src: '~/plugins/navigation.js'},

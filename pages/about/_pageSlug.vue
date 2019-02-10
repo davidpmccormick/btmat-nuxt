@@ -25,7 +25,7 @@ import TwoColumns from '~/components/TwoColumns';
 
 const aboutMap = {
   'our-work': 57,
-  'the-trust': 59,
+  'beryl-thyer-memorial-africa-trust': 59,
   'founder': 66,
   'supporters': 69,
   'hq': 71,
@@ -36,7 +36,7 @@ export default {
   head: {
     titleTemplate: '%s | About the trust',
     meta: [
-      { hid: 'description', name: 'description', content: 'Beryl Thyer Memorial Africa Trust trust information' }
+      { hid: 'description', name: 'description', content: 'Beryl Thyer Memorial Africa Trust information' }
     ]
   },
   components: {
