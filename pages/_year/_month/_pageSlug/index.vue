@@ -110,7 +110,7 @@ export default {
 
       return [{
         hid: 'twitter:image',
-        hame: 'twitter:image',
+        name: 'twitter:image',
         content: firstImage.value.src
       }, {
         hid: 'twitter:image:alt',
