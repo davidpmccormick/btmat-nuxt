@@ -10,7 +10,7 @@
           <BodyContent v-else :key="component.id" :model="component.value.html" />
         </template>
 
-        <div class="article__related" v-if="article.relatedArticles">
+        <div class="article__related" v-if="article.relatedArticles && article.relatedArticles.length > 0">
           <h2>Related articles</h2>
           <ul>
             <NewsPromo v-for="relatedArticle in article.relatedArticles" :key="relatedArticle.slug" :model="{
@@ -52,9 +52,29 @@ export default {
         {
           hid: 'description',
           name: 'description',
-          content: this.article.components.find(a => a.type === 'standfirst') && this.article.components.find(a => a.type === 'standfirst').value.html
+          content: this.description
+        },
+        {
+          hid: 'twitter:card',
+          name: 'twitter:card',
+          content: 'summary'
+        },
+        {
+          hid: 'twitter:site',
+          name: 'twitter:site',
+          content: '@btmat'
+        },
+        {
+          hid: 'twitter:title',
+          name: 'twitter:title',
+          content: this.article.title
+        },
+        {
+          hid: 'twitter:description',
+          name: 'twitter:description',
+          content: this.description
         }
-      ]
+      ].concat(this.twitterImageMeta).filter(Boolean)
     };
   },
   components: {
@@ -80,6 +100,26 @@ export default {
       const status = maybeStatus || 404;
 
       error({ statusCode: status });
+    }
+  },
+  computed: {
+    twitterImageMeta() {
+      const firstImage = this.article.components.find(c => c.type === 'image');
+
+      if (!firstImage) return [];
+
+      return [{
+        hid: 'twitter:image',
+        hame: 'twitter:image',
+        content: firstImage.value.src
+      }, {
+        hid: 'twitter:image:alt',
+        name: 'twitter:image:alt',
+        content: firstImage.value.alt
+      }];
+    },
+    description() {
+      return this.article.components.find(a => a.type === 'standfirst') && this.article.components.find(a => a.type === 'standfirst').value.html || 'Latest news from BTMAT';
     }
   },
   scrollToTop: true
