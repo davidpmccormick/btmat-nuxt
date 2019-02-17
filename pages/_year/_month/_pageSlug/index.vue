@@ -62,7 +62,7 @@ export default {
         {
           hid: 'og:type',
           name: 'og:type',
-          content: 'News'
+          content: 'article'
         },
         {
           hid: 'og:url',
