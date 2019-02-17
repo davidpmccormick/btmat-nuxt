@@ -62,7 +62,10 @@ module.exports = {
   sitemap: {
     routes: [
       '/',
-      '/news',
+      {
+        url: '/news',
+        changefreq: 'daily'
+      },
       '/cancer/burkitt',
       '/cancer/research',
       '/cancer/follow-up',

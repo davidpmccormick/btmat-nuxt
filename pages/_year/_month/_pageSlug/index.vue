@@ -50,6 +50,31 @@ export default {
       titleTemplate: `%s | ${this.article.title}`,
       meta: [
         {
+          hid: 'og:site_name',
+          name: 'og:site_name',
+          content: 'Beryl Thyer Memorial Africa Trust'
+        },
+        {
+          hid: 'og:title',
+          name: 'og:title',
+          content: this.title
+        },
+        {
+          hid: 'og:type',
+          name: 'og:type',
+          content: 'News'
+        },
+        {
+          hid: 'og:url',
+          name: 'og:url',
+          content: this.url
+        },
+        {
+          hid: 'og:description',
+          name: 'og:description',
+          content: this.description
+        },
+        {
           hid: 'description',
           name: 'description',
           content: this.description
@@ -74,7 +99,7 @@ export default {
           name: 'twitter:description',
           content: this.description
         }
-      ].concat(this.twitterImageMeta).filter(Boolean)
+      ].concat(this.imageMeta).filter(Boolean)
     };
   },
   components: {
@@ -93,7 +118,8 @@ export default {
       await store.dispatch('getArticleBySlug', params.pageSlug);
 
       return {
-        article: store.state.article
+        article: store.state.article,
+        url: `https://btmat.org.uk/${params.pageSlug}`
       };
     } catch (err) {
       const maybeStatus = err.response && err.response.status;
@@ -103,12 +129,16 @@ export default {
     }
   },
   computed: {
-    twitterImageMeta() {
+    imageMeta() {
       const firstImage = this.article.components.find(c => c.type === 'image');
 
       if (!firstImage) return [];
 
       return [{
+        hid: 'og:image',
+        name: 'og:image',
+        content: firstImage.value.src
+      }, {
         hid: 'twitter:image',
         name: 'twitter:image',
         content: firstImage.value.src
