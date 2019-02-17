@@ -58,6 +58,7 @@ module.exports = {
     '@nuxtjs/sitemap',
     '@nuxtjs/redirect-module'
   ],
+  modern: true,
   sitemap: {
     routes: [
       '/',
