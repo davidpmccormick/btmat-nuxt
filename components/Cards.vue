@@ -46,7 +46,7 @@
       </div>
       <div class="card__body">
         <ul>
-          <NewsPromo class="news-promo--in-card" :model="articleStubs[0]" />
+          <NewsPromo class="news-promo--in-card" :model="newsArticle" />
         </ul>
         <Search :inCard="true" />
       </div>
@@ -55,21 +55,16 @@
 </template>
 
 <script>
-import { mapState } from 'vuex';
 import ButtonLink from '~/components/ButtonLink';
 import NewsPromo from '~/components/NewsPromo';
 import Search from '~/components/Search';
 
 export default {
+  props: ['newsArticle'],
   components: {
     ButtonLink,
     NewsPromo,
     Search
-  },
-  computed: {
-    ...mapState([
-      'articleStubs'
-    ])
   }
 };
 </script>

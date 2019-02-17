@@ -1,6 +1,6 @@
 <template>
   <div>
-    <Cards />
+    <Cards :news-article="firstArticle" />
   </div>
 </template>
 <script>
@@ -13,9 +13,13 @@ export default {
   components: {
     Cards
   },
-  async fetch({ store, error }) {
+  async asyncData({ store, error }) {
     try {
       await store.dispatch('getArticleStubs');
+
+      return {
+        firstArticle: store.state.articleStubs[0]
+      };
     } catch (err) {
       const maybeStatus = err.response && err.response.status;
       const status = maybeStatus || 404;
