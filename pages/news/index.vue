@@ -17,6 +17,7 @@ export default {
   components: {
     NewsList
   },
+  watchQuery: ['search'],
   async asyncData({ store, route, error }) {
     const search = route.query && route.query.search;
 
