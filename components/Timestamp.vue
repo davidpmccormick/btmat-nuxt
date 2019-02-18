@@ -48,7 +48,7 @@ export default {
     font-family: $f-sans;
     align-items: center;
     font-size: 1rem;
-    color: $c-mid-grey;
+    color: $c-grey;
   }
 
   .timestamp__icon {
