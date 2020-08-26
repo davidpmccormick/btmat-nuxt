@@ -17,12 +17,9 @@ export default {
   components: {
     NewsList
   },
-  watchQuery: ['search'],
   async asyncData({ store, route, error }) {
-    const search = route.query && route.query.search;
-
     try {
-      await store.dispatch('getArticleStubs', {query: {search}});
+      await store.dispatch('getArticleStubs');
 
       return {
         articleStubs: store.state.articleStubs

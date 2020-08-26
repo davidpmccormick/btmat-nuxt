@@ -70,6 +70,7 @@ module.exports = {
   },
   modules: ['@nuxtjs/sentry', '@nuxtjs/sitemap', '@nuxtjs/redirect-module'],
   modern: true,
+  target: 'static',
   sitemap: {
     routes: [
       '/',

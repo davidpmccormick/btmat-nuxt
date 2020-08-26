@@ -48,7 +48,6 @@
         <ul>
           <NewsPromo class="news-promo--in-card" :model="newsArticle" />
         </ul>
-        <Search :inCard="true" />
       </div>
     </div>
   </div>
@@ -57,14 +56,12 @@
 <script>
 import ButtonLink from '~/components/ButtonLink';
 import NewsPromo from '~/components/NewsPromo';
-import Search from '~/components/Search';
 
 export default {
   props: ['newsArticle'],
   components: {
     ButtonLink,
     NewsPromo,
-    Search
   }
 };
 </script>
