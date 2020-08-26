@@ -26,7 +26,6 @@
       </template>
       <template slot="secondary">
         <Archive />
-        <Search />
         <ButtonLink class="article__button-link" />
       </template>
     </TwoColumns>
@@ -39,7 +38,6 @@ import BodyContent from '~/components/BodyContent';
 import ButtonLink from '~/components/ButtonLink';
 import CaptionedImage from '~/components/CaptionedImage';
 import NewsPromo from '~/components/NewsPromo';
-import Search from '~/components/Search';
 import Standfirst from '~/components/Standfirst';
 import Timestamp from '~/components/Timestamp';
 import TwoColumns from '~/components/TwoColumns';
@@ -108,7 +106,6 @@ export default {
     ButtonLink,
     NewsPromo,
     CaptionedImage,
-    Search,
     Standfirst,
     Timestamp,
     TwoColumns
