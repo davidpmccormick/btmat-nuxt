@@ -6,7 +6,6 @@ import {
 } from '~/services/wordpress';
 
 export const state = () => ({
-
   fontsLoaded: false,
   researchProjects: null,
   newProjects: null,
@@ -23,7 +22,8 @@ export const state = () => ({
       title: 'Home',
       url: '/',
       routesHandled: ['index']
-    }, {
+    },
+    {
       title: 'News',
       url: '/news',
       routesHandled: [
@@ -33,48 +33,55 @@ export const state = () => ({
         'news-page-pageNumber',
         'year-page-pageNumber'
       ]
-    }, {
+    },
+    {
       title: 'Cancer',
       url: '/cancer/burkitt',
       subnavPath: '/cancer/',
-      routesHandled: [
-        'cancer-pageSlug',
-        'cancer-research'
-      ],
+      routesHandled: ['cancer-pageSlug', 'cancer-research'],
       subnavItems: [
         {
           title: 'Burkitt',
           url: '/cancer/burkitt'
-        }, {
+        },
+        {
           title: 'Research',
           url: '/cancer/research'
-        }, {
+        },
+        {
           title: 'Follow up',
           url: '/cancer/follow-up'
-        }, {
+        },
+        {
           title: 'Future',
           url: '/cancer/future'
-        }, {
+        },
+        {
           title: 'Other cancers',
           url: '/cancer/other-cancers'
-        }, {
+        },
+        {
           title: 'Costs',
           url: '/cancer/diagnostic-and-treatment-costs'
         }
       ]
-    }, {
+    },
+    {
       title: 'Hospitals',
       url: '/hospitals',
       routesHandled: ['hospitals']
-    }, {
+    },
+    {
       title: 'Gallery',
       url: '/gallery',
       routesHandled: ['gallery']
-    }, {
+    },
+    {
       title: 'Press',
       url: '/press',
       routesHandled: ['press']
-    }, {
+    },
+    {
       title: 'About',
       url: '/about/our-work',
       routesHandled: ['about-pageSlug'],
@@ -105,7 +112,8 @@ export const state = () => ({
           url: '/about/south-africa'
         }
       ]
-    }, {
+    },
+    {
       title: 'Support',
       url: '/support/donate',
       routesHandled: ['support-pageSlug'],
@@ -114,7 +122,8 @@ export const state = () => ({
         {
           title: 'Donate',
           url: '/support/donate'
-        }, {
+        },
+        {
           title: 'Work with us',
           url: '/support/work-with-us'
         }
@@ -124,16 +133,14 @@ export const state = () => ({
 });
 
 export const actions = {
-
   async getArticleStubs({ commit }, data = {}) {
     const query = data.query || {};
     const categories = data.categories || 1;
-    const queryWithPage = query.page ? query : {...query, page: 1};
-    const {
-      articleStubs,
-      totalPages,
-      currentPage
-    } = await getArticleStubs(queryWithPage, categories);
+    const queryWithPage = query.page ? query : { ...query, page: 1 };
+    const { articleStubs, totalPages, currentPage } = await getArticleStubs(
+      queryWithPage,
+      categories
+    );
 
     commit('setCurrentPage', currentPage);
     commit('setTotalPages', totalPages);
@@ -155,9 +162,12 @@ export const actions = {
     commit('setPage', post);
   },
   async getResearch({ commit }, id) {
-    const researchProjectsPromise = getArticleStubs({per_page: 50}, 4);
-    const newProjectsPromise = getArticleStubs({per_page: 50}, 7);
-    const publicationsAndAbstractsPromise = getArticleStubs({per_page: 50}, 6);
+    const researchProjectsPromise = getArticleStubs({ per_page: 50 }, 4);
+    const newProjectsPromise = getArticleStubs({ per_page: 50 }, 7);
+    const publicationsAndAbstractsPromise = getArticleStubs(
+      { per_page: 50 },
+      6
+    );
     const [
       researchProjects,
       newProjects,
