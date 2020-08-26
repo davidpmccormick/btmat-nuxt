@@ -19,11 +19,10 @@ export default {
   },
   scrollToTop: true,
   async asyncData({ store, params, route, error }) {
-    const search = route.query && route.query.search;
     const page = params.pageNumber;
 
     try {
-      await store.dispatch('getArticleStubs', {query: {page, search}});
+      await store.dispatch('getArticleStubs');
 
       return {
         articleStubs: store.state.articleStubs
