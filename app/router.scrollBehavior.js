@@ -4,7 +4,7 @@ export default function(to, from, savedPosition) {
   const scrollPosition = window.pageYOffset;
   const viewportWidth = window.innerWidth;
 
-  return new Promise((resolve, reject) => {
+  return new Promise(resolve => {
     this.app.$once('triggerScroll', () => {
       resolve({
         x: 0,
