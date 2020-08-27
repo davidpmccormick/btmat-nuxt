@@ -12,7 +12,7 @@ export default function(to, from, savedPosition) {
           scrollPosition >= DESKTOP_NAV_HEIGHT &&
           viewportWidth >= MAX_MOBILE_NAV
             ? DESKTOP_NAV_HEIGHT
-            : scrollPosition
+            : 0
       });
     });
   });
