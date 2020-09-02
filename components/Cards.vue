@@ -5,7 +5,7 @@
         <h2 class="card__heading">Hello</h2>
       </div>
       <div class="card__image-wrap">
-        <img src="~/assets/images/home_1.jpg" alt="" class="card__image">
+        <img width="600" height="200" src="~/assets/images/home_1.jpg" alt="" class="card__image">
       </div>
       <div class="card__body">
         <div class="card__copy">
@@ -18,7 +18,7 @@
         <h2 class="card__heading">About the trust</h2>
       </div>
       <div class="card__image-wrap">
-        <img src="~/assets/images/home_3.jpg" alt="" class="card__image">
+        <img width="600" height="200" src="~/assets/images/home_3.jpg" alt="" class="card__image">
       </div>
       <div class="card__body">
         <div class="card__copy">
@@ -31,7 +31,7 @@
         <h2 class="card__heading">You can help</h2>
       </div>
       <div class="card__image-wrap">
-        <img src="~/assets/images/home_2.jpg" alt="" class="card__image">
+        <img width="600" height="200" src="~/assets/images/home_2.jpg" alt="" class="card__image">
       </div>
       <div class="card__body">
         <div class="card__copy">
@@ -100,8 +100,7 @@ export default {
 }
 
 .card__header {
-  background: $c-green;
-  color: $c-white;
+  color: $c-green;
   position: relative;
 }
 
@@ -135,6 +134,7 @@ export default {
 .card__image {
   width: 100%;
   display: block;
+  height: auto;
 }
 
 .card__copy {
