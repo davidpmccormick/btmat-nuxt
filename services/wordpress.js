@@ -1,28 +1,26 @@
 import axios from 'axios';
-import wrapper from 'axios-cache-plugin';
 import { bodyParser } from '../utils/body-parser';
 
 const baseUrl = 'https://api.btmat.org.uk/wp-json/wp/v2';
 
-const http = wrapper(axios, {
-  maxCacheSize: 100
-});
-http.__addFilter(/.*/); // Cache everything
-
 export async function getArticleStubs(query = {}, categories = 1) {
-  const articleStubFields = 'id,title.rendered,slug,excerpt.rendered,date,better_featured_image';
-  const params = Object.assign(query, {fields: articleStubFields, categories: categories});
+  const articleStubFields =
+    'id,title.rendered,slug,excerpt.rendered,date,better_featured_image';
+  const params = Object.assign(query, {
+    fields: articleStubFields,
+    categories: categories
+  });
 
-  const { data, headers, config } = await http({
-    url: `${baseUrl}/posts`,
-    method: 'get',
+  const { data, headers, config } = await axios.get(`${baseUrl}/posts`, {
     params
   });
+  console.log(config);
   const totalArticles = headers['x-wp-total'];
   const totalPages = headers['x-wp-totalpages'];
   const currentPage = Number(config.params.page) || 1;
+  console.log(config.params);
 
-  const articleStubs = data.map((article) => {
+  const articleStubs = data.map(article => {
     const year = article.date.slice(0, 4);
     const month = article.date.slice(5, 7);
     const date = article.date.slice(8, 10);
@@ -31,7 +29,9 @@ export async function getArticleStubs(query = {}, categories = 1) {
       id: article.id,
       title: article.title && article.title.rendered,
       slug: article.slug,
-      excerpt: article.excerpt && `${article.excerpt.rendered.slice(0, -16)}&hellip;</p>`,
+      excerpt:
+        article.excerpt &&
+        `${article.excerpt.rendered.slice(0, -16)}&hellip;</p>`,
       year: year,
       month: month,
       date: date,
@@ -48,12 +48,8 @@ export async function getArticleStubs(query = {}, categories = 1) {
 }
 
 export async function getArticleBySlug(slug) {
-  const params = {slug};
-  const { data } = await http({
-    url: `${baseUrl}/posts`,
-    method: 'get',
-    params
-  });
+  const params = { slug };
+  const { data } = await axios.get(`${baseUrl}/posts`, { params });
   const article = data[0];
   const components = bodyParser(article.content.rendered);
   const relatedArticles = article['jetpack-related-posts'].map(a => {
@@ -86,10 +82,7 @@ export async function getArticleBySlug(slug) {
 }
 
 export async function getPageById(id) {
-  const page = await http({
-    url: `${baseUrl}/pages/${id}`,
-    method: 'get'
-  });
+  const page = await axios.get(`${baseUrl}/pages/${id}`);
 
   const components = bodyParser(page.data.content.rendered);
 
@@ -100,10 +93,7 @@ export async function getPageById(id) {
 }
 
 export async function getPostById(id) {
-  const post = await http({
-    url: `${baseUrl}/posts/${id}`,
-    method: 'get'
-  });
+  const post = await axios.get(`${baseUrl}/posts/${id}`);
 
   const components = bodyParser(post.data.content.rendered);
 

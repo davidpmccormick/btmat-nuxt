@@ -14,6 +14,7 @@ import { mapState } from 'vuex';
 export default {
   created() {
     this.clonedCurrentPage = this.currentPage;
+    console.log(this.clonedCurrentPage);
   },
   computed: {
     ...mapState([
