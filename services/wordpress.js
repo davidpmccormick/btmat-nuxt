@@ -14,11 +14,9 @@ export async function getArticleStubs(query = {}, categories = 1) {
   const { data, headers, config } = await axios.get(`${baseUrl}/posts`, {
     params
   });
-  console.log(config);
   const totalArticles = headers['x-wp-total'];
   const totalPages = headers['x-wp-totalpages'];
   const currentPage = Number(config.params.page) || 1;
-  console.log(config.params);
 
   const articleStubs = data.map(article => {
     const year = article.date.slice(0, 4);

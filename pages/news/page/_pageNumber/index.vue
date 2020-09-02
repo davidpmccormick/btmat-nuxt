@@ -22,7 +22,7 @@ export default {
     const page = params.pageNumber;
 
     try {
-      await store.dispatch('getArticleStubs');
+      await store.dispatch('getArticleStubs', {query: {page}});
 
       return {
         articleStubs: store.state.articleStubs
