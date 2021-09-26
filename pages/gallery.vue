@@ -13,14 +13,12 @@
         </template>
       </template>
       <template slot="secondary">
-        <ButtonLink />
       </template>
     </TwoColumns>
   </div>
 </template>
 
 <script>
-import ButtonLink from '~/components/ButtonLink';
 import CaptionedImage from '~/components/CaptionedImage';
 import TwoColumns from '~/components/TwoColumns';
 
@@ -32,7 +30,6 @@ export default {
     ]
   },
   components: {
-    ButtonLink,
     CaptionedImage,
     TwoColumns
   },

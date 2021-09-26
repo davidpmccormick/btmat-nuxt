@@ -20,15 +20,12 @@
           <li v-for="project in publicationsAndAbstracts.articleStubs"
             :key="project.id">{{ project.title }}</li>
         </ul>
-
-        <ButtonLink />
       </template>
     </TwoColumns>
   </div>
 </template>
 
 <script>
-import ButtonLink from '~/components/ButtonLink';
 import TwoColumns from '~/components/TwoColumns';
 
 export default {
@@ -39,7 +36,6 @@ export default {
     ]
   },
   components: {
-    ButtonLink,
     TwoColumns
   },
   async asyncData({ store }) {

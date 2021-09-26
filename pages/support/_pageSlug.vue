@@ -10,7 +10,6 @@
         </template>
       </template>
       <template slot="secondary">
-        <ButtonLink />
       </template>
     </TwoColumns>
   </div>
@@ -18,7 +17,6 @@
 
 <script>
 import BodyContent from '~/components/BodyContent';
-import ButtonLink from '~/components/ButtonLink';
 import CaptionedImage from '~/components/CaptionedImage';
 import Standfirst from '~/components/Standfirst';
 import TwoColumns from '~/components/TwoColumns';
@@ -37,7 +35,6 @@ export default {
   },
   components: {
     BodyContent,
-    ButtonLink,
     CaptionedImage,
     Standfirst,
     TwoColumns

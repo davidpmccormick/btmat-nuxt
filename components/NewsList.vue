@@ -12,7 +12,6 @@
       </template>
       <template slot="secondary">
         <Archive />
-        <ButtonLink />
       </template>
     </TwoColumns>
   </div>
@@ -20,7 +19,6 @@
 
 <script>
 import Archive from '~/components/Archive';
-import ButtonLink from '~/components/ButtonLink';
 import NewsPromo from '~/components/NewsPromo';
 import Pagination from '~/components/Pagination';
 import TwoColumns from '~/components/TwoColumns';
@@ -29,7 +27,6 @@ export default {
   props: ['articleStubs'],
   components: {
     Archive,
-    ButtonLink,
     NewsPromo,
     Pagination,
     TwoColumns
