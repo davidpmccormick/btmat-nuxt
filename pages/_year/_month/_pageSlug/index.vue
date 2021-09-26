@@ -26,7 +26,6 @@
       </template>
       <template slot="secondary">
         <Archive />
-        <ButtonLink class="article__button-link" />
       </template>
     </TwoColumns>
   </div>
@@ -35,7 +34,6 @@
 <script>
 import Archive from '~/components/Archive';
 import BodyContent from '~/components/BodyContent';
-import ButtonLink from '~/components/ButtonLink';
 import CaptionedImage from '~/components/CaptionedImage';
 import NewsPromo from '~/components/NewsPromo';
 import Standfirst from '~/components/Standfirst';
@@ -103,7 +101,6 @@ export default {
   components: {
     Archive,
     BodyContent,
-    ButtonLink,
     NewsPromo,
     CaptionedImage,
     Standfirst,

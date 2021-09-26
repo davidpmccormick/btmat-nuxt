@@ -35,9 +35,8 @@
       </div>
       <div class="card__body">
         <div class="card__copy">
-          <p>Every single penny that you donate goes directly towards supporting the work that we do in Africa.</p>
+          <p>Every single penny that you donate goes directly towards supporting the work that we do in Africa. Please <a href="mailto:info@btmat.org.uk?subject=BTMAT%20Support">email the BTMAT Trustees</a> for details of how you can help.</p>
         </div>
-        <ButtonLink class="button-link--in-card" />
       </div>
     </div>
     <div class="cards__card">
@@ -54,13 +53,11 @@
 </template>
 
 <script>
-import ButtonLink from '~/components/ButtonLink';
 import NewsPromo from '~/components/NewsPromo';
 
 export default {
   props: ['newsArticle'],
   components: {
-    ButtonLink,
     NewsPromo,
   }
 };
